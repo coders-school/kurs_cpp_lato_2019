@@ -57,4 +57,4 @@ Materiały z kursu C++ (Lipiec 2019 - Wrzesień 2019)
 
 ### Pre-work
 
-- [ ] Zapoznaj się ze [ściągą o polimorfiźmie](https://github.com/coders-school/kurs_cpp_zima_2019/blob/master/L06-algorithms%2Ctesting/polimorfizm.pdf)
+- [x] Zapoznaj się ze [ściągą o polimorfiźmie](https://github.com/coders-school/kurs_cpp_zima_2019/blob/master/L06-algorithms%2Ctesting/polimorfizm.pdf)
