@@ -1,9 +1,12 @@
 #include <string>
+#include <string_view>
 
-bool palindrom(std::string napis)
+bool palindrom(std::string_view napis)
 {
-    if(napis.size() < 2) return true;
+    std::string_view word = napis;   
+	
+    if(word.size() < 2) return true;
 
-    return napis.front() == napis.back()
-        && palindrom(napis.substr(1, napis.size() - 2));
+    return word.front() == word.back()
+        && palindrom(word.substr(1, word.size() - 2));
 }
