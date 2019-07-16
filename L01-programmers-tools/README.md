@@ -36,9 +36,9 @@ Materiały z kursu C++ (Lipiec 2019 - Wrzesień 2019)
 - [06.07.2019 Narzędzia programisty: git](https://www.youtube.com/watch?v=_ElZZKoTnJY&list=PLQqoaQUqs4DCbDNiqBU3E9bFvX6YSUZc1&index=4&t=0s)
 - [06.07.2019 Narzędzia programisty: kompilator, make, cmake](https://www.youtube.com/watch?v=j-P2MjCM40o&list=PLQqoaQUqs4DCbDNiqBU3E9bFvX6YSUZc1&index=5&t=0s)
 - [06.07.2019 Narzędzia programisty: formatowanie kodu](https://www.youtube.com/watch?v=Y4OsUF9pfXk&list=PLQqoaQUqs4DCbDNiqBU3E9bFvX6YSUZc1&index=6&t=0s)
-- <img src="01_contract.jpg" width="250px" /> <img src="02_descriptors.jpg" width="250px" />
-  <img src="03_commit_tree.jpg" width="250px" /> <img src="04_compilation_options.jpg" width="250px" />
-  <img src="05_formatting.jpg" width="250px" />
+- <img src="foto/01_contract.jpg" width="250px" /> <img src="foto/02_descriptors.jpg" width="250px" />
+  <img src="foto/03_commit_tree.jpg" width="250px" /> <img src="foto/04_compilation_options.jpg" width="250px" />
+  <img src="foto/05_formatting.jpg" width="250px" />
 
 ### Post-work
 

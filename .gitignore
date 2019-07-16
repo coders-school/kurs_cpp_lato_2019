@@ -1,4 +1,4 @@
-.build/*
+[Bb]uild/*
 cmake-build-debug/*
 idea/*
 *.o

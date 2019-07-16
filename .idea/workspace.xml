@@ -15,14 +15,21 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="68bba2f0-9d27-4724-b0a5-c4debc916ba1" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/L02-C++-introduction/CMakeLists.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/L02-C++-introduction/stringView.cpp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/L02-C++-introduction/testPalindrom.cpp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/L02-C++-introduction/testPalindrome.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/L02-C++-introduction/foto/01_repetition.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/L02-C++-introduction/foto/02_long_int.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/L02-C++-introduction/foto/03_param_passing.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/L02-C++-introduction/foto/04_zdalne_repo.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/L03-object-oriented-cpp/object_oriented_cpp.pdf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/L03-object-oriented-cpp/pre-test.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/L01-programmers-tools/01_contract.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/L01-programmers-tools/foto/01_contract.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/L01-programmers-tools/02_descriptors.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/L01-programmers-tools/foto/02_descriptors.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/L01-programmers-tools/03_commit_tree.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/L01-programmers-tools/foto/03_commit_tree.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/L01-programmers-tools/04_compilation_options.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/L01-programmers-tools/foto/04_compilation_options.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/L01-programmers-tools/05_formatting.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/L01-programmers-tools/foto/05_formatting.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/L01-programmers-tools/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/L01-programmers-tools/README.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/L02-C++-introduction/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/L02-C++-introduction/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/L02-C++-introduction/long_int.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/L02-C++-introduction/long_int.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/L02-C++-introduction/palindrom.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/L02-C++-introduction/palindrom.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/L02-C++-introduction/palindrom_recursive.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/L02-C++-introduction/palindrom_recursive.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/L02-C++-introduction/cmake-build-debug/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -40,25 +47,37 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="225">
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/L02-C++-introduction/README.md">
           <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
             <state split_layout="SPLIT">
-              <first_editor relative-caret-position="276">
-                <caret line="23" column="4" selection-start-line="23" selection-start-column="4" selection-end-line="23" selection-end-column="4" />
+              <first_editor relative-caret-position="360">
+                <caret line="30" column="64" selection-start-line="30" selection-start-column="64" selection-end-line="30" selection-end-column="64" />
               </first_editor>
               <second_editor />
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/L02-C++-introduction/long_int.cpp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1655">
-              <caret line="194" column="28" lean-forward="true" selection-start-line="194" selection-start-column="28" selection-end-line="194" selection-end-column="28" />
+            <state relative-caret-position="-109">
+              <caret line="194" column="28" selection-start-line="194" selection-start-column="28" selection-end-line="194" selection-end-column="28" />
               <folding>
                 <element signature="e#0#18#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/L02-C++-introduction/palindrom.cpp">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="539">
+              <caret line="105" column="133" selection-start-line="105" selection-start-column="133" selection-end-line="105" selection-end-column="133" />
+              <folding>
+                <element signature="e#0#17#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -88,16 +107,17 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/L02-C++-introduction/palindrom.cpp" />
         <option value="$PROJECT_DIR$/L02-C++-introduction/stringView.cpp" />
         <option value="$PROJECT_DIR$/L02-C++-introduction/testPalindrome.cpp" />
         <option value="$PROJECT_DIR$/L02-C++-introduction/CMakeLists.txt" />
         <option value="$PROJECT_DIR$/L02-C++-introduction/testPalindrom.h" />
         <option value="$PROJECT_DIR$/L02-C++-introduction/testPalindrom.cpp" />
-        <option value="$PROJECT_DIR$/L02-C++-introduction/palindrom_recursive.cpp" />
         <option value="$PROJECT_DIR$/L02-C++-introduction/testPalindrome.h" />
-        <option value="$PROJECT_DIR$/L02-C++-introduction/README.md" />
+        <option value="$PROJECT_DIR$/.gitignore" />
         <option value="$PROJECT_DIR$/L02-C++-introduction/long_int.cpp" />
+        <option value="$PROJECT_DIR$/L02-C++-introduction/palindrom.cpp" />
+        <option value="$PROJECT_DIR$/L02-C++-introduction/palindrom_recursive.cpp" />
+        <option value="$PROJECT_DIR$/L02-C++-introduction/README.md" />
       </list>
     </option>
   </component>
@@ -135,6 +155,7 @@
     </panes>
   </component>
   <component name="PropertiesComponent">
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/L02-C++-introduction" />
     <property name="node.js.detected.package.eslint" value="true" />
@@ -205,32 +226,31 @@
       <workItem from="1563194926997" duration="2162000" />
       <workItem from="1563212591607" duration="7339000" />
       <workItem from="1563282169957" duration="1074000" />
-      <workItem from="1563292644717" duration="5748000" />
+      <workItem from="1563292644717" duration="6445000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="28760000" />
+    <option name="totallyTimeSpent" value="29457000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="1916" y="0" width="1928" height="1084" extended-state="6" />
-    <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.496875" visible="true" weight="0.26705757" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49619773" visible="true" weight="0.26705757" />
       <window_info id="Structure" order="1" sideWeight="0.5015625" side_tool="true" weight="0.25346112" />
-      <window_info id="Favorites" order="2" sideWeight="0.503125" side_tool="true" visible="true" weight="0.26705757" />
+      <window_info id="Favorites" order="2" sideWeight="0.5038023" side_tool="true" visible="true" weight="0.26705757" />
       <window_info anchor="bottom" id="CMake" order="0" weight="0.32914045" />
       <window_info anchor="bottom" id="Message" order="1" />
       <window_info anchor="bottom" id="Messages" order="2" weight="0.32914045" />
       <window_info anchor="bottom" id="Find" order="3" weight="0.32984293" />
-      <window_info active="true" anchor="bottom" id="Run" order="4" visible="true" weight="0.32914045" />
+      <window_info anchor="bottom" id="Run" order="4" weight="0.32914045" />
       <window_info anchor="bottom" id="Debug" order="5" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="6" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="7" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="8" />
       <window_info anchor="bottom" id="Database Changes" order="9" />
       <window_info anchor="bottom" id="Version Control" order="10" weight="0.32984293" />
-      <window_info anchor="bottom" id="Terminal" order="11" weight="0.0932914" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="11" visible="true" weight="0.4486373" />
       <window_info anchor="bottom" id="Event Log" order="12" side_tool="true" />
       <window_info anchor="bottom" id="Profiler" order="13" weight="0.32984293" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
@@ -304,16 +324,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/L02-C++-introduction/palindrom.cpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="348">
-          <caret line="31" column="28" selection-start-line="17" selection-end-line="34" />
-          <folding>
-            <element signature="e#0#17#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/L02-C++-introduction/CMakeLists.txt">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="72">
@@ -338,23 +348,33 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/L02-C++-introduction/README.md">
-      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-        <state split_layout="SPLIT">
-          <first_editor relative-caret-position="276">
-            <caret line="23" column="4" selection-start-line="23" selection-start-column="4" selection-end-line="23" selection-end-column="4" />
-          </first_editor>
-          <second_editor />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/L02-C++-introduction/long_int.cpp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1655">
-          <caret line="194" column="28" lean-forward="true" selection-start-line="194" selection-start-column="28" selection-end-line="194" selection-end-column="28" />
+        <state relative-caret-position="-109">
+          <caret line="194" column="28" selection-start-line="194" selection-start-column="28" selection-end-line="194" selection-end-column="28" />
           <folding>
             <element signature="e#0#18#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/L02-C++-introduction/palindrom.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="539">
+          <caret line="105" column="133" selection-start-line="105" selection-start-column="133" selection-end-line="105" selection-end-column="133" />
+          <folding>
+            <element signature="e#0#17#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/L02-C++-introduction/README.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor relative-caret-position="360">
+            <caret line="30" column="64" selection-start-line="30" selection-start-column="64" selection-end-line="30" selection-end-column="64" />
+          </first_editor>
+          <second_editor />
         </state>
       </provider>
     </entry>
