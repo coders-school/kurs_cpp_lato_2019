@@ -1,9 +1,19 @@
 #include <string>
+#include <iostream>
+#include "testPalindrome.h"
 
-bool palindrom(std::string napis)
+using namespace std;
+
+bool palindrome(string_view text)
 {
-    if(napis.size() < 2) return true;
+    if(text.size() < 2) return true;
 
-    return napis.front() == napis.back()
-        && palindrom(napis.substr(1, napis.size() - 2));
+    return text.front() == text.back()
+        && palindrome(text.substr(1, text.size() - 2));
+}
+
+
+int main() {
+    testPalindrome(palindrome);
+    cout << "Program pass the tests" << endl;
 }

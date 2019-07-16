@@ -1,0 +1,1 @@
+/usr/bin/c++   -Wall -Wpedantic -Wextra -Wconversion --std=c++17 -g   CMakeFiles/stringView.dir/stringView.cpp.o  -o stringView 

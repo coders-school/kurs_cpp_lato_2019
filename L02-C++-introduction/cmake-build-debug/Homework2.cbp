@@ -1,0 +1,244 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CodeBlocks_project_file>
+	<FileVersion major="1" minor="6"/>
+	<Project>
+		<Option title="Homework2"/>
+		<Option makefile_is_custom="1"/>
+		<Option compiler="gcc"/>
+		<Option virtualFolders="CMake Files\;"/>
+		<Build>
+			<Target title="all">
+				<Option working_dir="/home/adi/dev/coders/kurs_cpp_lato_2019/L02-C++-introduction/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j8 -f &quot;/home/adi/dev/coders/kurs_cpp_lato_2019/L02-C++-introduction/cmake-build-debug/Makefile&quot;  VERBOSE=1 all"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/adi/dev/coders/kurs_cpp_lato_2019/L02-C++-introduction/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/home/adi/dev/coders/kurs_cpp_lato_2019/L02-C++-introduction/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/home/adi/dev/coders/kurs_cpp_lato_2019/L02-C++-introduction/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="edit_cache">
+				<Option working_dir="/home/adi/dev/coders/kurs_cpp_lato_2019/L02-C++-introduction/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j8 -f &quot;/home/adi/dev/coders/kurs_cpp_lato_2019/L02-C++-introduction/cmake-build-debug/Makefile&quot;  VERBOSE=1 edit_cache"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/adi/dev/coders/kurs_cpp_lato_2019/L02-C++-introduction/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/home/adi/dev/coders/kurs_cpp_lato_2019/L02-C++-introduction/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/home/adi/dev/coders/kurs_cpp_lato_2019/L02-C++-introduction/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="stringView">
+				<Option output="/home/adi/dev/coders/kurs_cpp_lato_2019/L02-C++-introduction/cmake-build-debug/stringView" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/adi/dev/coders/kurs_cpp_lato_2019/L02-C++-introduction/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/usr/include/c++/8"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/8"/>
+					<Add directory="/usr/include/c++/8/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/8/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/8/include-fixed"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j8 -f &quot;/home/adi/dev/coders/kurs_cpp_lato_2019/L02-C++-introduction/cmake-build-debug/Makefile&quot;  VERBOSE=1 stringView"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/adi/dev/coders/kurs_cpp_lato_2019/L02-C++-introduction/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/home/adi/dev/coders/kurs_cpp_lato_2019/L02-C++-introduction/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/home/adi/dev/coders/kurs_cpp_lato_2019/L02-C++-introduction/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="stringView/fast">
+				<Option output="/home/adi/dev/coders/kurs_cpp_lato_2019/L02-C++-introduction/cmake-build-debug/stringView" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/adi/dev/coders/kurs_cpp_lato_2019/L02-C++-introduction/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/usr/include/c++/8"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/8"/>
+					<Add directory="/usr/include/c++/8/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/8/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/8/include-fixed"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j8 -f &quot;/home/adi/dev/coders/kurs_cpp_lato_2019/L02-C++-introduction/cmake-build-debug/Makefile&quot;  VERBOSE=1 stringView/fast"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/adi/dev/coders/kurs_cpp_lato_2019/L02-C++-introduction/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/home/adi/dev/coders/kurs_cpp_lato_2019/L02-C++-introduction/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/home/adi/dev/coders/kurs_cpp_lato_2019/L02-C++-introduction/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="longInt">
+				<Option output="/home/adi/dev/coders/kurs_cpp_lato_2019/L02-C++-introduction/cmake-build-debug/longInt" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/adi/dev/coders/kurs_cpp_lato_2019/L02-C++-introduction/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/usr/include/c++/8"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/8"/>
+					<Add directory="/usr/include/c++/8/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/8/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/8/include-fixed"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j8 -f &quot;/home/adi/dev/coders/kurs_cpp_lato_2019/L02-C++-introduction/cmake-build-debug/Makefile&quot;  VERBOSE=1 longInt"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/adi/dev/coders/kurs_cpp_lato_2019/L02-C++-introduction/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/home/adi/dev/coders/kurs_cpp_lato_2019/L02-C++-introduction/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/home/adi/dev/coders/kurs_cpp_lato_2019/L02-C++-introduction/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="longInt/fast">
+				<Option output="/home/adi/dev/coders/kurs_cpp_lato_2019/L02-C++-introduction/cmake-build-debug/longInt" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/adi/dev/coders/kurs_cpp_lato_2019/L02-C++-introduction/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/usr/include/c++/8"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/8"/>
+					<Add directory="/usr/include/c++/8/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/8/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/8/include-fixed"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j8 -f &quot;/home/adi/dev/coders/kurs_cpp_lato_2019/L02-C++-introduction/cmake-build-debug/Makefile&quot;  VERBOSE=1 longInt/fast"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/adi/dev/coders/kurs_cpp_lato_2019/L02-C++-introduction/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/home/adi/dev/coders/kurs_cpp_lato_2019/L02-C++-introduction/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/home/adi/dev/coders/kurs_cpp_lato_2019/L02-C++-introduction/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="pali">
+				<Option output="/home/adi/dev/coders/kurs_cpp_lato_2019/L02-C++-introduction/cmake-build-debug/pali" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/adi/dev/coders/kurs_cpp_lato_2019/L02-C++-introduction/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/usr/include/c++/8"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/8"/>
+					<Add directory="/usr/include/c++/8/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/8/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/8/include-fixed"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j8 -f &quot;/home/adi/dev/coders/kurs_cpp_lato_2019/L02-C++-introduction/cmake-build-debug/Makefile&quot;  VERBOSE=1 pali"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/adi/dev/coders/kurs_cpp_lato_2019/L02-C++-introduction/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/home/adi/dev/coders/kurs_cpp_lato_2019/L02-C++-introduction/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/home/adi/dev/coders/kurs_cpp_lato_2019/L02-C++-introduction/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="pali/fast">
+				<Option output="/home/adi/dev/coders/kurs_cpp_lato_2019/L02-C++-introduction/cmake-build-debug/pali" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/adi/dev/coders/kurs_cpp_lato_2019/L02-C++-introduction/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/usr/include/c++/8"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/8"/>
+					<Add directory="/usr/include/c++/8/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/8/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/8/include-fixed"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j8 -f &quot;/home/adi/dev/coders/kurs_cpp_lato_2019/L02-C++-introduction/cmake-build-debug/Makefile&quot;  VERBOSE=1 pali/fast"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/adi/dev/coders/kurs_cpp_lato_2019/L02-C++-introduction/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/home/adi/dev/coders/kurs_cpp_lato_2019/L02-C++-introduction/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/home/adi/dev/coders/kurs_cpp_lato_2019/L02-C++-introduction/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="rebuild_cache">
+				<Option working_dir="/home/adi/dev/coders/kurs_cpp_lato_2019/L02-C++-introduction/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j8 -f &quot;/home/adi/dev/coders/kurs_cpp_lato_2019/L02-C++-introduction/cmake-build-debug/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/adi/dev/coders/kurs_cpp_lato_2019/L02-C++-introduction/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/home/adi/dev/coders/kurs_cpp_lato_2019/L02-C++-introduction/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/home/adi/dev/coders/kurs_cpp_lato_2019/L02-C++-introduction/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="paliR">
+				<Option output="/home/adi/dev/coders/kurs_cpp_lato_2019/L02-C++-introduction/cmake-build-debug/paliR" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/adi/dev/coders/kurs_cpp_lato_2019/L02-C++-introduction/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/usr/include/c++/8"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/8"/>
+					<Add directory="/usr/include/c++/8/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/8/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/8/include-fixed"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j8 -f &quot;/home/adi/dev/coders/kurs_cpp_lato_2019/L02-C++-introduction/cmake-build-debug/Makefile&quot;  VERBOSE=1 paliR"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/adi/dev/coders/kurs_cpp_lato_2019/L02-C++-introduction/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/home/adi/dev/coders/kurs_cpp_lato_2019/L02-C++-introduction/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/home/adi/dev/coders/kurs_cpp_lato_2019/L02-C++-introduction/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="paliR/fast">
+				<Option output="/home/adi/dev/coders/kurs_cpp_lato_2019/L02-C++-introduction/cmake-build-debug/paliR" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/adi/dev/coders/kurs_cpp_lato_2019/L02-C++-introduction/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/usr/include/c++/8"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/8"/>
+					<Add directory="/usr/include/c++/8/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/8/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/8/include-fixed"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j8 -f &quot;/home/adi/dev/coders/kurs_cpp_lato_2019/L02-C++-introduction/cmake-build-debug/Makefile&quot;  VERBOSE=1 paliR/fast"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/adi/dev/coders/kurs_cpp_lato_2019/L02-C++-introduction/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/home/adi/dev/coders/kurs_cpp_lato_2019/L02-C++-introduction/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/home/adi/dev/coders/kurs_cpp_lato_2019/L02-C++-introduction/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+		</Build>
+		<Unit filename="/home/adi/dev/coders/kurs_cpp_lato_2019/L02-C++-introduction/long_int.cpp">
+			<Option target="longInt"/>
+		</Unit>
+		<Unit filename="/home/adi/dev/coders/kurs_cpp_lato_2019/L02-C++-introduction/palindrom.cpp">
+			<Option target="pali"/>
+		</Unit>
+		<Unit filename="/home/adi/dev/coders/kurs_cpp_lato_2019/L02-C++-introduction/palindrom_recursive.cpp">
+			<Option target="paliR"/>
+		</Unit>
+		<Unit filename="/home/adi/dev/coders/kurs_cpp_lato_2019/L02-C++-introduction/stringView.cpp">
+			<Option target="stringView"/>
+		</Unit>
+		<Unit filename="/home/adi/dev/coders/kurs_cpp_lato_2019/L02-C++-introduction/testPalindrom.cpp">
+			<Option target="paliR"/>
+		</Unit>
+		<Unit filename="/home/adi/dev/coders/kurs_cpp_lato_2019/L02-C++-introduction/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\"/>
+		</Unit>
+	</Project>
+</CodeBlocks_project_file>

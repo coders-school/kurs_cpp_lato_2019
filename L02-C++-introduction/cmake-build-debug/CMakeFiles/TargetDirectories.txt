@@ -1,0 +1,6 @@
+/home/adi/dev/coders/kurs_cpp_lato_2019/L02-C++-introduction/cmake-build-debug/CMakeFiles/edit_cache.dir
+/home/adi/dev/coders/kurs_cpp_lato_2019/L02-C++-introduction/cmake-build-debug/CMakeFiles/stringView.dir
+/home/adi/dev/coders/kurs_cpp_lato_2019/L02-C++-introduction/cmake-build-debug/CMakeFiles/longInt.dir
+/home/adi/dev/coders/kurs_cpp_lato_2019/L02-C++-introduction/cmake-build-debug/CMakeFiles/pali.dir
+/home/adi/dev/coders/kurs_cpp_lato_2019/L02-C++-introduction/cmake-build-debug/CMakeFiles/rebuild_cache.dir
+/home/adi/dev/coders/kurs_cpp_lato_2019/L02-C++-introduction/cmake-build-debug/CMakeFiles/paliR.dir

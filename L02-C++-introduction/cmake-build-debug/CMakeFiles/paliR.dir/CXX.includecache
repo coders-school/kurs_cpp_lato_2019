@@ -1,0 +1,26 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/adi/dev/coders/kurs_cpp_lato_2019/L02-C++-introduction/palindrom_recursive.cpp
+string
+-
+iostream
+-
+testPalindrome.h
+/home/adi/dev/coders/kurs_cpp_lato_2019/L02-C++-introduction/testPalindrome.h
+
+/home/adi/dev/coders/kurs_cpp_lato_2019/L02-C++-introduction/testPalindrom.cpp
+assert.h
+-
+testPalindrome.h
+/home/adi/dev/coders/kurs_cpp_lato_2019/L02-C++-introduction/testPalindrome.h
+
+/home/adi/dev/coders/kurs_cpp_lato_2019/L02-C++-introduction/testPalindrome.h
+string
+-
+

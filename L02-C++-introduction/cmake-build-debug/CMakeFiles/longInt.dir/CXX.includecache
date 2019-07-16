@@ -1,0 +1,20 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/adi/dev/coders/kurs_cpp_lato_2019/L02-C++-introduction/long_int.cpp
+cstdint
+-
+iostream
+-
+string
+-
+sstream
+-
+assert.h
+-
+
