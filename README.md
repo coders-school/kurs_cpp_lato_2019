@@ -31,7 +31,7 @@ Materiały z kursu C++ (Lipiec 2019 - Wrzesień 2019)
 | [nadia1101](https://github.com/JustynaSlazak)       | 15 |    |    |    |    |
 | NG                                                  |    |    |    |    |    |
 | [Piotr H](https://github.com/PiotrHCpp)             |  8 |    |    |    |    |
-| [piotr.kowandy](https://github.com/PiotrKowandy)    | 15 |    |    |  3 |  1 |
+| [piotr.kowandy](https://github.com/PiotrKowandy)    | 15 |  2 |    |  3 |  1 |
 | [rafal.em](https://github.com/elRaphaelo)           |  2 |    |    |    |    |
 | [Raziel14](https://github.com/Arakis14)             |  1 |    |    |    |    |
 | [RyszardH](https://github.com/RyszardHalapacz)      |  9 |    |    |    |    |
