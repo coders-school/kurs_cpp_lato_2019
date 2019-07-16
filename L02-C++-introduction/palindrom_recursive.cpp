@@ -1,6 +1,6 @@
 #include <string>
 
-bool palindrom(auto napis)
+bool palindrom(string_view napis)
 {
     if(napis.size() < 2) return true;
 
