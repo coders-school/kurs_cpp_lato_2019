@@ -35,7 +35,7 @@ Materiały z kursu C++ (Lipiec 2019 - Wrzesień 2019)
 
 ### Post-work
 
-- [ ] (2 punkty) Spróbuj zamienić std::size_t na float w funkcji [palindrom](palindrom.cpp). Wynik zapisz jako komentarz wewnątrz pliku.
+- [x] (2 punkty) Spróbuj zamienić std::size_t na float w funkcji [palindrom](palindrom.cpp). Wynik zapisz jako komentarz wewnątrz pliku.
 - [ ] (2 punkty) Zrób optymalizację, żeby pozbyć się kopiowania stringów w  [rekurencyjnej funkcji palindrom](palindrom_recursive.cpp). <details><summary>Podpowiedź</summary><p>Zapoznaj się z std::string_view</p></details>
 - [ ] (1 punkt) Zapoznaj się ze wszystkimi slowami kluczowymi z rozdziału "Basic" z prezentacji (43 slajd).
 - [ ] (3 punkty) Funkcja [toString](long_int.cpp) posiada bug. Spróbuj go znaleźć i naprawić. <details><summary>Podpowiedź</summary><p>Spróbuj dostać takie wartości "0", "10", "3001"</p></details>
