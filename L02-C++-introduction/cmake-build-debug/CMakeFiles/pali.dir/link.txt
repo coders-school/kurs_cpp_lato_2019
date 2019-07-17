@@ -1,1 +1,0 @@
-/usr/bin/c++   -Wall -Wpedantic -Wextra -Wconversion --std=c++17 -g   CMakeFiles/pali.dir/palindrom.cpp.o  -o pali 

@@ -1,1 +1,0 @@
-/usr/bin/c++   -Wall -Wpedantic -Wextra -Wconversion --std=c++17 -g   CMakeFiles/paliR.dir/palindrom_recursive.cpp.o CMakeFiles/paliR.dir/testPalindrom.cpp.o  -o paliR 
