@@ -58,8 +58,8 @@ mainFloat.cpp: In function ‘bool palindrome(std::__cxx11::string)’:
          unikać. Nawet w dokumentacji dla funkcji .size() znajdziemy informację "size_t is an unsigned integral type" więc jeśli zwraca size_ to nasza zmienna też powinna
          być size_t a nie float.
 
-         Ad2. oraz Ad3. Zgodnie z tym co omawialiśmy na zajęciach iterator powinien być typu size_t. Gwarantuje nam to że nieważne jak duża będzie iteracja to zawsze się
-         zmieścimy  w tej zmiennej i nie wystąpi sytuacja gdzie skończy się float i program będzie mógł się wysypać.
+         Ad2. oraz Ad3. Zgodnie z tym co omawialiśmy na zajęciach iterator powinien być typu size_t. W przypadku float przy bardzo dużych liczbach może on przeskakiwać
+         co kilka liczb czego nie chcemy. Dlatego size_t jest zalecany do iterowania.
 */
 
 
