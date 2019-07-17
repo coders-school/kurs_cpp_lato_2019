@@ -14,8 +14,8 @@ struct LongInt
     LongInt(std::string str)
     {
         int number = std::stoi(str);
-        left = number / 100;
         right = number % 100;
+        left = (number - right) / 10;
     }
 
     //Copy constructor
@@ -34,7 +34,11 @@ struct LongInt
     //Method
     std::string toString()
     {
-        return std::to_string(left) + std::to_string(right);
+        std::string leftStr = left == 0 
+            ? ""
+            : std::to_string(left);
+
+        return leftStr + std::to_string(right);
     }
 
     //Operator
@@ -61,9 +65,7 @@ struct LongInt
 
 int main()
 {
-    LongInt val1(1, 70);
-    LongInt val2("5980");
-
-    val1 += val2;
-    std::cout << val1.toString() << std::endl;
+    LongInt li0("0");
+    LongInt li10("10");
+    LongInt li3001("3001");
 }
