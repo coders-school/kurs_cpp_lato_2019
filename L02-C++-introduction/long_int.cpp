@@ -64,25 +64,6 @@ struct LongInt
         left += right / 100;
         right = right % 100;
     }
-    void operator-=(const LongInt &r)
-    {
-        left -= r.left;
-        right -= r.right;
-        left -= right / 100;
-        right = right % 100;
-    }
-
-    LongInt operator+(const LongInt &r)
-    {
-        int tLeft, tRight;
-
-        tLeft = left + r.left;
-        tRight = right + r.right;
-        tLeft += tRight / 100;
-        tLeft = tRight % 100;
-
-        return LongInt(tLeft, tRight);
-    }
 
     //Copy operator
     LongInt &operator=(const LongInt &other)
@@ -107,8 +88,7 @@ int main()
     LongInt val5(1, 0);
 
     val1 += val2;
-    val3 -= val2;
-    //   val1 = val2;
+ 
     std::cout << val1.toString() << std::endl;
     std::cout << val3.toString() << std::endl;
     std::cout << val4.toString() << std::endl;
