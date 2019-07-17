@@ -19,17 +19,10 @@ struct LongInt
     }
 
     //Copy constructor
-    LongInt(const LongInt& other)
-    {
-        left = other.left;
-        right = other.right;
-    }
+    LongInt(const LongInt& other) = default;
 
     //Destructor
-    ~LongInt()
-    {
-        std::cout << "Delete " << toString() << std::endl;
-    }
+    ~LongInt() = default;
 
     //Method
     std::string toString()
@@ -68,4 +61,6 @@ int main()
     LongInt li0("0");
     LongInt li10("10");
     LongInt li3001("3001");
+
+    std::cout << li0.toString() << " " << li10.toString() << " " << li3001.toString() << "\n";
 }
