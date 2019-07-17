@@ -2,8 +2,8 @@
 
 bool palindrom(std::string napis)
 {
-    std::float dlugosc = napis.size();
-    for(std::float i = 0; i < (dlugosc / 2); ++i)
+    float dlugosc = napis.size();
+    for(float i = 0; i < (dlugosc / 2); ++i)
     {
         if(napis[i] != napis[dlugosc - (i + 1)])
             return false;
