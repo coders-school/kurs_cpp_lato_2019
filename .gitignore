@@ -1,6 +1,6 @@
 [Bb]uild/*
-cmake-build-debug/*
-idea/*
+cmake-build-debug
+.idea/*
 *.o
 *.ko
 
