@@ -19,7 +19,7 @@ struct LongInt
     }
 
     //Copy constructor
-    LongInt(const LongInt& other)
+    LongInt(const LongInt &other)
     {
         left = other.left;
         right = other.right;
@@ -32,22 +32,60 @@ struct LongInt
     }
 
     //Method
-    std::string toString()
+    const std::string toString()
     {
-        return std::to_string(left) + std::to_string(right);
+
+        if (left)
+        {
+            if (right < 10 && right != 0)
+            {
+                return std::to_string(left) + "0" + std::to_string(right);
+            }
+            else if (right == 0)
+            {
+                return std::to_string(left) + "0";
+            }
+            else
+            {
+                return std::to_string(left) + std::to_string(right);
+            }
+        }
+        else
+        {
+            return std::to_string(right);
+        }
     }
 
     //Operator
-    void operator+=(const LongInt& r)
+    void operator+=(const LongInt &r)
     {
         left += r.left;
         right += r.right;
         left += right / 100;
         right = right % 100;
     }
+    void operator-=(const LongInt &r)
+    {
+        left -= r.left;
+        right -= r.right;
+        left -= right / 100;
+        right = right % 100;
+    }
+
+    LongInt operator+(const LongInt &r)
+    {
+        int tLeft, tRight;
+
+        tLeft = left + r.left;
+        tRight = right + r.right;
+        tLeft += tRight / 100;
+        tLeft = tRight % 100;
+
+        return LongInt(tLeft, tRight);
+    }
 
     //Copy operator
-    LongInt& operator=(const LongInt& other)
+    LongInt &operator=(const LongInt &other)
     {
         left = other.left;
         right = other.right;
@@ -61,9 +99,18 @@ struct LongInt
 
 int main()
 {
+
     LongInt val1(1, 70);
     LongInt val2("5980");
+    LongInt val3(30, 01);
+    LongInt val4("0");
+    LongInt val5(1, 0);
 
     val1 += val2;
+    val3 -= val2;
+    //   val1 = val2;
     std::cout << val1.toString() << std::endl;
+    std::cout << val3.toString() << std::endl;
+    std::cout << val4.toString() << std::endl;
+    std::cout << val5.toString() << std::endl;
 }
