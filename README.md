@@ -11,33 +11,33 @@ Materiały z kursu C++ (Lipiec 2019 - Wrzesień 2019)
 
 ### Punktacja
 
-| | L1. Narzędzia programisty (15) | L2. Podstawy C++ | L3. Obiektowy C++ | Punktualność | PR |
-|---                                                  |--- |--- |--- |--- |--- |
-| [Adam Mierzwiak](https://github.com/adamvm)         | 15 |    |    |  3 |  1 |
-| [Alicja](https://github.com/AlicjaBonder)           | 15 |    |    |  3 |    |
-| alicjaliqui                                         |    |    |    |    |    |
-| [Arion](https://github.com/Ariionex)                |  3 |    |    |    |    |
-| [Bodzio](https://github.com/Dolaroza)               |  6 |    |    |    |    |
-| [Cypher](https://github.com/ChopSeeGuy)             | 15 |    |    |  3 |    |
-| [Daniel T](https://github.com/LinQ007)              | 15 |    |    |  3 |    |
-| [Joanna](https://github.com/teojdb)                 | 15 |    |    |  3 |    |
-| [kasia.zel](https://github.com/kasiazel)            |  6 |    |    |    |    |
-| Kuba_k                                              |    |    |    |    |    |
-| [Łukasz](https://github.com/lucaswalicki)           |  8 |    |    |    |    |
-| [Marcin Bury](https://github.com/MarcinBury92)      |  7 |    |    |    |    |
-| [mateuszh](https://github.com/czarny247)            |  2 |    |    |    |    |
-| [MonikaZ](https://github.com/MonikaZelechowska)     | 15 |    |    |  3 |    |
-| MWoz                                                |    |    |    |    |    |
-| [nadia1101](https://github.com/JustynaSlazak)       | 15 |    |    |    |    |
-| NG                                                  |    |    |    |    |    |
-| [Piotr H](https://github.com/PiotrHCpp)             |  8 |    |    |    |    |
-| [piotr.kowandy](https://github.com/PiotrKowandy)    | 15 | 15 |    |  6 |  1 |
-| [rafal.em](https://github.com/elRaphaelo)           |  2 |    |    |    |    |
-| [Raziel14](https://github.com/Arakis14)             |  1 |    |    |    |    |
-| [RyszardH](https://github.com/RyszardHalapacz)      |  9 |    |    |    |    |
-| [SzymonGajewski](https://github.com/SzymonGajewski) | 15 |    |    |  3 |    |
-| [TheDude](https://github.com/TheDude-cpu)           |  4 |    |    |    |    |
-| zielin                                              |    |    |    |    |    |
+| | L1. Narzędzia programisty (15) | L2. Podstawy C++ | L3. Obiektowy C++ | Punktualność | PR | Sciaga |
+|---                                                  |--- |--- |--- |--- |--- |--- |
+| [Adam Mierzwiak](https://github.com/adamvm)         | 15 |    |    |  3 |  1 |    |
+| [Alicja](https://github.com/AlicjaBonder)           | 15 |    |    |  3 |    |    |
+| alicjaliqui                                         |    |    |    |    |    |    |
+| [Arion](https://github.com/Ariionex)                |  3 |    |    |    |    |    |
+| [Bodzio](https://github.com/Dolaroza)               |  6 |    |    |    |    |    |
+| [Cypher](https://github.com/ChopSeeGuy)             | 15 |    |    |  3 |    |    |
+| [Daniel T](https://github.com/LinQ007)              | 15 |    |    |  3 |    |    |
+| [Joanna](https://github.com/teojdb)                 | 15 |    |    |  3 |    |    |
+| [kasia.zel](https://github.com/kasiazel)            |  6 |    |    |    |    |    |
+| Kuba_k                                              |    |    |    |    |    |    |
+| [Łukasz](https://github.com/lucaswalicki)           |  8 |    |    |    |    |    |
+| [Marcin Bury](https://github.com/MarcinBury92)      |  7 |    |    |    |    |    |
+| [mateuszh](https://github.com/czarny247)            |  2 |    |    |    |    |    |
+| [MonikaZ](https://github.com/MonikaZelechowska)     | 15 |    |    |  3 |    |    |
+| MWoz                                                |    |    |    |    |    |    |
+| [nadia1101](https://github.com/JustynaSlazak)       | 15 |    |    |    |    |    |
+| NG                                                  |    |    |    |    |    |    |
+| [Piotr H](https://github.com/PiotrHCpp)             |  8 |    |    |    |    |    |
+| [piotr.kowandy](https://github.com/PiotrKowandy)    | 15 | 15 |    |  6 |  1 |  3 |
+| [rafal.em](https://github.com/elRaphaelo)           |  2 |    |    |    |    |    |
+| [Raziel14](https://github.com/Arakis14)             |  1 |    |    |    |    |    |
+| [RyszardH](https://github.com/RyszardHalapacz)      |  9 |    |    |    |    |    |
+| [SzymonGajewski](https://github.com/SzymonGajewski) | 15 |    |    |  3 |    |    |
+| [TheDude](https://github.com/TheDude-cpu)           |  4 |    |    |    |    |    |
+| zielin                                              |    |    |    |    |    |    |
 
 ### Nagrody
 
