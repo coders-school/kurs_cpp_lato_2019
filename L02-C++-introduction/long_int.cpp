@@ -52,12 +52,7 @@ struct LongInt
     }
 
     //Copy operator
-    LongInt& operator=(const LongInt& other)
-    {
-        left = other.left;
-        right = other.right;
-        return *this;
-    }
+    LongInt& operator=(const LongInt& other) = default;
 
     //Members
     int left;
