@@ -25,7 +25,7 @@ Materiały z kursu C++ (Lipiec 2019 - Wrzesień 2019)
 | Kuba_k                                              |    |    |    |    |    |
 | [Łukasz](https://github.com/lucaswalicki)           |  8 |    |    |    |    |
 | [Marcin Bury](https://github.com/MarcinBury92)      |  7 |    |    |    |    |
-| [mateuszh](https://github.com/czarny247)            |  2 |    |    |    |    |
+| [mateuszh](https://github.com/czarny247)            |  2 | 15 |    |  3 |    |
 | [MonikaZ](https://github.com/MonikaZelechowska)     | 15 |    |    |  3 |    |
 | MWoz                                                |    |    |    |    |    |
 | [nadia1101](https://github.com/JustynaSlazak)       | 15 |    |    |    |    |
