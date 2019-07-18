@@ -51,6 +51,20 @@ struct LongInt
         right = right % 100;
     }
 
+    LongInt operator+(const LongInt& r)
+    {
+        LongInt result = *this;
+        result += r;
+        return result;
+    }
+
+    LongInt operator-(const LongInt& r)
+    {
+        LongInt result = *this;
+        result -= r;
+        return result;
+    }
+
     //Copy operator
     LongInt& operator=(const LongInt& other)
     {
@@ -76,4 +90,5 @@ int main()
     li3002 -= li3001;
 
     std::cout << li3002.toString() << "\n";
+    std::cout << (LongInt("3002") - li3001).toString() << "\n";
 }
