@@ -5,6 +5,11 @@
 
 struct LongInt
 {
+    LongInt()
+    : LongInt(0,0)
+    {
+    }
+
     //Constructor
     LongInt(int left, int right) : left(left), right(right)
     {
@@ -105,7 +110,7 @@ std::istream& operator>>(std::istream& is, LongInt& li)
 
     li.setLeft(l);
 
-    std::cout << "\nEnter right part: ";
+    std::cout << "Enter right part: ";
 
     is >> r;
 
@@ -127,4 +132,12 @@ int main()
 
     std::cout << li3002 << "\n";
     std::cout << (LongInt("3002") - li3001) << "\n";
+
+    LongInt usrLi;
+
+    std::cin >> usrLi;
+
+    std::cout << "\n" << usrLi << "\n";
+
+    return 0; 
 }
