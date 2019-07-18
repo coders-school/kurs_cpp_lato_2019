@@ -25,7 +25,7 @@ struct LongInt
     ~LongInt() = default;
 
     //Method
-    std::string toString()
+    std::string toString() const
     {
         std::string leftStr = left == 0 
             ? ""
@@ -76,7 +76,43 @@ struct LongInt
     //Members
     int left;
     int right;
+
+    void setLeft(const int& l)
+    {
+        left = l;
+    }
+
+    void setRight(const int& r)
+    {
+        right = r;
+    }
 };
+
+std::ostream& operator<<(std::ostream& os, const LongInt& li)
+{
+    os << li.toString();
+    return os;
+}
+
+std::istream& operator>>(std::istream& is, LongInt& li)
+{
+    int l {};
+    int r {};
+    
+    std::cout << "Enter left part: ";
+
+    is >> l;
+
+    li.setLeft(l);
+
+    std::cout << "\nEnter right part: ";
+
+    is >> r;
+
+    li.setRight(r);
+
+    return is;
+}
 
 int main()
 {
@@ -85,10 +121,10 @@ int main()
     LongInt li3001("3001");
     LongInt li3002("3002");
 
-    std::cout << li0.toString() << " " << li10.toString() << " " << li3001.toString() << "\n";
+    std::cout << li0 << " " << li10 << " " << li3001 << "\n";
 
     li3002 -= li3001;
 
-    std::cout << li3002.toString() << "\n";
-    std::cout << (LongInt("3002") - li3001).toString() << "\n";
+    std::cout << li3002 << "\n";
+    std::cout << (LongInt("3002") - li3001) << "\n";
 }
