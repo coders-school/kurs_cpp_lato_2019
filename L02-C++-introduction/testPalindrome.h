@@ -2,10 +2,9 @@
 // Created by adi on 14.07.19.
 //
 
-#include <string>
-
 #ifndef HOMEWORK2_TESTPALINDROM_H
 #define HOMEWORK2_TESTPALINDROM_H
+#include <string_view>
 
 typedef bool (*pal)(std::string_view);
 

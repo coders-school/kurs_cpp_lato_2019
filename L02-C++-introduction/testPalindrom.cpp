@@ -2,7 +2,7 @@
 // Created by adi on 14.07.19.
 //
 
-#include <assert.h>
+#include <cassert>
 #include "testPalindrome.h"
 
 void testPalindrome(bool (*pal)(std::string_view)) {

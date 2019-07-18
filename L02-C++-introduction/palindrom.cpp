@@ -1,5 +1,5 @@
 #include <string>
-#include <assert.h>
+#include <cassert>
 #include <iostream>
 
 using namespace std;
