@@ -41,7 +41,11 @@ struct LongInt
     //Method
     std::string toString()
     {
-        return std::to_string(left) + std::to_string(right);
+	std::string l="",r="";
+        if(left<10) l+="0";
+        if(right<10) r+="0";
+        return  l + std::to_string(left) + r + std::to_string(right);
+    }
     }
 
     //Operator
