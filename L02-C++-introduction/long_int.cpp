@@ -198,8 +198,17 @@ struct LongInt
 	std::cout << "Give me right parametr: ";
 	input >> other.right;
 
-	other.left += other.right / 100;
-	other.right = other.right % 100;
+        if (other.right < 0)
+        {
+	    other.left += ( other.right * -1) / 100;
+	    other.right = ( other.right * -1) % 100;
+        }
+	else
+	{
+	    other.left += other.right / 100;
+	    other.right = other.right % 100;
+	}
+
 
 	return input;
    } 
