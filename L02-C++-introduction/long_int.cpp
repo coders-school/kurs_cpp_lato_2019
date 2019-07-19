@@ -37,17 +37,26 @@ struct LongInt
     //Method
     std::string toString()
     {
+        left += right /100;
+        right = right % 100;
+
+	int zeroCounter=1;
 	if (right < 10 && right > -10)
+	{
+	    zeroCounter = 10;
+	}
+
+	if (right != 0)
 	{
 	    if (left != 0)
 	    {
 		if (right > 0)
 		{
-                    return std::to_string(left*10) + std::to_string(right);
+                    return std::to_string(left*zeroCounter) + std::to_string(right);
 		}
 		else
 		{
-		    return std::to_string(left*10) + std::to_string(right * -1);
+		    return std::to_string(left*zeroCounter) + std::to_string(right * -1);
 		}
 	    }
 	    else
@@ -65,12 +74,19 @@ struct LongInt
 		}
 		else
 		{
-		    return std::to_string(left) + std::to_string(right * -1);
+		    return std::to_string(left*zeroCounter) + std::to_string(right * -1);
 		}
 	    }
 	    else
 	    {
-		return std::to_string(right);
+		if (right > 0)
+		{
+		    return std::to_string(right);
+		}
+		else
+		{
+		    return std::to_string(right * -1);
+		}
 	    }
 	}
     }
@@ -242,6 +258,7 @@ int main()
     LongInt valX(0,99);
     LongInt valY(1,1);
     LongInt val90(-30, -1);
+    LongInt val30(-1, 12000);
 
     std::cout<<"test for val6(0, 0) -> "<< val6.toString() << std::endl;
     std::cout<<"test for val5(0, 10) -> "<< val5.toString() << std::endl;
@@ -250,7 +267,8 @@ int main()
     std::cout<<"test for valTest2(8, 2) -> "<< valTest2.toString() << std::endl;
     std::cout<<"test for valTest3(7, -9) -> " << valTest3.toString() << std::endl;
 
-    std::cout<<"test for val90(-30, -1)" <<val90.toString() << std::endl;
+    std::cout<<"test for val90(-30, -1) ->" <<val90.toString() << std::endl;
+    std::cout<<"test for val30(1, 1200) ->" <<val30.toString() << std::endl;
     std::cout<<std::endl;
 
     LongInt val10("-340");
@@ -286,14 +304,15 @@ int main()
 }
 
 
-/*Comments
+/*
 test for val6(0, 0) -> 0
 test for val5(0, 10) -> 10
 test for val7(30, 1) -> 3001
 test for valTest1(12, 4) -> 1204
 test for valTest2(8, 2) -> 802
 test for valTest3(7, -9) -> 709
-test for val90(-30, -1)-3001
+test for val90(-30, -1) ->-3001
+test for val30(1, 1200) ->11900
 
 Operator -= : -340 -= 5690 = -6030
 
@@ -310,14 +329,15 @@ Operator + : 99 + 101 = Delete 200
 Operator << : 5980
 
 Operator >> : 
-Give me left parametr: 1
-Give me right parametr: 2
-102
+Give me left parametr: 3
+Give me right parametr: 5000
+5300
 
 Delete 5690
 Delete 340
 Delete 5690
 Delete -6030
+Delete 11900
 Delete -3001
 Delete 101
 Delete 99
@@ -327,7 +347,7 @@ Delete 402
 Delete 3001
 Delete 0
 Delete 10
-Delete 102
+Delete 5300
 Delete 200
 Delete 5980
 Delete -5810
