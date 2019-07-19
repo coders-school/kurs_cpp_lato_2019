@@ -2,7 +2,7 @@
 #include <string>
 #include <string_view>
 
-bool palindrom(std::string_view checkedWord)
+bool palindrom(const std::string_view& checkedWord)
 {
     if(checkedWord.size() < 2) return true;
 
