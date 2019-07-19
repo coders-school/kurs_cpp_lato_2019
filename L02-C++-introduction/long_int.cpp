@@ -11,8 +11,8 @@ struct LongInt
     //  {
     //  }
 
-    //   Default constructor
-    //   LongInt() = default;
+    // Default constructor
+     LongInt() = default;
 
       LongInt(int l =12, int r=34) : left(l), right(r)
       {
@@ -29,11 +29,11 @@ struct LongInt
     }
 
     //Copy constructor
-    LongInt(const LongInt& other)
-    {
-        left = other.left;
-        right = other.right;
-    }
+    LongInt(const LongInt& other)=default;
+ //   {
+ //       left = other.left;
+ //       right = other.right;
+ //   }
 
     //Destructor
     ~LongInt()
@@ -164,9 +164,16 @@ std::istream & operator>> (std::istream &in,  LongInt &i)
 
 int main()
 {
+    LongInt val0{};
+      std::cout << "val0 = "<<val0.toString() << std::endl;
     LongInt val1(1, 70);
     LongInt val2("5980");
 
+    val0=val1;
+
+    std::cout <<"val0 = "<< val0.toString() << std::endl;
+    std::cout << "val1 = "<<val1.toString() << std::endl;
+
     val1 += val2;
-    std::cout << val1.toString() << std::endl;
+    std::cout << "val1 (po dzialaniu) = "<<val1.toString() << std::endl;
 }
