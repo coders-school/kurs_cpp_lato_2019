@@ -15,7 +15,7 @@ Materiały z kursu C++ (Lipiec 2019 - Wrzesień 2019)
 
 | | SUMA | Punktualność | Code Review | PR | Ściągi | Projekt | US | Pomoc | Inne | L1. Narzędzia programisty (15) | L2. Podstawy C++ | L3. Obiektowy C++ |
 |---                                                  |--- |--- |--- |--- |--- |--- |--- |--- |--- |--- |--- |--- |
-| [Adam Mierzwiak](https://github.com/adamvm)         | 19 |  3 |    |  1 |    |    |    |    |    | 15 |    |    |
+| [Adam Mierzwiak](https://github.com/adamvm)         | 19 |  3 |    |  1 |  3 |    |    |    |    | 15 |    |    |
 | [Alicja](https://github.com/AlicjaBonder)           | 18 |  3 |    |    |    |    |    |    |    | 15 |    |    |
 | alicjaliqui                                         |  0 |    |    |    |    |    |    |    |    |    |    |    |
 | [Arion](https://github.com/Ariionex)                |  3 |    |    |    |    |    |    |    |    |  3 |    |    |
