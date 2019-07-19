@@ -1,4 +1,3 @@
-#include <string>
 #include <string_view>
 
 bool palindrom(std::string_view napis)

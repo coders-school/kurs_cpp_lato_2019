@@ -41,7 +41,7 @@ Materiały z kursu C++ (Lipiec 2019 - Wrzesień 2019)
 - [x] (3 punkty) Funkcja [toString](long_int.cpp) posiada bug. Spróbuj go znaleźć i naprawić. <details><summary>Podpowiedź</summary><p>Spróbuj dostać takie wartości "0", "10", "3001"</p></details>
 - [x] (2 punkty) Zapoznaj się ze słowem kluczowym "default" i użyj go w [tym kodzie](long_int.cpp)
 - [x] (3 punktow) Dopisz brakujące operatory takie jak "-=", "-", "+" w [tym kodzie](long_int.cpp)
-- [ ] (2 punktow) Dopisz własne operatory "<<" oraz ">>" żeby twoją klasę można było użyć razem z std::cout i std::cin w [tym kodzie](long_int.cpp)<details><summary>Podpowiedź</summary><p>Zobacz ten [przykład](https://medium.com/@nonuruzun/overloading-input-output-operators-in-c-a2a74c5dda8a)</p></details>
+- [x] (2 punktow) Dopisz własne operatory "<<" oraz ">>" żeby twoją klasę można było użyć razem z std::cout i std::cin w [tym kodzie](long_int.cpp)<details><summary>Podpowiedź</summary><p>Zobacz ten [przykład](https://medium.com/@nonuruzun/overloading-input-output-operators-in-c-a2a74c5dda8a)</p></details>
 
 ### Jak zaraportować wykonanie pracy domowej?
 
@@ -57,4 +57,4 @@ Materiały z kursu C++ (Lipiec 2019 - Wrzesień 2019)
 
 ### Pre-work
 
-- [ ] Zapoznaj się ze [ściągą o polimorfiźmie](https://github.com/coders-school/kurs_cpp_zima_2019/blob/master/L06-algorithms%2Ctesting/polimorfizm.pdf)
+- [x] Zapoznaj się ze [ściągą o polimorfiźmie](https://github.com/coders-school/kurs_cpp_zima_2019/blob/master/L06-algorithms%2Ctesting/polimorfizm.pdf)

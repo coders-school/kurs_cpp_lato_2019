@@ -35,7 +35,7 @@ Materiały z kursu C++ (Lipiec 2019 - Wrzesień 2019)
 | [rafal.em](https://github.com/elRaphaelo)           |  2 |    |    |    |    |    |
 | [Raziel14](https://github.com/Arakis14)             |  1 |    |    |    |    |    |
 | [RyszardH](https://github.com/RyszardHalapacz)      |  9 |    |    |    |    |    |
-| [SzymonGajewski](https://github.com/SzymonGajewski) | 15 | 13 |    |  3 |    |  3 |
+| [SzymonGajewski](https://github.com/SzymonGajewski) | 15 | 15 |    |  6 |    |  3 |
 | [TheDude](https://github.com/TheDude-cpu)           |  4 |    |    |    |    |    |
 | zielin                                              |    |    |    |    |    |    |
 

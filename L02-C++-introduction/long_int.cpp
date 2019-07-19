@@ -5,15 +5,12 @@
 
 struct LongInt
 {
-    //Construktor which let me make an object without parameters, like "LongInt val13".
     LongInt() = default;
 
-    //Constructor
     LongInt(int left, int right) : left(left), right(right)
     {
     }
 
-    //Constructor
     LongInt(std::string str)
     {
         int number = std::stoi(str);
@@ -21,20 +18,17 @@ struct LongInt
         right = number % 100;
     }
 
-    //Copy constructor
     LongInt(const LongInt& other)
     {
         left = other.left;
         right = other.right;
     }
 
-    //Destructor
     ~LongInt()
     {
         std::cout << "Delete " << toString() << std::endl;
     }
 
-    //Method
     std::string toString()
     {
         if(left==0)
@@ -45,7 +39,6 @@ struct LongInt
            return std::to_string(left) + std::to_string(right);
     }
 
-    //Operator +=
     void operator+=(const LongInt& r)
     {
         left += r.left;
@@ -54,7 +47,6 @@ struct LongInt
         right = right % 100;
     }
 
-    //Operator -=
     void operator-=(const LongInt& r)
     {
         if(right<r.right)
@@ -71,7 +63,6 @@ struct LongInt
         }
     }
 
-    //Operator +
     LongInt operator+(const LongInt& r)
     {
         LongInt result;
@@ -82,7 +73,6 @@ struct LongInt
         return result;
     }
 
-    //Operator -
     LongInt operator-(const LongInt& r)
     {
         LongInt result;
@@ -98,13 +88,26 @@ struct LongInt
         return result;
     }
 
-    //Copy operator
     LongInt& operator=(const LongInt& other) = default;
 
-    //Members
     int left;
     int right;
 };
+
+std::ostream& operator<<(std::ostream& out, const LongInt& number)
+{
+    out << "(" << number.left << "," << number.right << ")";
+    return out;
+}
+
+std::istream& operator>>(std::istream& in, LongInt& number)
+{
+    std::cout << "Enter left part of number: ";
+    in >>  number.left;
+    std::cout << "Enter right part of number: ";
+    in >> number.right;
+    return in;
+}
 
 void test()
 {
@@ -122,6 +125,7 @@ void test()
     LongInt val12("600");
     LongInt val13;
     LongInt val14;
+    LongInt OurVal;
 
     val1 += val2;
     val4 -= val3;
@@ -142,6 +146,10 @@ void test()
     std::cout << val12.toString() << std::endl;
     std::cout << val13.toString() << std::endl;
     std::cout << val14.toString() << std::endl;
+    assert(LongInt(1, 7).toString() == "107");
+    assert(LongInt(1,70).toString() == "170");
+    std::cin >> OurVal;
+    std::cout << OurVal;
 }
 
 int main()
