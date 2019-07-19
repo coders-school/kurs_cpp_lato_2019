@@ -20,7 +20,7 @@ Materiały z kursu C++ (Lipiec 2019 - Wrzesień 2019)
 | [Bodzio](https://github.com/Dolaroza)               |  6 |    |    |    |    |
 | [Cypher](https://github.com/ChopSeeGuy)             | 15 |    |    |  3 |    |
 | [Daniel T](https://github.com/LinQ007)              | 15 |    |    |  3 |    |
-| [Joanna](https://github.com/teojdb)                 | 15 |    |    |  3 |    |
+| [Joanna](https://github.com/teojdb)                 | 15 | 12?|    |  3 |    |
 | [kasia.zel](https://github.com/kasiazel)            |  6 |    |    |    |    |
 | Kuba_k                                              |    |    |    |    |    |
 | [Łukasz](https://github.com/lucaswalicki)           |  8 |    |    |    |    |
