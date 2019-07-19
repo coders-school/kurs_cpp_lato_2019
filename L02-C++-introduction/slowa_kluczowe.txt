@@ -1,0 +1,30 @@
+Bool –zwraca wartość logiczną
+Break – przerywa pętle
+Case – przypadek (jak if) podczas użycia metody switch
+Catch – pobieranie wyjątku
+Char – typ znak
+Const – stałe przypisanie na zmiennej, bez możliwości zmiany jej zawartości, 
+Continue – w pętli przejście do kolejnej iteracji
+Do – wykonaj, stosuje się w do ... while(), czyli wykonaj dopóki
+Double – typ zmiennoprzecinkowy, przechowuje dane o rozmiarze 8 bajtów
+Else – słowo kluczowe z instrukcji warunkowej, oznaczające „w każdym innym przypadku“
+Enum – stosowane przy wyliczaniu
+False – fałsz
+Float - typ zmiennoprzecinkowy, przechowuje dane o rozmiarze 4 bajtów (nie używa sie go w praktyce)
+For – „dla każdego“ słowo kluczowe oznaczające wejście do pętli
+If – jeśli (słowo kluczowe w instrukcji warunkowej)
+Int – typ całkowity
+Long – modyfikator typu o rozmiarze przynajmnej 4 bajtów
+Return – polecenie zwracania wyniku funkcji
+Short – modyfikator typu docelowego o długości przynajmniej 16 bitów
+Signed – modyfikator typu, który będzie mógł przechowywać wartości ujemne
+Static_cast – operator rzutowania do konwersji danych zapisanych w zmiennych różnych typów
+Switch – „przełącz“
+Throw – wyrzucenie wyjątku
+True – prawda
+Try – wykonanie bloku kodu, który może zawierać wyjątek
+Unsigned – modyfikator typu który nie będzie przechowywać wartości ujemnych
+Void – pusty
+While –dopóki
+Auto – element w zbiorze, na którym wykonuje się iteracje.
+
