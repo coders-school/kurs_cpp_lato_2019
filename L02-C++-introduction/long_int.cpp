@@ -5,6 +5,9 @@
 
 struct LongInt
 {
+    //Construktor which let me make an object without parameters, like "LongInt val9".
+    LongInt() = default;
+
     //Constructor
     LongInt(int left, int right) : left(left), right(right)
     {
@@ -68,6 +71,17 @@ struct LongInt
         }
     }
 
+    //Operator +
+    LongInt operator+(const LongInt& r)
+    {
+        LongInt result;
+        result.left = left + r.left;
+        result.right = right + r.right;
+        result.left += result.right / 100;
+        result.right = result.right % 100;
+        return result;
+    }
+
     //Copy operator
     LongInt& operator=(const LongInt& other) = default;
 
@@ -86,9 +100,12 @@ int main()
     LongInt val6(0,0);
     LongInt val7(0,10);
     LongInt val8(30,1);
+    LongInt val9;
 
     val1 += val2;
     val8 -= val5;
+    val9 = val1 + val5;
+
     std::cout << val1.toString() << std::endl;
     std::cout << val2.toString() << std::endl;
     std::cout << val3.toString() << std::endl;
@@ -97,4 +114,5 @@ int main()
     std::cout << val6.toString() << std::endl;
     std::cout << val7.toString() << std::endl;
     std::cout << val8.toString() << std::endl;
+    std::cout << val9.toString() << std::endl;
 }
