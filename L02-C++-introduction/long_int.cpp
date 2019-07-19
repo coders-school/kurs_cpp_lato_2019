@@ -3,6 +3,8 @@
 #include <string>
 #include <cassert>
 
+using namespace std;
+
 struct LongInt
 {
 
@@ -87,7 +89,22 @@ struct LongInt
         left -= right / 10;
         right = right % 10;
         return *this;
-     }
+    }
+
+    friend ostream& operator<<(ostream &out, LongInt& p)
+    {
+        out << "My << overloading" << endl;
+        out << "(" << p.left << "," << p.right << ")" << endl;
+        return out;
+    }
+
+    friend istream& operator>>(istream &inp, LongInt& s)
+    {   
+        inp >> s.left >> s.right;
+        return inp;
+    }
+ 
+
 
     //Members
     int left;
@@ -122,6 +139,13 @@ int main()
     std::cout << "Val6: " << val6.toString() << std::endl;
     std::cout << "Val7: " << val7.toString() << std::endl;
     std::cout << "Val5: " << val5.toString() << std::endl;
+
+    cout << val1 << endl;
+    cout << "Insert new numbers to object" << endl;
+    cin >> val7;
+    cout << "You inserted" << val7;
+
+
 
     return 0;
 
