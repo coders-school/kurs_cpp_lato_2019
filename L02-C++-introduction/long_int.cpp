@@ -5,7 +5,7 @@
 
 struct LongInt
 {
-    //Construktor which let me make an object without parameters, like "LongInt val9".
+    //Construktor which let me make an object without parameters, like "LongInt val13".
     LongInt() = default;
 
     //Constructor
@@ -45,7 +45,7 @@ struct LongInt
            return std::to_string(left) + std::to_string(right);
     }
 
-    //Operator
+    //Operator +=
     void operator+=(const LongInt& r)
     {
         left += r.left;
@@ -82,6 +82,22 @@ struct LongInt
         return result;
     }
 
+    //Operator -
+    LongInt operator-(const LongInt& r)
+    {
+        LongInt result;
+        result.right = right - r.right;
+        if(result.right<0)
+        {
+            result.right += 100;
+            result.left = left - r.left - 1;
+        }
+        else
+            result.left = left - r.left;
+
+        return result;
+    }
+
     //Copy operator
     LongInt& operator=(const LongInt& other) = default;
 
@@ -90,7 +106,7 @@ struct LongInt
     int right;
 };
 
-int main()
+void test()
 {
     LongInt val1("170");
     LongInt val2("0");
@@ -100,11 +116,17 @@ int main()
     LongInt val6(0,0);
     LongInt val7(0,10);
     LongInt val8(30,1);
-    LongInt val9;
+    LongInt val9("456");
+    LongInt val10("512");
+    LongInt val11("701");
+    LongInt val12("600");
+    LongInt val13;
+    LongInt val14;
 
     val1 += val2;
-    val8 -= val5;
-    val9 = val1 + val5;
+    val4 -= val3;
+    val13 = val6 + val7;
+    val14 = val11 - val12;
 
     std::cout << val1.toString() << std::endl;
     std::cout << val2.toString() << std::endl;
@@ -115,4 +137,14 @@ int main()
     std::cout << val7.toString() << std::endl;
     std::cout << val8.toString() << std::endl;
     std::cout << val9.toString() << std::endl;
+    std::cout << val10.toString() << std::endl;
+    std::cout << val11.toString() << std::endl;
+    std::cout << val12.toString() << std::endl;
+    std::cout << val13.toString() << std::endl;
+    std::cout << val14.toString() << std::endl;
+}
+
+int main()
+{
+    test();
 }
