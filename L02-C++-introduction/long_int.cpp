@@ -145,6 +145,22 @@ struct LongInt
     int left;
     int right;
 };
+std::ostream & operator<< (std::ostream &out, const LongInt &i)
+{
+    out << i.left;
+    out << i.right;
+    return out;
+}
+
+std::istream & operator>> (std::istream &in,  LongInt &i)
+{
+    std::cout << "Enter first (left) number ";
+    in >> i.left;
+    std::cout << "Enter second (right) number ";
+    in >> i.right;
+    return in;
+}
+
 
 int main()
 {
