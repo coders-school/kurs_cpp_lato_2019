@@ -5,10 +5,20 @@
 
 struct LongInt
 {
-    //Constructor
-    LongInt(int left, int right) : left(left), right(right)
-    {
-    }
+
+    //  Constructor
+    //  LongInt(int left, int right) : left(left), right(right)
+    //  {
+    //  }
+
+    //   Default constructor
+    //   LongInt() = default;
+
+      LongInt(int l =12, int r=34) : left(l), right(r)
+      {
+      }
+
+
 
     //Constructor
     LongInt(std::string str)
