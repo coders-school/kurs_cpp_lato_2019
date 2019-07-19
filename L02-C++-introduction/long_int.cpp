@@ -19,11 +19,13 @@ struct LongInt
     }
 
     //Copy constructor
-    LongInt(const LongInt& other)
-    {
-        left = other.left;
-        right = other.right;
-    }
+//    LongInt(const LongInt& other)
+//    {
+//        left = other.left;
+//        right = other.right;
+//    }
+
+    LongInt(const LongInt& other) = default;
 
     //Destructor
     ~LongInt()
