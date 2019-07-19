@@ -20,7 +20,9 @@ struct LongInt
     {
         int number = std::stoi(str);
         right = number % 100;
-        left = (number - right) / 10;
+
+        int denominator = str.length() > 3 ? 10 : 100;
+        left = (number - right) / denominator;
     }
 
     //Copy constructor
@@ -131,7 +133,21 @@ int main()
     li3002 -= li3001;
 
     std::cout << li3002 << "\n";
+
+    li3002 += li3001;
+
+    std::cout << li3002 << "\n";
+
     std::cout << (LongInt("3002") - li3001) << "\n";
+    std::cout << (LongInt("3002") + li3001) << "\n";
+
+    LongInt li256("256");
+
+    std::cout << li256 << "\n";
+
+    LongInt li300001("300001");
+
+    std::cout << li300001 << "\n";
 
     LongInt usrLi;
 
@@ -139,5 +155,5 @@ int main()
 
     std::cout << "\n" << usrLi << "\n";
 
-    return 0; 
+    return 0;
 }
