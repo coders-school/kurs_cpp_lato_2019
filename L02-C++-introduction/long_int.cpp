@@ -275,3 +275,51 @@ int main()
     std::cin >> val4;
     std::cout<< val4.toString() << std::endl << std::endl;
 }
+
+
+/*Comments
+test for val6(0, 0) -> 0
+test for val5(0, 10) -> 10
+test for val7(30, 1) -> 3001
+test for valTest1(12, 4) -> 1204
+test for valTest2(8, 2) -> 802
+test for valTest3(7, -9) -> 709
+test for val90(-30, -1)-3001
+
+Operator -= : -340 -= 5690 = -6030
+
+Operator -= : 170 -= 5980 = -5810
+
+Operator -= : 1204 -= 802 = 402
+
+Operator - : 340 - 5690 = Delete -5350
+-5350
+
+Operator + : 99 + 101 = Delete 200
+200
+
+Operator << : 5980
+
+Operator >> : 
+Give me left parametr: 1
+Give me right parametr: 2
+102
+
+Delete 5690
+Delete 340
+Delete 5690
+Delete -6030
+Delete -3001
+Delete 101
+Delete 99
+Delete 709
+Delete 802
+Delete 402
+Delete 3001
+Delete 0
+Delete 10
+Delete 102
+Delete 200
+Delete 5980
+Delete -5810
+*/
