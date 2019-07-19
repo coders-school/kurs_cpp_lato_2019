@@ -5,6 +5,9 @@
 
 struct LongInt
 {
+
+    LongInt() {}
+
     //Constructor
     LongInt(int left, int right) : left(left), right(right)
     {
@@ -30,7 +33,7 @@ struct LongInt
     //Destructor
     ~LongInt()
     {
-        std::cout << "Delete " << toString() << std::endl;
+//        std::cout << "Delete " << toString() << std::endl;
     }
 
     //Method
@@ -57,10 +60,41 @@ struct LongInt
         return *this;
     }
 
+     //Operator -=
+    void operator-=(const LongInt& a)
+    {
+        left -= a.left;
+        right -= a.right;
+        left -= right / 10;
+        right = right % 10;
+    }
+
+    //Operator +
+    LongInt& operator+(const LongInt& one)
+    {
+        left += one.left;
+        right += one.right;
+        left += right / 10;
+        right = right % 10;
+        return *this;
+    }
+
+     //Operator -
+    LongInt& operator-(const LongInt& sec)
+    {
+        left -= sec.left;
+        right -= sec.right;
+        left -= right / 10;
+        right = right % 10;
+        return *this;
+     }
+
     //Members
     int left;
     int right;
+
 };
+
 
 int main()
 {
@@ -69,12 +103,25 @@ int main()
     LongInt val3("3001");
     LongInt val4("0");
     LongInt val5("10");
+    LongInt val6;
+    LongInt val7;
+    LongInt val8("100");
+    LongInt val9("200");
+    LongInt val10("1");
+    LongInt val11("2");
 
     val1 += val2;
-    std::cout << val1.toString() << std::endl;
-    std::cout << val3.toString() << std::endl;
-    std::cout << val4.toString() << std::endl;
-    std::cout << val5.toString() << std::endl;
+    val6 = val8 + val9;
+    val7 = val11 - val10;
+    val5 -= val4;
+
+    std::cout << "Val1: " << val1.toString() << std::endl;
+    std::cout << "Val2: " << val3.toString() << std::endl;
+    std::cout << "Val3: " << val4.toString() << std::endl;
+    std::cout << "Val5: " << val5.toString() << std::endl;
+    std::cout << "Val6: " << val6.toString() << std::endl;
+    std::cout << "Val7: " << val7.toString() << std::endl;
+    std::cout << "Val5: " << val5.toString() << std::endl;
 
     return 0;
 
