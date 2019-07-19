@@ -7,20 +7,14 @@ struct LongInt
 {
 
     //  Constructor
-    //  LongInt(int left, int right) : left(left), right(right)
-    //  {
-    //  }
+      LongInt(int left, int right) : left(left), right(right)
+      {
+      }
 
     // Default constructor
      LongInt() = default;
 
-      LongInt(int l =12, int r=34) : left(l), right(r)
-      {
-      }
-
-
-
-    //Constructor
+     //Constructor
     LongInt(std::string str)
     {
         int number = std::stoi(str);
