@@ -19,7 +19,7 @@ Fundamental types:
 - int
 	- integer
 - long
-	- teoretycznie 2x wiekszy od int, moze to sie roznic ze wzgledu na sprzet
+	- co najmniej takiej samej dlugosci jak int, tak mowi standard jezyka 
 - short
 	- mniejszy od int, lecz moze sie zdarzyc ze short i int bede mialy 16 bits
 - signed
@@ -87,7 +87,7 @@ Related to function:
 
 Conversion:
 Sa to operatory rzutowania, przy pomocy ktorych mozemy przypisac zmienna np z typu float na typ int
-- statis_cast
+- static_cast
 	- wykorzystujemy przy konwersji roznych typow
 - const_cast
 	- wykorzystujemy do konwersji ze stalych na zmienne, zmienne na stale, 
