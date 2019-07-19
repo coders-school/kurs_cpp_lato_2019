@@ -31,11 +31,16 @@ struct LongInt
         std::cout << "Delete " << toString() << std::endl;
     }
 
+
     //Method
     std::string toString()
     {
-        return std::to_string(left) + std::to_string(right);
+            if(left==0)   return std::to_string(right);
+            else if(left>0 && right<10)   return std::to_string(left) + "0"+  std::to_string(right);
+            else return std::to_string(left) + std::to_string(right);
     }
+
+
 
     //Operator
     void operator+=(const LongInt& r)
