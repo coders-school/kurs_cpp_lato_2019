@@ -3,6 +3,7 @@
 #include <string>
 #include <cassert>
 
+void testLongInt();
 struct LongInt
 {
     //Constructor
@@ -18,12 +19,10 @@ struct LongInt
         right = number % 100;
     }
 
-    //Copy constructor
-    LongInt(const LongInt &other)
-    {
-        left = other.left;
-        right = other.right;
-    }
+    LongInt() = default;
+
+    //Default copy operator
+    LongInt &operator=(const LongInt &other) = default;
 
     //Destructor
     ~LongInt()
@@ -31,23 +30,18 @@ struct LongInt
         std::cout << "Delete " << toString() << std::endl;
     }
 
-    //Method
-    const std::string toString()
+    std::string toString()
     {
 
         if (left)
         {
-            if (right < 10 && right != 0)
+            if (right < 10)
             {
                 return std::to_string(left) + "0" + std::to_string(right);
             }
-            else if (right == 0)
-            {
-                return std::to_string(left) + "0";
-            }
             else
             {
-                return std::to_string(left) + std::to_string(right);
+                return std::to_string(left) + "0";
             }
         }
         else
@@ -56,7 +50,6 @@ struct LongInt
         }
     }
 
-    //Operator
     void operator+=(const LongInt &r)
     {
         left += r.left;
@@ -64,13 +57,36 @@ struct LongInt
         left += right / 100;
         right = right % 100;
     }
-
-    //Copy operator
-    LongInt &operator=(const LongInt &other)
+    void operator-=(const LongInt &r)
     {
-        left = other.left;
-        right = other.right;
-        return *this;
+        left -= r.left;
+        right -= r.right;
+        left -= right / 100;
+        right = right % 100;
+    }
+
+    LongInt operator+(const LongInt &r)
+    {
+        int tLeft, tRight;
+
+        tLeft = this->left + r.left;
+        tRight = this->right + r.right;
+        tLeft += tRight / 100;
+        tRight = tRight % 100;
+
+        return LongInt(tLeft, tRight);
+    }
+
+    LongInt operator-(const LongInt &r)
+    {
+        int tLeft, tRight;
+
+        tLeft = this->left - r.left;
+        tRight = this->right - r.right;
+        tLeft -= tRight / 100;
+        tRight = tRight % 100;
+
+        return LongInt(tLeft, tRight);
     }
 
     //Members
@@ -81,16 +97,17 @@ struct LongInt
 int main()
 {
 
+    testLongInt();
+}
+
+void testLongInt()
+{
+
+    assert(LongInt(1, 7).toString() == "107");
+    assert(LongInt(0, 10).toString() == "10");
+
     LongInt val1(1, 70);
     LongInt val2("5980");
-    LongInt val3(30, 01);
-    LongInt val4("0");
-    LongInt val5(1, 0);
-
     val1 += val2;
- 
-    std::cout << val1.toString() << std::endl;
-    std::cout << val3.toString() << std::endl;
-    std::cout << val4.toString() << std::endl;
-    std::cout << val5.toString() << std::endl;
+    assert(val1.toString() == "6150");
 }
