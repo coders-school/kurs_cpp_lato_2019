@@ -12,7 +12,7 @@ Materiały z kursu C++ (Lipiec 2019 - Wrzesień 2019)
 ### Punktacja
 
 | | L1. Narzędzia programisty (15) | L2. Podstawy C++ | L3. Obiektowy C++ | Punktualność | PR | Dodatkowe Zadania |
-|---                                                  |--- |--- |--- |--- |--- |    |
+|---                                                  |--- |--- |--- |--- |--- |--- |
 | [Adam Mierzwiak](https://github.com/adamvm)         | 15 |    |    |  3 |  1 |    |
 | [Alicja](https://github.com/AlicjaBonder)           | 15 |    |    |  3 |    |    |
 | alicjaliqui                                         |    |    |    |    |    |    |
