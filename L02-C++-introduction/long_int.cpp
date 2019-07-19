@@ -51,6 +51,23 @@ struct LongInt
         right = right % 100;
     }
 
+    //Operator -=
+    void operator-=(const LongInt& r)
+    {
+        if(right<r.right)
+        {
+            right+=100;
+            left -= 1;
+            right -= r.right;
+            left -= r.left;
+        }
+        else
+        {
+            right-=r.right;
+            left-=r.left;
+        }
+    }
+
     //Copy operator
     LongInt& operator=(const LongInt& other) = default;
 
@@ -71,6 +88,7 @@ int main()
     LongInt val8(30,1);
 
     val1 += val2;
+    val8 -= val5;
     std::cout << val1.toString() << std::endl;
     std::cout << val2.toString() << std::endl;
     std::cout << val3.toString() << std::endl;
