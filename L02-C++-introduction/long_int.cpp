@@ -111,12 +111,19 @@ struct LongInt
     int left;
     int right;
 };
+std::ostream & operator << (std::ostream & e, LongInt & r)
+{
+    e<<" "<<r.left<<r.right;
+    return e;
+}
+
 
 int main()
 {
 
     LongInt val1("1200");
     LongInt val3;
+    cout<<val1;
  //   LongInt val2(1,2);
    // val1=val1-val2;
    // cout<<val1.left<<val1.right<<endl;
