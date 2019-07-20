@@ -32,7 +32,7 @@ Materiały z kursu C++ (Lipiec 2019 - Wrzesień 2019)
 | MWoz                                                |  0 |    |    |    |    |    |    |    |    |    |    |    |
 | [nadia1101](https://github.com/JustynaSlazak)       | 18 |  3 |    |    |    |    |    |    |    | 15 |    |    |
 | NG                                                  |  0 |    |    |    |    |    |    |    |    |    |    |    |
-| [Piotr H](https://github.com/PiotrHCpp)             |  8 |    |    |    |    |    |    |    |    |  8 |    |    |
+| [Piotr H](https://github.com/PiotrHCpp)             | 23 |    |    |    |    |    |    |    |    |  8 | 15 |    |
 | [piotr.kowandy](https://github.com/PiotrKowandy)    | 18 |  3 |    |    |    |    |    |    |    | 15 |    |    |
 | [rafal.em](https://github.com/elRaphaelo)           |  2 |    |    |    |    |    |    |    |    |  2 |    |    |
 | [Raziel14](https://github.com/Arakis14)             |  1 |    |    |    |    |    |    |    |    |  1 |    |    |
