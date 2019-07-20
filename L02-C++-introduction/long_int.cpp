@@ -1,5 +1,6 @@
 #include <cstdint>
 #include <iostream>
+#include <sstream>
 #include <string>
 #include <cassert>
 
@@ -116,28 +117,20 @@ std::ostream& operator<<(std::ostream& os, const LongInt& li)
 
 std::istream& operator>>(std::istream& is, LongInt& li)
 {
-    // int l {};
-    // int r {};
+    int l {};
+    int r {};
     
-    // std::cout << "Enter left part: ";
+    std::cout << "Enter left part: ";
 
-    // is >> l;
+    is >> l;
 
-    // li.setLeft(l);
+    li.setLeft(l);
 
-    // std::cout << "Enter right part: ";
+    std::cout << "Enter right part: ";
 
-    // is >> r;
+    is >> r;
 
-    // li.setRight(r);
-
-    std::cout << "Enter the number: ";
-
-    std::string numStr;
-
-    is >> numStr;
-
-    li = LongInt(numStr);
+    li.setRight(r);
 
     return is;
 }
