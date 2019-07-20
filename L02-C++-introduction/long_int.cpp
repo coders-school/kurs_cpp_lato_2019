@@ -19,11 +19,7 @@ struct LongInt
     }
 
     //Copy constructor
-    LongInt(const LongInt& other)
-    {
-        left = other.left;
-        right = other.right;
-    }
+    LongInt(const LongInt& other)=default;
 
     //Destructor
     ~LongInt()
@@ -42,8 +38,8 @@ struct LongInt
     {
         left += r.left;
         right += r.right;
-        left += right / 100;
-        right = right % 100;
+        left += right / 10;
+        right = right % 10;
     }
 
     //Copy operator
@@ -61,8 +57,8 @@ struct LongInt
 
 int main()
 {
-    LongInt val1(1, 70);
-    LongInt val2("5980");
+    LongInt val1(1,70);
+    LongInt val2("2831");
 
     val1 += val2;
     std::cout << val1.toString() << std::endl;
