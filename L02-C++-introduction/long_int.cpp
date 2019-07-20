@@ -32,7 +32,7 @@ struct LongInt
     //Method
     std::string toString() const
     {
-        std::string leftStr = left == 0 
+        std::string leftStr = left == 0
             ? ""
             : std::to_string(left);
 
@@ -50,10 +50,28 @@ struct LongInt
 
     void operator-=(const LongInt& r)
     {
+        //30 00 - 10 01
+        //19 99
+
         left -= r.left;
+        
         right -= r.right;
+        
+        if(right > r.right)
+        {
+            right -= r.right;
+        }
+
+        else
+        {
+            --left;
+            right = 10 - r.right;
+        }
+
         left -= right / 100;
         right = right % 100;
+
+
     }
 
     LongInt operator+(const LongInt& r)
@@ -139,5 +157,15 @@ int main()
 
     std::cout << "\n" << usrLi << "\n";
 
-    return 0; 
+    LongInt li107(10,7);
+
+    std::cout << li107 << "\n";
+
+    LongInt li1001("1001");
+    LongInt li3000("3000");
+    li3000 -= li1001;
+
+    std::cout << li3000 << "\n";
+
+    return 0;
 }
