@@ -38,8 +38,8 @@ struct LongInt
     {
         left += r.left;
         right += r.right;
-        left += right / 10;
-        right = right % 10;
+        left += right / 100;
+        right = right % 100;
     }
 
     //Copy operator
