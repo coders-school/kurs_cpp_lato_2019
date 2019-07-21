@@ -24,7 +24,10 @@ struct LongInt
 
     //Copy constructor
     LongInt(const LongInt& other)=default;
-
+ //   {
+ //       left = other.left;
+ //       right = other.right;
+ //   }
 
     //Destructor
     ~LongInt()
