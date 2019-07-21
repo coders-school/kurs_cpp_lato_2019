@@ -34,10 +34,10 @@ struct LongInt
 
 
     //Method
-    std::string toString()
+    std::string toString() const
     {
             if(left==0)   return std::to_string(right);
-            else if(left>0 && right<10)   return std::to_string(left) + "0"+  std::to_string(right);
+            else if(right<10)   return std::to_string(left) + "0"+  std::to_string(right);
             else return std::to_string(left) + std::to_string(right);
     }
 
@@ -53,7 +53,7 @@ struct LongInt
     }
 
 
-    //Operator
+    //Operator  - jeszcze bez uwzglednienia liczb ujemnych
     void operator-=(const LongInt& r)
     {
         if (left>=r.left)
@@ -79,21 +79,18 @@ struct LongInt
         }
      }
 
- //Operator
-    LongInt operator+(const LongInt &other)
-    {
-        LongInt example(0,0);
-
-        example.left = left + other.left;
-        example.right = right + other.right;
-        example.left += example.right / 100;
-        example.right = example.right % 100;
-
-        return example;
-    }
-
 
     //Operator
+       LongInt operator+(const LongInt &other)
+       {
+           LongInt example(0,0);
+           example+=*this;
+           example+=other;
+           return example;
+       }
+
+
+    //Operator - jeszcze bez uwzglednienia liczb ujemnych
     LongInt operator-(const LongInt &other )
     {
         LongInt example(0,0);
@@ -138,17 +135,14 @@ struct LongInt
 };
 std::ostream & operator<< (std::ostream &out, const LongInt &i)
 {
-    out << i.left;
-    out << i.right;
+    out << i.toString();
     return out;
 }
 
 std::istream & operator>> (std::istream &in,  LongInt &i)
 {
-    std::cout << "Enter first (left) number ";
-    in >> i.left;
-    std::cout << "Enter second (right) number ";
-    in >> i.right;
+     in >> i.left;
+     in >> i.right;
     return in;
 }
 
