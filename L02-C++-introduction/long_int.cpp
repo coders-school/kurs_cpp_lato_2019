@@ -53,7 +53,7 @@ struct LongInt
     }
 
 
-    //Operator  - jeszcze bez uwzglednienia liczb ujemnych
+    //Operator - do poprawy, nie uwzglednienia liczb ujemnych
     void operator-=(const LongInt& r)
     {
         if (left>=r.left)
@@ -90,7 +90,7 @@ struct LongInt
        }
 
 
-    //Operator - jeszcze bez uwzglednienia liczb ujemnych
+    //Operator - do poprawy, nie uwzglednienia liczb ujemnych
     LongInt operator-(const LongInt &other )
     {
         LongInt example(0,0);
