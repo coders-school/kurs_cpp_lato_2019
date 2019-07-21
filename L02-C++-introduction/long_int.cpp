@@ -42,9 +42,10 @@ struct LongInt
 		}
 		if(right == 0)
 		{
-			return std::to_string(left);
+			return std::to_string(left) + "0";
 		}
-		else return std::to_string(left) + std::to_string(right); 
+		else return std::to_string(left) + std::to_string(right);
+
 	}
 	return  std::to_string(right);
     }
@@ -78,10 +79,11 @@ int main()
     LongInt val3(30, 01);
     LongInt val4("0");
     LongInt val5(0,10);
+    LongInt val6(10,0);
     val1 += val2;
     std::cout << val1.toString() << std::endl;
     std::cout << val3.toString() << std::endl;
     std::cout << val4.toString() << std::endl;
     std::cout << val5.toString() << std::endl;
-
+    std::cout << val6.toString() << std::endl;
 }
