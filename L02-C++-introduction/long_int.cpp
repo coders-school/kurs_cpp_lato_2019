@@ -29,7 +29,7 @@ struct LongInt
         std::cout << "Delete " << toString() << std::endl;
     }
 
-    std::string toString()
+    std::string toString() const
     {
         if(left==0)
            return std::to_string(right);
@@ -68,7 +68,7 @@ struct LongInt
         LongInt result;
         result.left = left + r.left;
         result.right = right + r.right;
-        result.left += result.right / 100;
+        result.left = result.left + result.right / 100;
         result.right = result.right % 100;
         return result;
     }
@@ -96,15 +96,12 @@ struct LongInt
 
 std::ostream& operator<<(std::ostream& out, const LongInt& number)
 {
-    out << "(" << number.left << "," << number.right << ")";
-    return out;
+    return out << number.toString();
 }
 
 std::istream& operator>>(std::istream& in, LongInt& number)
 {
-    std::cout << "Enter left part of number: ";
     in >>  number.left;
-    std::cout << "Enter right part of number: ";
     in >> number.right;
     return in;
 }
