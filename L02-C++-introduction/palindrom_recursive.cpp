@@ -1,9 +1,20 @@
-#include <string>
+#include <string_view>
+#include <iostream>
 
-bool palindrom(std::string napis)
+
+std::string_view name_sv;
+
+bool palindrom(auto name_sv)
 {
-    if(napis.size() < 2) return true;
+    if(name_sv.size() < 2) return true;
 
-    return napis.front() == napis.back()
-        && palindrom(napis.substr(1, napis.size() - 2));
+    return name_sv.front() == name_sv.back()
+        && palindrom(name_sv.substr(1, name_sv.size() - 2));
 }
+
+int main()
+{
+	name_sv = "kajak";
+	std::cout << palindrom(name_sv) << std::endl;
+}
+
