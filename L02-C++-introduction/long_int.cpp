@@ -94,16 +94,18 @@ struct LongInt
     int right;
 };
 
+
 int main()
 {
     LongInt val1(31,31);	
     LongInt val2("1111");
     LongInt val3(31,31);
     LongInt val4(11,11); 
-    std::cout << val1.toString() << std::endl;
+    std:: cout << val1.toString() <<std::endl;
     std::cout << val2.toString() << std::endl;
     std::cout << val3.toString() << std::endl; 
     std::cout << val4.toString() << std::endl; 
+   
     val3 = val3 - val4;
 
     val1 += val2;
