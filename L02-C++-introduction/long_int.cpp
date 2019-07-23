@@ -57,19 +57,26 @@ struct LongInt
         left += right / 100;
         right = right % 100;
     }
-    LongInt& operator+(const LongInt & r)
+    LongInt& operator + (const LongInt & r)
     {
-        (*this)+=r;
-        return *this;
+        LongInt Neww(0,0);
+        Neww.left= left + r.left;
+        Neww.right =right + r.right;
+
+
+        return Neww;
     }
-    LongInt operator-=(const LongInt& r)
+    void operator -=(const LongInt& r)
     {
-      *this=*this-r;
-       return *this;
+        left -= r.left;
+        right -= r.right;
+        left  = right / 100;
+        right = right % 100;
+
     }
 
     //Copy operator
-    LongInt& operator=( LongInt& other)
+    LongInt& operator=( const LongInt& other)
     {
         left = other.left;
         right = other.right;
@@ -113,7 +120,11 @@ struct LongInt
 };
 std::ostream & operator << (std::ostream & e, LongInt & r)
 {
-    e<<" "<<r.left<<r.right;
+    string ll="",rr="",all="";
+    if(r.left<10) ll+="0";
+    if(r.right<10) rr+="0";
+    all=ll+rr;
+    e<<all;
     return e;
 }
 
@@ -121,14 +132,15 @@ std::ostream & operator << (std::ostream & e, LongInt & r)
 int main()
 {
 
-    LongInt val1("1200");
+    LongInt val1("1234");
     LongInt val3;
     cout<<val1;
  //   LongInt val2(1,2);
    // val1=val1-val2;
    // cout<<val1.left<<val1.right<<endl;
-
-  //  val1 = val2+val1;
-    cout<<val1.left<<val1.right<<endl;
-    //std::cout << val1.toString() << std::endl;
+    //val1-=val1;
+    //val1 = val1+val1;
+    cout<<val1.left<<"  "<<val1.right<<"lalala"<<endl;
+    std::cout << val1.toString() << std::endl;
+    cout<<val1;
 }
