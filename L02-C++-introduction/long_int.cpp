@@ -5,9 +5,9 @@
 
 struct LongInt
 {
-    //Constructor
-    LongInt(int left,int right) : left(left), right(right)		
 
+    //Constructor
+    LongInt(int left,int right) : left(left), right(right)
     {
     }
 
@@ -65,22 +65,22 @@ struct LongInt
 	  return *this; 
     }
     //Operator +
-    LongInt operator + (const LongInt& ex_l)
+    LongInt operator + (const LongInt & ex_l)
     {
-	    left =ex_l.left + left;
-	    right = ex_l.right + right;
+	 left = ex_l.left + left;
+	 right = ex_l.right + right;
 	   
 	  
 	   return *this;
     }
     //Operator -
-	LongInt operator - (const LongInt& ex_l2)
-	{
-		left = left - ex_l2.left;
-		right = right - ex_l2.right;
+    LongInt operator - (const LongInt& ex_l2)
+    {
+	left = left - ex_l2.left;
+	right = right - ex_l2.right;
 
-		return *this;
-	}	
+	return *this;
+     }	
     //Copy operator
     LongInt& operator=(const LongInt& other)
     {
@@ -88,6 +88,21 @@ struct LongInt
         right = other.right;
         return *this;
     }
+
+   friend std::ostream& operator <<(std::ostream& out, const LongInt& number)
+    {
+	    out << number.left;
+	    out << number.right;
+	    return out;
+    }
+   friend std::istream& operator >>(std::istream& in, LongInt& number)
+    {
+	    in >> number.left;
+	    in >> number.right;
+	   return in;
+    }
+
+
 
     //Members
     int left;
