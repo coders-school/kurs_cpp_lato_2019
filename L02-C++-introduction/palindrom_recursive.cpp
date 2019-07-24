@@ -1,9 +1,23 @@
-#include <string>
+#include <iostream>
+#include <string_view>
 
-bool palindrom(std::string napis)
-{
-    if(napis.size() < 2) return true;
+using namespace std;
 
-    return napis.front() == napis.back()
-        && palindrom(napis.substr(1, napis.size() - 2));
+bool palindrom(string_view napis) {
+  if (napis.size() < 2)
+    return true;
+
+  return napis.front() == napis.back() &&
+         palindrom(napis.substr(1, napis.size() - 2));
+}
+
+int main() {
+
+  string longString(300000, 'Z');
+  cout << boolalpha << palindrom("manam") << endl;
+  cout << boolalpha << palindrom("gggggggggggg") << endl;
+  cout << boolalpha << palindrom("marcin") << endl;
+  cout << boolalpha << palindrom(longString) << endl;
+
+  return 0;
 }
