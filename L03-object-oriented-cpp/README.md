@@ -37,10 +37,10 @@ Materiały z kursu C++ (Lipiec 2019 - Wrzesień 2019)
 
 Pracujcie w parach lub po 3 osoby na wspólnym repo. Punkty zostaną przyznane wszystkim osobom w grupie, których commity będą widoczne w PR.
 
-- [ ] (2 punkty) Naprawcie enkapsulację, aby m.in. nie można było wymienić silnika podczas jazdy samochodem
-- [ ] (2 punkty) Naprawcie wycieki pamięci poprzez zwalnianie zaalokowanych obiektów (silników) w odpowiednich destruktorach
-- [ ] (2 punkt) Dodajcie do samochodów pole `velocity`, które będzie przechowywać aktualną prędkość pojazdu i modyfikujcie je odpowienio w funkcjach `accelerate()` oraz `brake()`
-- [ ] (3 punkty) Poprawcie interfejs, aby był jak najmniej podatny na niewłaściwe użycie (np. accelerate(-999))
+- [x] (2 punkty) Naprawcie enkapsulację, aby m.in. nie można było wymienić silnika podczas jazdy samochodem
+- [x] (2 punkty) Naprawcie wycieki pamięci poprzez zwalnianie zaalokowanych obiektów (silników) w odpowiednich destruktorach
+- [x] (2 punkt) Dodajcie do samochodów pole `velocity`, które będzie przechowywać aktualną prędkość pojazdu i modyfikujcie je odpowienio w funkcjach `accelerate()` oraz `brake()`
+- [x] (3 punkty) Poprawcie interfejs, aby był jak najmniej podatny na niewłaściwe użycie (np. accelerate(-999))
 - [ ] (4 punktów) Napiszcie w dowolny sposób kilka testów do obecnej funkcjonalności, m.in. sprawdzających pole `velocity`. Nie musicie używać żadnego frameworka, jeśli nie znacie. Wystarczy funkcja `assert()`.
 - [ ] (2 punkty) Utwórzcie wyjątek InvalidGear, który powinien być rzucony w momencie, gdy ktoś próbuje np. zmienić bieg z 5 na R. Powinien on dziedziczyć z jednego z wyjątków z biblioteki standardowej
 
