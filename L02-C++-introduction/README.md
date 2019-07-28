@@ -58,3 +58,8 @@ Materiały z kursu C++ (Lipiec 2019 - Wrzesień 2019)
 ### Pre-work
 
 - [ ] Zapoznaj się ze [ściągą o polimorfiźmie](https://github.com/coders-school/kurs_cpp_zima_2019/blob/master/L06-algorithms%2Ctesting/polimorfizm.pdf)
+
+### Uwagi
+
+1. Tak wyglądają [sygnatury operatorów arytmetycznych](https://en.cppreference.com/w/cpp/language/operator_arithmetic) a tak [sygnatury operatorów przypisania](https://en.cppreference.com/w/cpp/language/operator_assignment). Trzeba się trzymać tej konwencji i zwracać uwagę, gdzie jest zwracana referencja (operatory +=, -=), a gdzie kopia (operator+, operator-). Tam gdzie jest zwracana referencja tam modyfikujemy i zwracamy samego siebie (*this). Tam gdzie kopia, to należy utwrzyć nowy obiekt, odpowiednio go zmodyfikować i zwrócić. [Inne operatory](https://en.cppreference.com/w/cpp/language/operators)
+
