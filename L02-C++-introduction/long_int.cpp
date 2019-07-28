@@ -27,7 +27,7 @@ struct LongInt
     //Destructor
     ~LongInt()
     {
-        std::cout << "Delete " << toString() << std::endl;
+      //  std::cout << "Delete " << toString() << std::endl;
     }
 
     //Method
@@ -104,6 +104,23 @@ struct LongInt
         left = left - r.left;
     }
 
+    friend std::ostream &operator<< (std::ostream &output, const LongInt &r) 
+    {
+        LongInt temp(r); 
+        output << temp.toString();
+        return output;          
+    }
+
+    friend std::istream &operator>> (std::istream  &input, LongInt &r) 
+    { 
+        int number;
+        input >> number;
+
+        r.left = number / 100;
+        r.right = number % 100;
+        return input;            
+    }
+
     //Members
     int left;
     int right;
@@ -148,11 +165,17 @@ int main()
     std::cout << val1.toString() << std::endl;  //left substract doesn't work properly (should be 2991, but is -3009) -> to be fixed
 
     val9 -= val7;
-    std::cout << val9.toString() << std::endl;  //2991
+    std::cout << val9 << std::endl;  //2991
     val5 -= val7;
-    std::cout << val5.toString() << std::endl;  //-10
+    std::cout << val5 << std::endl;  //-10
     val2 -= val6;
-    std::cout << val2.toString() << std::endl;  //5970
+    std::cout << val2 << std::endl;  //5970
+
+    std::cout << "Please type a number" << std::endl;
+    std::cin >> val2;
+    std::cout << "Your number: " << val2 << std::endl;  //5970
+
+
 
     return 0;
 }
