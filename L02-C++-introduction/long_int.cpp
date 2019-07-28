@@ -19,11 +19,7 @@ struct LongInt
     }
 
     //Copy constructor
-    LongInt(const LongInt& other)
-    {
-        left = other.left;
-        right = other.right;
-    }
+    LongInt(const LongInt& other) = default;
 
     //Destructor
     ~LongInt()
@@ -89,13 +85,15 @@ int main()
     LongInt val8("3001");
     LongInt val9(30, 1);
 
-    std::cout << val4.toString() << std::endl; //00     if l==0 && r==0 print "0"
+    std::cout << val4.toString() << std::endl;
     std::cout << val5.toString() << std::endl;
-    std::cout << val6.toString() << std::endl; //010    if left==0 -> not print left
+    std::cout << val6.toString() << std::endl;
     std::cout << val7.toString() << std::endl;
-    std::cout << val8.toString() << std::endl; //301    if right<10 -> add 0 before right
+    std::cout << val8.toString() << std::endl;
     std::cout << val9.toString() << std::endl;
 
-    return 0;
+    LongInt val3(val2);
+    std::cout << val3.toString() << std::endl;
 
+    return 0;
 }
