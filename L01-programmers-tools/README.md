@@ -8,18 +8,18 @@ Materiały z kursu C++ (Lipiec 2019 - Wrzesień 2019)
 
 - [X] Instalacja Linuxa
 - [X] Instalacja oprogramowania:
-  - git
-  - gitk lub gitg
-  - make
-  - cmake
-  - vim
-  - g++ lub clang++
-  - gdb
-  - valgrind
-  - clang-format
-  - clang-tidy lub clang-modernize
-  - kdiff3 lub meld
-  - qtCreator lub Visual Studio Code
+- [X] git
+- [X] gitk lub gitg
+- [X] make
+- [X] cmake
+- [X] vim
+- [X] g++ lub clang++
+- [X] gdb
+- [X] valgrind
+- [X] clang-format
+- [X] clang-tidy lub clang-modernize
+- [X] kdiff3 lub meld
+- [X] qtCreator lub Visual Studio Code
 
 ### Materiały
 
