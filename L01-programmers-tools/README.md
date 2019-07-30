@@ -42,9 +42,9 @@ Materiały z kursu C++ (Lipiec 2019 - Wrzesień 2019)
 
 ### Post-work
 
-- [ ] (1 punkt) Prześlij na Discordzie na kanale #narzedzia-programisty adres do swojego konta na GitHubie, tak aby wszyscy mogli Cię znaleźć i obserwować, czy robisz prace domowe ;D
-- [ ] (1 punkty) Obczaj jak działa git revert i cofnij już skomitowane zmiany.
-- [ ] (4 punkty) Przejdź samouczek vimtutor. Obowiązkowo pierwsze 4 rozdziały (1 rozdział - 1 punkt).
+- [X] (1 punkt) Prześlij na Discordzie na kanale #narzedzia-programisty adres do swojego konta na GitHubie, tak aby wszyscy mogli Cię znaleźć i obserwować, czy robisz prace domowe ;D
+- [X] (1 punkty) Obczaj jak działa git revert i cofnij już skomitowane zmiany.
+- [X] (4 punkty) Przejdź samouczek vimtutor. Obowiązkowo pierwsze 4 rozdziały (1 rozdział - 1 punkt).
 - [ ] (1 punkt) Czasem na GitHubie natkniesz się na projekty ze znaczkiem Build Passing (np. [Google Test](https://github.com/google/googletest)). Poczytaj czym jest CI (Continuous Integration) i jak jest ono oferowane na GitHubie (np. Travis CI, Circle CI). Przydatne linki:
 
   - [GitHub Continuous Integration](https://github.com/marketplace/category/continuous-integration)
