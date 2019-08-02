@@ -1,6 +1,7 @@
 #include <iostream>
 #include <array>
 #include <vector>
+#include <list>
 
 void printElements(const auto& a)
 {
@@ -14,12 +15,12 @@ void printElements(const auto& a)
 void printStart(int numb)
 {
 	std::cout<<"\n-----------------------------------------------";
-	std::cout<<"\nExercise number "<< numb << " -----------------------------\n"<< std::endl;
+	std::cout<<"\nExercise number "<< numb << " -----------------------------\n\n";
 }
 
 void printEnd(int numb)
 {
-	std::cout<<"\nEnd of exercise number "<< numb << " ----------------------"<< std::endl;
+	std::cout<<"\nEnd of exercise number "<< numb << " ----------------------\n";
 	std::cout<<"-----------------------------------------------\n\n";
 }
 
@@ -82,7 +83,6 @@ void exercise2(const int number)
 	printElements(myVector);
 
 	std::cout<<"myVector size: " << myVector.size() <<std::endl;
-	std::cout<<"myVector capacity: " << myVector.capacity() <<std::endl;
 	std::cout<<"myVector max_size: " << myVector.max_size() <<std::endl;
 
 	std::cout<<"myVector after clear function:"<<std::endl;
@@ -94,11 +94,52 @@ void exercise2(const int number)
 	printEnd(number);
 }
 
+void exercise4(const int number)
+{
+	printStart(number);
+	//list
+	std::list<int> myList;
+	int i=0;
+
+	while(i < 1000000)
+	{
+		myList.push_back(i);
+		i++;
+	}
+	std::cout<< "List -> Time of adding 1000000 elements: " << std::endl;
+
+	int length = myList.size();
+	std::list<int>::iterator it = myList.begin();
+	for (size_t i=0; i< length/2; i++)
+	{
+		it++;	
+	}
+	std::cout<<"List -> 500 000 element: "<< *it << std::endl; 
+	std::cout<< "List -> Access time to 500000 element: " << std::endl;
+	//vector
+	
+	std::vector<int> myVector;
+	i=0;
+	while (i < 1000000)
+	{
+		myVector.push_back(i);
+		i++;
+	}
+	std::cout<< "Vector -> Time of adding 1000000 elements: " << std::endl;
+
+	std::cout<<"Vector -> 500 000 element: " << myVector[500000] << std::endl;
+	std::cout<< "Vector -> Access time to 500000 element: " << std::endl;
+
+	printEnd(number);
+}
+
 
 int main (int argc, char* argv[])
 {
 	exercise1(1);
 	exercise2(2);
+
+	exercise4(4);
 
 	return 0;
 }
