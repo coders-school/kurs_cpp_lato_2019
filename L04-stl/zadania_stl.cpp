@@ -95,6 +95,36 @@ void exercise2(const int number)
 	printEnd(number);
 }
 
+void exercise3(const int number)
+{
+	printStart(number);
+
+	std::vector<int> myVector;
+	std::cout << "Size() of myVector: " << myVector.size() << std::endl;
+	std::cout << "Capacity() of myVector: " << myVector.capacity() << std::endl;
+
+	myVector.resize(10);
+	std::fill(myVector.begin(), myVector.end(),  5);
+
+	std::cout << "myVector: ";
+	printElements(myVector);
+	std::cout << "Size() of myVector: " << myVector.size() << std::endl;
+	std::cout << "Capacity() of myVector: " << myVector.capacity() << std::endl;
+
+	myVector.reserve(20);
+	std::cout<< "Reservation for at least 20 elements has been deployed." <<std::endl;
+	std::cout << "Size() of myVector: " << myVector.size() << std::endl;
+	std::cout << "Capacity() of myVector: " << myVector.capacity() << std::endl;
+
+	myVector.shrink_to_fit();
+	std::cout<< "myVector after activation of shrink_to_fit function: " <<std::endl;
+	std::cout << "Size() of myVector: " << myVector.size() << std::endl;
+	std::cout << "Capacity() of myVector: " << myVector.capacity() << std::endl;
+
+	printEnd(number);
+}
+
+
 void exercise4(const int number)
 {
 	printStart(number);
@@ -123,8 +153,8 @@ void exercise4(const int number)
 	elapsed = stop - start;
 	std::cout<<"List -> 500 000 element: "<< *it << std::endl; 
 	std::cout<< "List -> Access time to 500000 element: " << elapsed.count() << std::endl;
-	//vector
 	
+	//vector
 	std::vector<int> myVector;
 	i=0;
 	start = std::chrono::high_resolution_clock::now();
@@ -153,7 +183,7 @@ int main (int argc, char* argv[])
 {
 	exercise1(1);
 	exercise2(2);
-
+	exercise3(3);
 	exercise4(4);
 
 	return 0;
