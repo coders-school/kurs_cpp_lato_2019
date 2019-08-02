@@ -20,7 +20,6 @@ bool is_palindrome (std::string napis)
     {
         napis_temp.push_back(*rit);
     }
-//    std::cout<<napis_temp<<std::endl;
     std::pair<std::string::iterator,std::string::iterator> test;
     test=mismatch(napis.begin(),napis.end(),napis_temp.begin());
     if (*test.first!=0)
