@@ -1,0 +1,7 @@
+1. What is a difference between a class and an object?
+
+2. What is an inheritance? Provide a short code example.
+
+3. What is a pure virtual function? Write down it's signature.
+
+4. What are the differences between a class and a struct?

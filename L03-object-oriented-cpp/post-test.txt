@@ -1,0 +1,67 @@
+1. What will be printed on the screen? What kind of problems can you see?
+```cpp
+#include <string>
+#include <iostream>
+
+struct A {
+    void setNumber(int n);
+    int getNumber() const;
+private:
+    int number;
+};
+
+class B : public A {
+    void setText(std::string s);
+	std::string getText() const;
+private:
+    std::string text;
+};
+
+int main() {
+    A* obj = new B();
+    obj->setNumber(5);
+    obj->setText("hi");
+    std::cout << obj->getNumber()
+              << obj->getText()
+			  << '\n';
+}
+```
+
+https://ideone.com/dYHume
+
+2. What will be printed on the screen? What kind of problems can you see?
+```cpp
+#include <string>
+#include <iostream>
+
+class A {
+public:
+    A() {}
+    ~A() {}
+    virtual std::string whoAreYou() {
+        return "I'm class A";
+    }
+};
+
+class B : public A {
+public:
+    B() {}
+	~B() {}
+    std::string whoAreYou() {
+        return "I'm class B";
+    }
+};
+
+int main() {
+    A a;
+    B b;
+    B* bp = new A();
+    A& ar = b;
+    std::cout << a.whoAreYou() << '\n';
+    std::cout << b.whoAreYou() << '\n';
+    std::cout << bp.whoAreYou() << '\n';
+    std::cout << ar.whoAreYou() << '\n';
+}
+```
+
+https://ideone.com/C964oW
