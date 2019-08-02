@@ -2,6 +2,7 @@
 #include <array>
 #include <vector>
 #include <list>
+#include <chrono>
 
 void printElements(const auto& a)
 {
@@ -101,34 +102,48 @@ void exercise4(const int number)
 	std::list<int> myList;
 	int i=0;
 
+	auto start = std::chrono::high_resolution_clock::now();
 	while(i < 1000000)
 	{
 		myList.push_back(i);
 		i++;
 	}
-	std::cout<< "List -> Time of adding 1000000 elements: " << std::endl;
+	auto stop = std::chrono::high_resolution_clock::now();
+	std::chrono::duration<double> elapsed = stop - start;
+	std::cout<< "List -> Time of adding 1000000 elements: " << elapsed.count()<< std::endl;
 
 	int length = myList.size();
 	std::list<int>::iterator it = myList.begin();
+	start = std::chrono::high_resolution_clock::now();
 	for (size_t i=0; i< length/2; i++)
 	{
 		it++;	
 	}
+	stop = std::chrono::high_resolution_clock::now();
+	elapsed = stop - start;
 	std::cout<<"List -> 500 000 element: "<< *it << std::endl; 
-	std::cout<< "List -> Access time to 500000 element: " << std::endl;
+	std::cout<< "List -> Access time to 500000 element: " << elapsed.count() << std::endl;
 	//vector
 	
 	std::vector<int> myVector;
 	i=0;
+	start = std::chrono::high_resolution_clock::now();
 	while (i < 1000000)
 	{
 		myVector.push_back(i);
 		i++;
 	}
-	std::cout<< "Vector -> Time of adding 1000000 elements: " << std::endl;
+	stop = std::chrono::high_resolution_clock::now();
+	elapsed = stop - start;
+	std::cout<< "Vector -> Time of adding 1000000 elements: " << elapsed.count() << std::endl;
 
+	start = std::chrono::high_resolution_clock::now();
 	std::cout<<"Vector -> 500 000 element: " << myVector[500000] << std::endl;
-	std::cout<< "Vector -> Access time to 500000 element: " << std::endl;
+	stop = std::chrono::high_resolution_clock::now();
+	elapsed = stop - start;
+	std::cout<< "Vector -> Access time to 500000 element: " << elapsed.count() << std::endl;
+	elapsed *= 1000;
+	std::cout<< "Vector -> Time multiplying by 1000, to better show time: " << elapsed.count() << std::endl;
 
 	printEnd(number);
 }
