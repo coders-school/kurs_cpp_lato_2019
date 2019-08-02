@@ -13,10 +13,25 @@ Materiały z kursu C++ (Lipiec 2019 - Wrzesień 2019)
 - [Prezentacja Obiektowy C++](object_oriented_cpp.pdf)
 - [Pre-test](pre-test.txt)
 - [Post-test](post-test.txt)
-- [Repozytorium z projektem](https://github.com/LordLukin/Cars)
+- [Repozytorium z wstępnym projektem](https://github.com/coders-school/Cars)
+- [Branch z naszym rozwiązaniem z zajęć](https://github.com/coders-school/Cars/tree/2019_lato)
 - [Kolejność inicjalizacji](https://dorwijnerda.pl/blog/kolejnosc-inicjalizacji/)
 
 ### Nagrania i foto
+
+- [20.07.2019 Obiektowy C++: wstęp](https://www.youtube.com/watch?v=zLRcmbIah04&list=PLQqoaQUqs4DCbDNiqBU3E9bFvX6YSUZc1&index=14)
+- [20.07.2019 Obiektowy C++: 4 filary obiektowość](https://www.youtube.com/watch?v=6Kv8bBvf9Es&list=PLQqoaQUqs4DCbDNiqBU3E9bFvX6YSUZc1&index=15)
+- [20.07.2019 Obiektowy C++: projekt Cars](https://www.youtube.com/watch?v=RDUvty4-TEA&list=PLQqoaQUqs4DCbDNiqBU3E9bFvX6YSUZc1&index=16)
+- [20.07.2019 Obiektowy C++: abstrakcja](https://www.youtube.com/watch?v=5HeeEuSdrws&list=PLQqoaQUqs4DCbDNiqBU3E9bFvX6YSUZc1&index=17)
+- [20.07.2019 Obiektowy C++: enkapsulacja](https://www.youtube.com/watch?v=RgF4bMei1IY&list=PLQqoaQUqs4DCbDNiqBU3E9bFvX6YSUZc1&index=18)
+- [20.07.2019 Obiektowy C++: dziedziczenie](https://www.youtube.com/watch?v=rY3rs7R0--Q&list=PLQqoaQUqs4DCbDNiqBU3E9bFvX6YSUZc1&index=19)
+- [20.07.2019 Obiektowy C++: polimorfizm](https://www.youtube.com/watch?v=WAkWuns1rCI&list=PLQqoaQUqs4DCbDNiqBU3E9bFvX6YSUZc1&index=20)
+- [20.07.2019 Obiektowy C++: abstrakcja w projekcie Cars](https://www.youtube.com/watch?v=JqsiN_E4Rzg&list=PLQqoaQUqs4DCbDNiqBU3E9bFvX6YSUZc1&index=21)
+- [20.07.2019 Obiektowy C++: implementacja w projekcie Cars](https://www.youtube.com/watch?v=sXMjOSCMKCU&list=PLQqoaQUqs4DCbDNiqBU3E9bFvX6YSUZc1&index=22)
+- [20.07.2019 Obiektowy C++: praca domowa](https://www.youtube.com/watch?v=5f3CxyVnMM4&list=PLQqoaQUqs4DCbDNiqBU3E9bFvX6YSUZc1&index=23)
+- <img src="foto/01_constructors_order.jpg" width="250px" /> <img src="foto/02_diamond.jpg" width="250px" />
+  <img src="foto/03_inheritance_access.jpg" width="250px" /> <img src="foto/04_design.jpg" width="250px" />
+  <img src="foto/05_design.jpg" width="250px" /> <img src="foto/06_design.jpg" width="250px" />
 
 ### Post-work
 
