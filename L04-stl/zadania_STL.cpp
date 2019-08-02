@@ -9,7 +9,8 @@
 #include <algorithm>
 #include <numeric>
 #include <functional>
-
+#include <string>
+#include <utility>
 
 void print_ar (std::array<double,6>ar)
 {
@@ -32,6 +33,29 @@ struct by_abs
     return std::abs(l)<std::abs(r);
     }
 };
+
+bool is_palindrome (std::string napis)
+{
+    std::string napis_temp {};
+    for (std::string::reverse_iterator rit=napis.rbegin();
+         rit!=napis.rend();++rit)
+    {
+        napis_temp.push_back(*rit);
+    }
+//    std::cout<<napis_temp<<std::endl;
+    std::pair<std::string::iterator,std::string::iterator> test;
+    test=mismatch(napis.begin(),napis.end(),napis_temp.begin());
+    if (*test.first!=0)
+    {
+        std::cout<<"No!"<<std::endl;
+        return false;
+    }
+    else
+    {
+        std::cout<<"Yes!"<<std::endl;
+        return true;
+    }
+}
 
 
 //struct Multiply_value{
@@ -137,6 +161,11 @@ int main () {
     });
     print_ar(data);
     */
+    //Exercise_9
+    std::cout<<"===========Exercise 9========"<<std::endl;
+    is_palindrome("kajak");
+    is_palindrome("wiktor");
+
     return 0;
 
 }
