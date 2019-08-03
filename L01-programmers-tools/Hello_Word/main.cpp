@@ -2,6 +2,6 @@
 
 int main( int argc, char** argv )
 {
-	std::cout <<"Hallo_World"<< std::endl;
+	std::cout <<"second Commit"<< std::endl;
 	return 0;
 }
