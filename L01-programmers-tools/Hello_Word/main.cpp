@@ -1,7 +1,8 @@
-#include <iostream>
 
-int main( int argc, char** argv )
+#include "MyHeader.hpp"
+
+int main()
 {
-	std::cout <<"Hallo_World"<< std::endl;
+	foo();
 	return 0;
 }
