@@ -29,10 +29,14 @@ set(CMAKE_CXX_STANDARD_REQUIRED ON)
 project(coders.school)
 
 set(SRC_LIST
-L01-programmers-tools/Hello_Word/main.cpp
+  main.cpp
 )
 
-include_directories(L01-programmers-tools/Hello_Word)
+include_directories(
+  L01-programmers-tools/Hello_Word
+  L02-C++-introduction
+)
+
 add_executable(${PROJECT_NAME} ${SRC_LIST})
 target_compile_options(${PROJECT_NAME} PUBLIC -Wall -Werror -Wpedantic -Wextra)
 
