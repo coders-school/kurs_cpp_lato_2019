@@ -1,6 +1,6 @@
 #include <string>
 
-bool palindrom(std::string napis)
+bool palindrom(const std::string& napis)
 {
     if(napis.size() < 2) return true;
 
