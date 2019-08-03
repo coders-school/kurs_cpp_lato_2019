@@ -26,7 +26,7 @@ endif()
 set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
-project(coders.cshool)
+project(coders.school)
 
 set(SRC_LIST
 L01-programmers-tools/Hello_Word/main.cpp
