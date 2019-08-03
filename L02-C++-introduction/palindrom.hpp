@@ -1,6 +1,6 @@
 #include <string>
 
-bool palindrom(std::string napis)
+bool palindrom(const std::string& napis)
 {
     std::size_t dlugosc = napis.size();
     
