@@ -1,5 +1,7 @@
 # Kurs-CPP
 
+[![Build Status](https://travis-ci.com/darkassazi/kurs_cpp_lato_2019.svg?branch=master)](https://travis-ci.com/darkassazi/kurs_cpp_lato_2019)
+
 Materiały z kursu C++ (Lipiec 2019 - Wrzesień 2019)
 
 ## 06.07.2019 Narzędzia programisty (linux, vim, git, make, cmake, formatowanie kodu)
