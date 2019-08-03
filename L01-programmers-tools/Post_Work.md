@@ -18,6 +18,7 @@
 --Done w dniu 25.07.2019 ;)
 ----------------------------------------------
  (1 punkt) Zapoznaj się pobieżnie ze standardem kodowania Google oraz standardem kodowania LLVM. Możesz je porównać i wychwycić podobieństwa i różnice.
+ 
   jescze nie zrobione
 ----------------------------------------------
 
