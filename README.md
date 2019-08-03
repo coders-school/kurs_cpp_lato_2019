@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.com/darkassazi/kurs_cpp_lato_2019.svg?branch=master)](https://travis-ci.com/darkassazi/kurs_cpp_lato_2019)
+
 # Kurs C++
 
 Materiały z kursu C++ (Lipiec 2019 - Wrzesień 2019)
