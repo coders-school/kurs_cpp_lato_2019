@@ -21,4 +21,7 @@ compiler:
   - clang
 
 script:
-  - g++ -o hello_Word main.cpp
+  - cmake -H. -Bbuild
+  - cmake -build build
+  - cd build
+  - make ./coders.school-ut
