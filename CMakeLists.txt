@@ -35,6 +35,8 @@ set(SRC_LIST
 include_directories(
   L01-programmers-tools/Hello_Word
   L02-C++-introduction
+  L03-object-oriented-cpp
+  L04-stl
 )
 
 add_executable(${PROJECT_NAME} ${SRC_LIST})

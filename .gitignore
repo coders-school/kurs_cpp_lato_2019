@@ -1,4 +1,6 @@
 [Bb]uild/*
+.vscode/*
+uild/*
 cmake-build-debug/*
 idea/*
 *.o
