@@ -19,8 +19,10 @@
 ----------------------------------------------
 
  (1 punkt) Zrób test Narzędzia programisty
+
 -- 25 / 31 za test
 ---------------------------------------------- 
+ 
  (5 punktów) Spróbuj ustawić CI do programu Hello World z naszych zajęć. Spraw, aby GitHub sam budował cały projekt i mówił, czy czasem nie został scommitowany kod, który się nie kompiluje. Pokaż, że to działa spróbując komitować kod, który faktycznie się nie kompiluje, ale oczywiście potem wycofaj te zmiany za pomocą git revert. Możesz do tego użyć TravisCI albo CircleCI. Przydatne linki:
  
  Done. dla całego kurs_cpp_lato_2019 :)
