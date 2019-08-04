@@ -16,4 +16,6 @@ jobs:
           command: date
       - run:
           name: L01
-          command: cd L01-programmers-tools/hello_world/; g++ main.cpp; ./a.out
+          command: cd L01-programmers-tools/hello_world/
+      - run: g++ main.cpp
+      - run: ./a.out
