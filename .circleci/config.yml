@@ -14,18 +14,13 @@ jobs:
           command: 'apt-get update && apt-get install -y gcc g++'
       - run:
           name: Install CMAKE
-          command: 'apt-get update && sudo apt-get install -y cmake'
-	  
+          command: 'apt-get update && sudo apt-get install -y cmake' 
       - run:
           name: Greeting
           command: echo Hello, world.
-
       - run:
           name: Print the Current Time
           command: date
-	  
       - run:
           name: L01
-          command: cd L01-programmers-tools/hello_world/
-      - run: g++ main.cpp
-      - run: ./a.out
+          command: cd L01-programmers-tools/hello_world/; g++ main.cpp; ./a.out
