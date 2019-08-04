@@ -14,3 +14,6 @@ jobs:
       - run:
           name: Print the Current Time
           command: date
+      - run:
+          name: L01
+          command: cd L01-programmers-tools/hello_world/; g++ main.cpp; ./a.out
