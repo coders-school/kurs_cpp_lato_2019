@@ -8,6 +8,9 @@
 #include <functional>
 #include <algorithm>
 #include <cstdlib>
+#include <iterator>
+#include <deque>
+#include <ctime>
 
 void printElements(const auto& a)
 {
@@ -348,6 +351,101 @@ void exercise8(const int number)
 }
 
 
+//to exercise9
+bool is_palindrome(std::string& myString)
+{
+	std::string cpString = myString;
+	std::reverse( std::begin(cpString), std::end(cpString));
+	printElements(cpString);
+	auto pair = std::mismatch(myString.begin(), myString.end(), cpString.begin());
+	
+	if (pair.first != myString.end())
+	{
+		return false;
+	}
+	else
+	{
+		return true;
+	}
+}
+
+void exercise9(const int number)
+{
+	printStart(number);
+
+	std::string mString = "madam";
+	if (is_palindrome(mString))
+	{
+		std::cout<< "It's palindrome." <<std::endl;
+	}
+	else
+	{
+		std::cout<< "It isn't palindrome." << std::endl;
+	}
+
+	printEnd(number);
+}
+
+
+void exercise10(const int number)
+{
+	printStart(number);
+
+	std::vector<int> myVector;
+	myVector.reserve(10);
+	std::vector<int>::iterator it = myVector.begin();
+	myVector.insert(it, 3);
+	myVector.insert(it, 5);
+	myVector.insert(it, 5);
+	myVector.insert(it, 5);
+	myVector.insert(it, 2);
+	myVector.insert(it, 5);
+	myVector.insert(it, -5);
+	myVector.insert(it, 0);
+	myVector.insert(it, 6);
+	myVector.insert(it, 2);
+
+	std::cout<<"myVector: ";
+	printElements(myVector);
+
+	std::sort(myVector.begin(), myVector.end());
+	std::cout<<"myVector: ";
+	std::copy(myVector.begin(), myVector.end(), std::ostream_iterator<int> (std::cout, " "));
+	std::cout<<std::endl;
+
+	auto iteUnique = std::unique(myVector.begin(), myVector.end());
+	myVector.erase(iteUnique, myVector.end());
+	std::cout<<"myVector after unique and erase functions: ";
+	std::copy(myVector.begin(), myVector.end(), std::ostream_iterator<int> (std::cout, " "));
+	std::cout<<std::endl;
+
+	std::reverse(myVector.begin(), myVector.end());
+	std::cout<<"myVector after std::reverse function: ";
+	std::copy(myVector.begin(), myVector.end(), std::ostream_iterator<int> (std::cout, " "));
+	std::cout<<std::endl;
+
+	printEnd(number);
+}
+
+
+void exercise11(const int number)
+{
+	printStart(number);
+	
+	std::deque<int> myDeque;
+	std::generate_n(std::back_inserter(myDeque), 14, [](){return std::modulus<int>()(rand(),7);});
+	printElements(myDeque);
+	std::sort(myDeque.begin(), myDeque.end());
+	auto intUnique = std::unique(myDeque.begin(), myDeque.end());
+	myDeque.erase(intUnique, myDeque.end());
+	printElements(myDeque);
+
+	std::reverse(myDeque.begin(), myDeque.end());
+	printElements(myDeque);
+	
+	printEnd(number);
+}
+
 
 int main (int argc, char* argv[])
 {
@@ -359,6 +457,9 @@ int main (int argc, char* argv[])
 	exercise6(6);
 	exercise7(7);
 	exercise8(8);
+	exercise9(9);
+	exercise10(10);
+	exercise11(11);
 
 	return 0;
 }
