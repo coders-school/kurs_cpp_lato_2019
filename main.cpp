@@ -8,12 +8,7 @@
 
 int main()
 {
-	//HomeWork2runner();
-	//foo();
-	//std::cout << "p1: " << "repaper" << std::endl;
-	//std::cout << "isPalindrom: " << palindrom("repaper") << std::endl;
-
-	//std::cout << "is palidrome: " << palindrom("ala") << std::endl;
+	HomeWork2runner();
 
 	homework4runner();
 	

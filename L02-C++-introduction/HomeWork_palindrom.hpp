@@ -8,7 +8,7 @@ bool palindrom(const std::string& napis)
     W naszym przypadku wykorzystujemy znak logiczny mniejszy większy i operujemy na liczbach pełnych 
     co też powoduje że nie zauważyłem żadnych problemów. 
     
-    float nie powinien być jednak  używany w pętlach. 
+    float nie powinien być jednak używany w pętlach. 
     Jest to podyktowane tym, że liczby zmiennoprzecinkowe nie mogą być dokładnie przedstawione w wartościach binarnych.  
 
     */
