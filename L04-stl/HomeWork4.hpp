@@ -12,82 +12,93 @@
 #include <random>
 
 
+std::vector<std::pair<char, char>>  exercise12_generate_Scheme(const unsigned int& start, const unsigned int end)
+{
+	// Random number generator setup
+	std::random_device l_random_device;
+	auto l_seed = l_random_device();
+
+	std::mt19937_64 l_gen(l_seed);
+	std::uniform_int_distribution<unsigned int> distribution(start, end);
+
+	// setup end
+
+	std::vector<std::pair<char, char>> Scheme;
+
+	unsigned int length = end - start;
+
+	unsigned int right = 0;
+	auto findpolicy = [&](const auto& val) {
+		return (unsigned int)val.second == right;
+	};
+
+	auto fillpolicy = [&]()
+	{
+		while (std::find_if(Scheme.begin(), Scheme.end(), findpolicy) != Scheme.end()) {
+			right = distribution(l_gen);
+		}
+
+		unsigned int left = start + Scheme.size();
+		auto result = std::make_pair<char, char>((char)(left), (char)right);
+		right = 0;
+
+		return result;
+	};
+
+	std::generate_n(std::back_inserter(Scheme), length + 1, fillpolicy);
+
+	return Scheme;
+}
+
+std::map<char, char> exercise12_encodePlan(const std::vector<std::pair<char, char>>& Scheme)
+{
+	std::map<char, char> plan;
+	std::copy(Scheme.begin(), Scheme.end(), std::inserter(plan, plan.begin()));
+
+	return plan;
+}
+
+std::map<char, char> exercise12_decodePlan(const std::vector<std::pair<char, char>>& Scheme)
+{
+	std::map<char, char> plan;
+	auto decodingpolicy = [](auto val) {
+		return std::make_pair(val.second, val.first);
+	};
+	std::transform(Scheme.begin(), Scheme.end(), std::inserter(plan, plan.begin()), decodingpolicy);
+
+	return plan;
+}
+
 void exercise12()
 {
-    int l_start = 32;
-    int l_end = 126;
+	unsigned int l_start = 32;
+	unsigned int l_end = 126;
+
+	std::vector<std::pair<char, char>>Scheme = exercise12_generate_Scheme(l_start, l_end);
+
+	std::map<char, char> encoding = exercise12_encodePlan(Scheme);
+	std::map<char, char> decoding = exercise12_decodePlan(Scheme);
 
 
-    // Random number generator setup
-    std::random_device l_random_device;
-    auto l_seed = l_random_device();
+	std::string textToBeEncoded;
+	std::cout << "Provide text:" << std::endl;
+	std::getline(std::cin, textToBeEncoded);
 
-    std::mt19937_64 l_gen(l_seed);
-    std::uniform_int_distribution<int> distribution(l_start, l_end);
+	std::string encodedText;
+	for (auto e : textToBeEncoded) {
+		encodedText += encoding.find(e)->second;
+	}
 
-    // setup end
+	std::string decoded;
+	for (auto e : encodedText) {
+		decoded += decoding.find(e)->second;
+	}
 
-    // generating Cypher
-    std::vector<std::pair<char, char>> encodingShame;
+	std::cout << "your orginal text: " << textToBeEncoded << std::endl;
 
-    int length = l_end - l_start;
-    auto fillpolicy = [&]()
-    {
-        int left = l_start + encodingShame.size();
-        int value = distribution(l_gen);
+	std::cout << "your encoded text: " << encodedText << std::endl;
 
-        auto findpolicy = [&](const auto& val){
-            return (int)val.second == value;
-        };
-
-        while( std::find_if(encodingShame.begin(), encodingShame.end(), findpolicy) != encodingShame.end()){
-            value = distribution(l_gen);
-        }
-
-
-        return std::make_pair<char, char>((char)left, (char)value );   
-    };
-
-    
-    std::generate_n(std::back_inserter(encodingShame), length + 1, fillpolicy);
-
-    // generating Cypher emd
-
-    // create encoding and decoding maps.
-
-
-    std::map<char, char> encoding;
-    std::copy(encodingShame.begin(), encodingShame.end(), std::inserter(encoding, encoding.begin()));
-
-
-    std::map<char, char> decoding;
-    auto decodingpolicy = [](auto val) {
-        return std::make_pair(val.second, val.first); 
-    };   
-    std::transform(encodingShame.begin(), encodingShame.end(), std::inserter(decoding, decoding.begin()), decodingpolicy);
-
-    // create encoding and decoding maps.
-
-
-    std::string textToBeEncoded;
-    std::cout << "Provide text:" << std::endl;
-    std::getline(std::cin, textToBeEncoded);
-
-    std::string encodedText;
-    for(auto e : textToBeEncoded) {
-        encodedText += encoding.find(e)->second;
-    }
-
-    std::string decoded;
-    for(auto e : encodedText) {
-        decoded += decoding.find(e)->second;
-    }
-
-    std::cout << "your orginal text: " << textToBeEncoded << std::endl;
-
-    std::cout << "your encoded text: " << encodedText << std::endl;
-
-    std::cout << "your decoded text: " << decoded << std::endl;
+	std::cout << "your decoded text: " << decoded << std::endl;
 }
 
 void exercise9()
@@ -119,16 +130,10 @@ void exercise6()
     unsigned int counter = 0;
     int value = 0;
     int distance = 0;
-    for(auto el = b; el != e; ++el)
-    {
-        if(counter == 4) {
-            value = *el;
-            distance = std::distance(b, e);
-        } 
-        ++counter;
-    }
-
     
+    std::advance(b, 4);
+    distance = std::distance(b, e);
+
     std::cout << "value of 5th element is: " << value << "\n";
     std::cout << "distance is: " << distance << "\n";
     std::cout << "size is: " << counter << "\n";
@@ -186,6 +191,14 @@ void exercise4()
 
     */
     
+}
+
+void homework4runner()
+{
+    //exercise4();
+	exercise6();
+	//exercise9();
+	//exercise12();
 }
 
 #endif //! HOMEWORK4_H
