@@ -1,0 +1,108 @@
+#include 
+#include 
+#include 
+#include 
+#include 
+#include 
+#include 
+#include 
+#include 
+
+using namespace std;
+
+
+int main()
+{
+	mapbaza;
+	baza[1] = 'a';
+	baza[2] = 'b';
+	baza[3] = 'c';
+	baza[4] = 'd';
+	baza[5] = 'e';
+	baza[6] = 'f';
+	baza[7] = 'g';
+	baza[8] = 'h';
+	baza[9] = 'i';
+	baza[10] = 'j';
+	baza[11] = 'k';
+	baza[12] = 'l';
+	baza[13] = 'n';
+	baza[14] = 'm';
+	baza[15] = 'o';
+	baza[16] = 'p';
+	baza[17] = 'r';
+	baza[18] = 's';
+	baza[19] = 't';
+	baza[20] = 'u';
+	baza[21] = 'w';
+	baza[22] = 'x';
+	baza[23] = 'y';
+	baza[24] = 'z';
+
+	cout << "\nThe map baza is : \n";
+	cout << "KEY\tELEMENT\n";
+	for (auto it = baza.begin(); it != baza.end(); ++it) {
+		cout << it->first
+			<< '\t' << it->second << '\n';
+	}
+
+	map szyfr;
+	szyfr = baza;
+
+	cout << "\nThe map szyfr is : \n";
+	cout << "KEY\tELEMENT\n";
+	for (auto it = szyfr.begin(); it != szyfr.end(); ++it) {
+		cout << it->first
+			<< '\t' << it->second << '\n';
+	}
+
+	vector keys;
+	transform(szyfr.begin(), szyfr.end(), back_inserter(keys), [](std::pair p) { return p.first; });
+	copy(keys.begin(), keys.end(), ostream_iterator(cout, "\n"));
+
+	random_device rd;
+	mt19937 g(rd());
+	shuffle(keys.begin(), keys.end(), g);
+	for (vector::iterator i = keys.begin(); i != keys.end(); ++i)
+		cout << ' ' << *i;
+	cout << endl;
+
+	vector strings;
+	transform(szyfr.begin(), szyfr.end(), back_inserter(strings), [](std::pair p) { return p.second; });
+	copy(strings.begin(), strings.end(), ostream_iterator(cout, "\n"));
+
+	map mapa;
+
+	std::transform(keys.begin(), keys.end(), strings.begin(), std::inserter(mapa, mapa.end()), [](int a, char b)
+		{
+			return std::make_pair(a, b);
+		});
+	std::for_each(mapa.begin(), mapa.end(), [](const std::pair& p)
+		{
+			std::cout << p.first << " " << p.second << "\n";
+		});
+
+	string word;
+	cout << "Podaj slowo" << endl;
+	cin >> word;
+	for (auto& letter : word)
+	{
+		auto it = mapa.find(letter);
+		if (it != mapa.end())
+		{
+			cout << it->second;
+
+		}
+	}
+
+	/*for (auto & letter : word) {
+	for (const auto & el : map1) {
+		if (el->second == letter) {
+			letter = map2[el->first];
+		}
+	}
+}*/
+
+	return 0;
+}
+
