@@ -2,6 +2,7 @@
 #include <iostream>
 #include <string>
 #include <cassert>
+#include <math.h>
 
 struct LongInt
 {
@@ -34,7 +35,21 @@ struct LongInt
     //Method
     std::string toString()
     {
-        return std::to_string(left) + std::to_string(right);
+        std::string long_int_string;
+        std::string left_string = std::to_string(left);
+        std::string right_string = std::to_string(abs(right));
+
+        if(abs(left)) {
+            if(right < 10) {
+                long_int_string = left_string + '0' + right_string;
+            } else {
+                long_int_string =  left_string + right_string;
+            }
+        } else {
+            long_int_string = right_string;
+        }
+
+        return long_int_string;
     }
 
     //Operator
@@ -63,6 +78,11 @@ int main()
 {
     LongInt val1(1, 70);
     LongInt val2("5980");
+    LongInt v1(0, 0);
+    LongInt v2(0, 10);
+    LongInt v3(30, 1);
+    LongInt v4(-30, -1);
+
 
     val1 += val2;
     std::cout << val1.toString() << std::endl;
