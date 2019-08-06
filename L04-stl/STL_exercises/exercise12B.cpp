@@ -3,6 +3,7 @@
 #include <numeric>
 #include <vector>
 #include <map>
+#include <algorithm>
 
 std::vector<int> generateRand(const int range, const int number)
 {
@@ -11,6 +12,7 @@ std::vector<int> generateRand(const int range, const int number)
     std::uniform_int_distribution<> dist(0, range);
     std::vector<int> randValVec;
     randValVec.reserve(number);
+    //std::for_each(randValVec.begin(), randValVec.end(), )   [&](){}
     for (int i = 0; i < number; ++i)
     {
         randValVec.push_back(dist(engine));
@@ -56,16 +58,17 @@ std::map<int, std::vector<int>> assignPrimeToRand(std::vector<int> prime, std::v
     }
     return primeToValueMap;
 }
-
+/* use with remove_if
 void removeEmptyKeys(std::map<int, std::vector<int>>& myMap) // does not always remove keys with empty values? wut??? for example - prime 41, 31, 11, even if empty, isn't removed
 {
-    for(auto it = myMap.begin(); it != myMap.end(); ++it)
+    for(auto it = myMap.begin(); it != myMap.end(); )
     {
         if(it->second.empty())
             myMap.erase(it);
+        else it++;
     }
 }
-
+*/
 void printVec(const std::vector<int>& number)
 {
     for(const auto& elements:number)
@@ -113,7 +116,7 @@ int main()
     printVec(testPrime);
     std::cout << std::endl;
     std::map<int, std::vector<int>> testMap(assignPrimeToRand(testPrime, testRand));
-    removeEmptyKeys(testMap);
+    //removeEmptyKeys(testMap);
     printMap(testMap);
     return 0;
 }
