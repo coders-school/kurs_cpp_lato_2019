@@ -1,24 +1,46 @@
 #include <iostream>
-#include <vector>
+#include <list>
 #include <iterator>
 #include <numeric>
 
-void printCapacity(std::vector<int> a)
+void printContent(std::list<int> a)
 {
-    std::cout<< a.size()<<std::endl;
-    std::cout<< a.capacity() << std::endl;
+    for(auto elements:a)
+    {
+        std::cout << elements << " ";
+    }
+    std::cout << std::endl;
+}
+
+void printSize(std::list<int>a)
+{
+    std::cout << "size: " << a.size() << std::endl;
 }
 
 int main()
 {
-    std::vector<int> v(1000000);
-    std::iota(v.begin(), v.end(), 1);
-    printCapacity(v);
-    std::cout << "Displaying 500000th element of vector v: " << v[499999] << std::endl;
+    std::list<int> list{};
+    printSize(list);
+    auto it = list.begin();
+    for(int i=1; i<=1000000; i++)
+    {
+        list.insert(it, 1, i);
+        it++;
+    }
+    printSize(list);
+    auto it2 = list.begin();
+    std::advance(it2, 499999);
+    std::cout << "500000th element = " << *it2 << std::endl;
     return 0;
 }
 
-//time:
-//real 0m 0.008s
-//user 0m 0.002s
-//sys  0m 0.006s
+/////////////////////////////////////////////////////////////
+// alternative fill method
+//
+// std::list<int> list(1000000);
+// std::itoa(list.begin(), list.end(), 1);
+//
+// time:
+// real 0m 0.133s
+// user 0m 0.107s
+// sys 0m 0.026s
