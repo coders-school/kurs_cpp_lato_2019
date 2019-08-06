@@ -17,3 +17,8 @@ int main()
     std::cout << "Displaying 500000th element of vector v: " << v[499999] << std::endl;
     return 0;
 }
+
+//time:
+//real 0m 0.008s
+//user 0m 0.002s
+//sys  0m 0.006s
