@@ -5,9 +5,9 @@
 #include <cstdlib>
 
 
-void fillMap(std::map<char, int>& myMap, std::string myString)
+void fillMap(std::map<char, int>& myMap, std::string& myString)
 {
-	myMap.erase(myMap.begin(), myMap.end());
+	myMap.clear();
 	for (size_t i=0; i<myString.size(); i++)
 	{
 		myMap.insert(myMap.begin(),std::pair<char,int>(myString[i], int(myString[i])));
@@ -41,11 +41,11 @@ int main ()
 	int key = (rand()%10)+1;
 
 	std::map<char, int> myMap;
-	std::string secretString {"abcd"}; // string will be downloaded from txt file
+	std::string secretString {"abcde"}; // string will be downloaded from txt file
 
 	std::cout<< "Orignal sentence: " << secretString << std::endl;
 	std::cout<< "Sentense after encryption: " << encrypt(myMap, key, secretString) << std::endl;
 	std::cout<< "Sentense after decryption: " << decrypt(myMap, key, secretString) << std::endl;
-
+	
 	return 0;
 }
