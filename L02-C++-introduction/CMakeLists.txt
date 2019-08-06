@@ -6,6 +6,8 @@ set(CMAKE_CXX_STANDARD_REQUIRED ON)
 project(palindrom_cpp)
 
 set(SRC_LIST
+    palindrom_recursive.hpp
+    palindrom_recursive.cpp
     palindrom.hpp
     palindrom.cpp
     main.cpp
