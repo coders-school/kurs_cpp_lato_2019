@@ -4,53 +4,54 @@
 #include <ctime>
 #include <cstdlib>
 
-char int2char(int myInt )
- {
-     switch(myInt)
-     {
-         case 0: return '0';
-		 case 1: return '1';
-         case 2: return '2';
-         case 3: return '3';
-         case 4: return '4';
-         case 5: return '5';
-         case 6: return '6';
-         case 7: return '7';
-         case 8: return '8';
-         case 9: return '9';
-     }
- }
+void encrypt(std::map<char, int>& myMap, int key)
+{
+	for (auto it= myMap.begin(); it !=myMap.end(); ++it)
+	{
+		myMap[it->second] += key;
+		myMap[it->first] = char(myMap[it->second]);		
+	}
+}
+
+
+void decrypt(std::map<char, int>& myMap, int key)
+{
+	key *= -1;
+	encrypt(myMap, key);
+}
+
+
+void printElements(auto& map)
+{
+	for (auto& [first, second] : map)
+	{
+		std::cout<< first << " " << second<< std::endl;
+	}
+}
 
 int main ()
 {
 	std::vector<char> chVector;
-	std::string myString {"abcd"};
+	std::string secretString {"abcd"}; // string will be downloaded from txt file
 
 	srand(time(NULL));
-	int	random_int = (rand()%10);
-	chVector.push_back(int2char(random_int));
+	int	key = (rand()%10);
 
-	for (size_t i=0; i<myString.size(); i++)
-	{
-		chVector.push_back(myString[i]);	
-	}	
+	std::cout<< "Key: " << key << std::endl;
 
-	std::map<int, char> myMap;
-	for (int i=0;i<=myString.size();i++)
+	std::map<char, int> myMap;
+	for (size_t i=0; i<secretString.size(); i++)
 	{
-		myMap.insert(myMap.begin(),std::pair<int,char>(i,chVector[i]));
+		myMap.insert(myMap.begin(),std::pair<char,int>(secretString[i], int(secretString[i])));
 	}
 
-	for (size_t i=1; i<myMap.size(); i++)
-	{		
-	( int myMap.at(i)+=random_int) ;
-	}
+	std::cout<< "myMap: " <<std::endl;
+	printElements(myMap);
+	std::cout << std::endl;
 
-	for (auto& [first, second] : myMap)
-	{
-		std::cout<< first << " " << second << std::endl;
-	}	
-
+	std::cout<< "Encryption: " << std::endl;
+	encrypt(myMap, key);
+	printElements(myMap);
 
 
 	return 0;
