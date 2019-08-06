@@ -4,7 +4,7 @@
 #include <vector>
 #include <map>
 
-std::vector<int> generateRand(const int& range, const int& number)
+std::vector<int> generateRand(const int range, const int number)
 {
     std::random_device randDevice;
     std::mt19937 engine{randDevice()};
@@ -18,7 +18,7 @@ std::vector<int> generateRand(const int& range, const int& number)
     return randValVec;
 }
 
-bool isPrime(const int& number)
+bool isPrime(const int number)
 {
     int numerOfTimes = {0};
     for(int i = 2; i <= number; ++i)
@@ -26,13 +26,13 @@ bool isPrime(const int& number)
         if(number%i==0)
             numerOfTimes++;
     }
-    return  number >= 2 and (numerOfTimes == 1 or numerOfTimes == 0);
+    return  number >= 2 and numerOfTimes == 1;
 }
 
-std::vector<int> generatePrime(const int& range)
+std::vector<int> generatePrime(const int range)
 {
-    std::vector<int> primeVec(range);
-    std::iota(primeVec.begin(), primeVec.end(), 0);
+    std::vector<int> primeVec(range+1);
+    std::iota(primeVec.begin(), primeVec.end(), 0); // UGLY COMMENT - cannot start with 2, input is 0-range. If range is 0-2 and vec filled with 2,3,4 - there is a prime '3' out of range 0-2. isBool takes 0 and 1 out of equation
     for(auto i = primeVec.begin(); i != primeVec.end(); )
     {
         if(isPrime(*i)) i++;
@@ -49,24 +49,24 @@ std::map<int, std::vector<int>> assignPrimeToRand(std::vector<int> prime, std::v
         primeToValueMap[element] = {};
         for(size_t i = 0; i < randVal.size(); ++i)
         {
-            if((randVal[i]%element)==0)
-                primeToValueMap[element].push_back(randVal[i]);
+            if(randVal[i]==0) continue;
+            else if((randVal[i]%element)==0)
+                {primeToValueMap[element].push_back(randVal[i]);}
         }
     }
     return primeToValueMap;
 }
 
-std::map<int, std::vector<int>> removeEmptyKeys(std::map<int, std::vector<int>> myMap)
+void removeEmptyKeys(std::map<int, std::vector<int>>& myMap) // does not always remove keys with empty values? wut??? for example - prime 41, 31, 11, even if empty, isn't removed
 {
     for(auto it = myMap.begin(); it != myMap.end(); ++it)
     {
         if(it->second.empty())
             myMap.erase(it);
     }
-    return myMap;
 }
 
-void printVec(std::vector<int> number)
+void printVec(const std::vector<int>& number)
 {
     for(const auto& elements:number)
     {
@@ -77,17 +77,17 @@ void printVec(std::vector<int> number)
     std::cout << "capacity: " << number.capacity() << std::endl;
 }
 
-void printVecFromMap(std::vector<int> number)
+void printVecFromMap(const std::vector<int>& number)
 {
-    std::cout << "{";
+    std::cout << " {";
     for(const auto& elements:number)
     {
-        std::cout << elements << ", ";
+        std::cout << elements << " ";
     }
     std::cout << "}" << std::endl;
 }
 
-void printMap(std::map<int, std::vector<int>> map)
+void printMap(const std::map<int, std::vector<int>>& map)
 {
     for(const auto& elements:map)
     {
@@ -113,7 +113,7 @@ int main()
     printVec(testPrime);
     std::cout << std::endl;
     std::map<int, std::vector<int>> testMap(assignPrimeToRand(testPrime, testRand));
-    std::map<int, std::vector<int>> cleanMap(removeEmptyKeys(testMap));
-    printMap(cleanMap);
+    removeEmptyKeys(testMap);
+    printMap(testMap);
     return 0;
 }
