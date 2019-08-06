@@ -4,55 +4,48 @@
 #include <ctime>
 #include <cstdlib>
 
-void encrypt(std::map<char, int>& myMap, int key)
+
+void fillMap(std::map<char, int>& myMap, std::string myString)
 {
+	myMap.erase(myMap.begin(), myMap.end());
+	for (size_t i=0; i<myString.size(); i++)
+	{
+		myMap.insert(myMap.begin(),std::pair<char,int>(myString[i], int(myString[i])));
+	}
+}
+
+
+std::string encrypt(std::map<char, int>& myMap, int key, std::string& secretString)
+{	
+	fillMap(myMap, secretString);
+	std::string secret = "";
 	for (auto it= myMap.begin(); it !=myMap.end(); ++it)
 	{
-		myMap[it->second] += key;
-		myMap[it->first] = char(myMap[it->second]);		
+		secret += char(myMap[it->second]+key);
 	}
+	secretString = secret;
+	return secret;
 }
 
 
-void decrypt(std::map<char, int>& myMap, int key)
+std::string decrypt(std::map<char, int>& myMap, int key, std::string& secretString)
 {
 	key *= -1;
-	encrypt(myMap, key);
+	return encrypt(myMap, key, secretString);
 }
 
-
-void printElements(auto& map)
-{
-	for (auto& [first, second] : map)
-	{
-		std::cout<< first << " " << second<< std::endl;
-	}
-}
 
 int main ()
 {
-	std::vector<char> chVector;
-	std::string secretString {"abcd"}; // string will be downloaded from txt file
-
 	srand(time(NULL));
-	int	key = (rand()%10);
-
-	std::cout<< "Key: " << key << std::endl;
+	int key = (rand()%10)+1;
 
 	std::map<char, int> myMap;
-	for (size_t i=0; i<secretString.size(); i++)
-	{
-		myMap.insert(myMap.begin(),std::pair<char,int>(secretString[i], int(secretString[i])));
-	}
+	std::string secretString {"abcd"}; // string will be downloaded from txt file
 
-	std::cout<< "myMap: " <<std::endl;
-	printElements(myMap);
-	std::cout << std::endl;
-
-	std::cout<< "Encryption: " << std::endl;
-	encrypt(myMap, key);
-	printElements(myMap);
-
+	std::cout<< "Orignal sentence: " << secretString << std::endl;
+	std::cout<< "Sentense after encryption: " << encrypt(myMap, key, secretString) << std::endl;
+	std::cout<< "Sentense after decryption: " << decrypt(myMap, key, secretString) << std::endl;
 
 	return 0;
 }
