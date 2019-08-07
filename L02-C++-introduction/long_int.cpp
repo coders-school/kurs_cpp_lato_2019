@@ -12,6 +12,7 @@ struct LongInt
     //Constructor
     LongInt(int left, int right) : left(left), right(right)
     {
+        std::cout << "Create " << toString() << std::endl;
     }
 
     //Constructor
@@ -20,6 +21,7 @@ struct LongInt
         int number = std::stoi(str);
         left = number / 100;
         right = number % 100;
+        std::cout << "Create " << toString() << std::endl;
     }
 
     //Copy constructor
@@ -27,6 +29,7 @@ struct LongInt
     {
         left = other.left;
         right = other.right;
+        std::cout << "Create " << toString() << std::endl;
     }
 
     //Destructor
@@ -40,7 +43,7 @@ struct LongInt
     {
         std::string long_int_string;
         std::string left_string = std::to_string(left);
-        std::string right_string = std::to_string(abs(right));
+        std::string right_string = std::to_string(right);
 
         if(abs(left)) {
             if(right < 10) {
@@ -64,6 +67,28 @@ struct LongInt
         right = right % 100;
     }
 
+    //Operator
+    void operator-=(const LongInt& r)
+    {
+        if(left > r.left) {
+            if((right < r.right) && (left > 0)) {
+                left -= 1;
+                right += 100;
+            }
+            left -= r.left;
+            right -= r.right;
+        } else {
+            if((right > r.right) && (r.left > 0)) {
+                left = -(r.left - left - 1);
+                right = r.right - right + 100;
+                if(left == 0) right *= -1;
+            } else {
+                left = -(r.left - left);
+                right = r.right - right;
+            }
+        }
+    }
+
     //Copy operator
     LongInt& operator=(const LongInt& other)
     {
@@ -84,10 +109,35 @@ int main()
     LongInt v1(0, 0);
     LongInt v2(0, 10);
     LongInt v3(30, 1);
-    LongInt v4(-30, -1);
+    LongInt v4(-30, 1);
     LongInt v5;
 
 
     val1 += val2;
     std::cout << val1.toString() << std::endl;
+
+    LongInt l(2, 10);
+    LongInt l_copy(2, 10);
+    LongInt r1(1, 0);
+    LongInt r2(1, 20);
+    LongInt r3(3, 0);
+    LongInt r4(3, 20);
+
+    LongInt sum;
+
+    l -= r1;
+    std::cout << l.toString() << std::endl;
+    l = l_copy;
+
+    l -= r2;
+    std::cout << l.toString() << std::endl;
+    l = l_copy;
+
+    l -= r3;
+    std::cout << l.toString() << std::endl;
+    l = l_copy;
+
+    l -= r4;
+    std::cout << l.toString() << std::endl;
+    l = l_copy;
 }
