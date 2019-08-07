@@ -79,12 +79,22 @@ user    0m0.086s
 sys     0m0.009s
 Przy wykonywanych probach zostały wykomentowane wcześniejsze zadania*/
 };
-
+void exercise5()
+{
+    map<int, string> map1;                                         //Create a map of integers to strings with content:
+    map1 = { {1,"One"},{2,"Two"},{3,"Thr"},{4,"Four"},{5,"Five"}}; //{1 → ‘one’, 2 → ‘two’, 3 → ‘thr’, 4 → ‘four’, 5 → ‘five’}
+    map1.insert({3, "Three"});                                     //Add a new pair: 3 → ‘three’
+    map1.erase(5);                                                 //Erase element with key 5
+    cout<<map1.size();                                             //Print how many values exist for all keys
+    auto it = map1.find(4);
+    cout<<"Key "<<it->first<<" Value :"<<it->second<<endl;         //Find element with key 4 and print its key and value.
+};
 int main()
 {
     //exercise1();
     //exercise2();
     //exercise3();
-    exercise4();
+    //exercise4();
+    exercise5();
     return 0;
 }
