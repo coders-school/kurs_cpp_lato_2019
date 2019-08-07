@@ -31,10 +31,22 @@ void exercise2()
     v.clear();                                                                //Clear vector
     for(auto element: v ) {cout<<element<<" ";}; cout<<endl;                  //Print vector
 };
+void exercise3()
+{
+    vector<int> v;                                                            //Ceate empty vector
+    cout<<"Size is: "<<v.size()<<" Capacity is : "<<v.capacity()<<endl;  //Print vector size and capacity
+    v.resize(10,5);                                                           //Resize vector to size 10 and fill it with 5.
+    cout<<"Size is: "<<v.size()<<" Capacity is : "<<v.capacity()<<endl;  //Print vector size and capacity
+    v.resize(20);                                                             //Resize vector to size 10 and fill it with 5.
+    cout<<"Size is: "<<v.size()<<" Capacity is : "<<v.capacity()<<endl;  //Print vector size and capacity
+    v.shrink_to_fit();                                                        //Shrink_to_fit
+    cout<<"Size is: "<<v.size()<<" Capacity is : "<<v.capacity()<<endl;  //Print vector size and capacity
+};
 int main()
 {
-    exercise1();
-    exercise2();
+    //exercise1();
+    //exercise2();
+    exercise3();
 
     return 0;
 }
