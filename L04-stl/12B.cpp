@@ -27,19 +27,17 @@ void fillVector(auto& v, int N, int M)
 }
 
 
-int isPrime(int n)
+bool isPrime(int n)
 {
-	int tempN = n;
-	int ch =0;
-	while (tempN > 1)
+	while (n > 1)
 	{
-		tempN--;
-		if (n%tempN == 0)
+		if (!n%(n-1))
 		{
-			ch++;
+			return true;
 		}
+		n--;
 	}
-	return ch;
+	return false;
 }
 
 int main ()
