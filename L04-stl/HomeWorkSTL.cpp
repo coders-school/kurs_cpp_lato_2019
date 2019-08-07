@@ -42,11 +42,49 @@ void exercise3()
     v.shrink_to_fit();                                                        //Shrink_to_fit
     cout<<"Size is: "<<v.size()<<" Capacity is : "<<v.capacity()<<endl;  //Print vector size and capacity
 };
+void exercise4()
+{
+    //Lista
+  list <int> lista;
+   for(size_t i = 1; i < 1'000'001; i++) lista.push_back(i);
+
+    //Vector
+  vector <int> vector1;
+  for(size_t i = 1; i < 1'000'001; i++) vector1.push_back(i);
+
+/*
+Czas wypelnienia listy:                                                          
+real    0m0.096s
+user    0m0.086s
+sys     0m0.010s
+Czas wypelnienia vectora:                             
+real    0m0.093s
+user    0m0.078s
+sys     0m0.015s
+*/
+ int counter = 0;
+    for(int value : lista) {
+        if(counter == 500'000) cout << value << endl;
+        counter++;
+    };
+cout<<vector1[500000]<<endl;
+/*
+Czas wykonania programu(lista):
+real    0m0.094s
+user    0m0.078s
+sys     0m0.016s
+Czas wykonania programu(vector):
+real    0m0.095s
+user    0m0.086s
+sys     0m0.009s
+Przy wykonywanych probach zostały wykomentowane wcześniejsze zadania*/
+};
+
 int main()
 {
     //exercise1();
     //exercise2();
-    exercise3();
-
+    //exercise3();
+    exercise4();
     return 0;
 }
