@@ -35,9 +35,9 @@ Materiały z kursu C++ (Lipiec 2019 - Wrzesień 2019)
 
 ### Post-work
 
-- [X] (2 punkty) Spróbuj zamienić std::size_t na float w funkcji [palindrom](palindrom.cpp). Wynik zapisz jako komentarz wewnątrz pliku.
-- [X] (2 punkty) Zrób optymalizację, żeby pozbyć się kopiowania stringów w  [rekurencyjnej funkcji palindrom](palindrom_recursive.cpp). <details><summary>Podpowiedź</summary><p>Zapoznaj się z std::string_view</p></details>
-- [X] (1 punkt) Zapoznaj się ze wszystkimi slowami kluczowymi z rozdziału "Basic" z prezentacji (43 slajd).
+- [ ] (2 punkty) Spróbuj zamienić std::size_t na float w funkcji [palindrom](palindrom.cpp). Wynik zapisz jako komentarz wewnątrz pliku.
+- [ ] (2 punkty) Zrób optymalizację, żeby pozbyć się kopiowania stringów w  [rekurencyjnej funkcji palindrom](palindrom_recursive.cpp). <details><summary>Podpowiedź</summary><p>Zapoznaj się z std::string_view</p></details>
+- [ ] (1 punkt) Zapoznaj się ze wszystkimi slowami kluczowymi z rozdziału "Basic" z prezentacji (43 slajd).
 - [ ] (3 punkty) Funkcja [toString](long_int.cpp) posiada bug. Spróbuj go znaleźć i naprawić. <details><summary>Podpowiedź</summary><p>Spróbuj dostać takie wartości "0", "10", "3001"</p></details>
 - [ ] (2 punkty) Zapoznaj się ze słowem kluczowym "default" i użyj go w [tym kodzie](long_int.cpp)
 - [ ] (3 punktow) Dopisz brakujące operatory takie jak "-=", "-", "+" w [tym kodzie](long_int.cpp)
@@ -58,3 +58,7 @@ Materiały z kursu C++ (Lipiec 2019 - Wrzesień 2019)
 ### Pre-work
 
 - [ ] Zapoznaj się ze [ściągą o polimorfiźmie](https://github.com/coders-school/kurs_cpp_zima_2019/blob/master/L06-algorithms%2Ctesting/polimorfizm.pdf)
+
+### Uwagi
+
+1. Tak wyglądają [sygnatury operatorów arytmetycznych](https://en.cppreference.com/w/cpp/language/operator_arithmetic) a tak [sygnatury operatorów przypisania](https://en.cppreference.com/w/cpp/language/operator_assignment). Trzeba się trzymać tej konwencji i zwracać uwagę, gdzie jest zwracana referencja (operatory +=, -=), a gdzie kopia (operator+, operator-). Tam gdzie jest zwracana referencja tam modyfikujemy i zwracamy samego siebie (*this). Tam gdzie kopia, to należy utwrzyć nowy obiekt, odpowiednio go zmodyfikować i zwrócić. [Inne operatory](https://en.cppreference.com/w/cpp/language/operators)
