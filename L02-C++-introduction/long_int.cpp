@@ -7,6 +7,9 @@
 struct LongInt
 {
     //Constructor
+    LongInt() = default;
+
+    //Constructor
     LongInt(int left, int right) : left(left), right(right)
     {
     }
@@ -82,6 +85,7 @@ int main()
     LongInt v2(0, 10);
     LongInt v3(30, 1);
     LongInt v4(-30, -1);
+    LongInt v5;
 
 
     val1 += val2;
