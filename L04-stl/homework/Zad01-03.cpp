@@ -77,7 +77,7 @@ Czas wykonania programu(vector):
 real    0m0.095s
 user    0m0.086s
 sys     0m0.009s
-Przy wykonywanych probach zostały wykomentowane wcześniejsze zadania*/
+Przy wykonywanych probach zostały wykomentowane wcześniejsze zadaniaa*/
 };
 void exercise5()
 {
