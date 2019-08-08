@@ -68,7 +68,49 @@ struct LongInt
     }
 
     //Operator
+    LongInt& operator+(const LongInt& r)
+    {
+        LongInt sum;
+        sum.left = left + r.left;
+        sum.right = right + r.right;
+        sum.left += (right / 100);
+        sum.right = right % 100;
+
+        return *this;
+    }
+
+    //Operator
     void operator-=(const LongInt& r)
+    {
+
+        if(r.left < 0) {
+            left += r.left;
+            right += r.right;
+            left += right / 100;
+            right = right % 100;
+        } else {
+            if(left > r.left) {
+                if((right < r.right) && (left > 0)) {
+                    left -= 1;
+                    right += 100;
+                }
+                left -= r.left;
+                right -= r.right;
+            } else {
+                if((right > r.right) && (r.left > 0)) {
+                    left = -(r.left - left - 1);
+                    right = r.right - right + 100;
+                    if(left == 0) right *= -1;
+                } else {
+                    left = -(r.left - left);
+                    right = r.right - right;
+                }
+            }
+        }
+    }
+
+    //Operator
+    LongInt& operator-(const LongInt& r)
     {
         if(left > r.left) {
             if((right < r.right) && (left > 0)) {
@@ -87,6 +129,8 @@ struct LongInt
                 right = r.right - right;
             }
         }
+
+        return *this;
     }
 
     //Copy operator
@@ -123,8 +167,6 @@ int main()
     LongInt r3(3, 0);
     LongInt r4(3, 20);
 
-    LongInt sum;
-
     l -= r1;
     std::cout << l.toString() << std::endl;
     l = l_copy;
@@ -140,4 +182,29 @@ int main()
     l -= r4;
     std::cout << l.toString() << std::endl;
     l = l_copy;
+
+    LongInt sum, sum1;
+
+    sum = l + r1;
+    std::cout << sum.toString() << std::endl;
+
+    std::cout << sum.toString() << std::endl;
+    std::cout << l.toString() << std::endl;
+    std::cout << r1.toString() << std::endl;
+
+    sum1 = l - r1;
+    std::cout << sum1.toString() << std::endl;
+
+
+    LongInt a(-2, 0);
+    LongInt b(-1, 0);
+    LongInt c(-1, 20);
+    LongInt val;
+
+    val = a - b;
+    std::cout << val.toString() << std::endl;
+    val = a - c;
+    std::cout << val.toString() << std::endl;
+
+
 }
