@@ -30,7 +30,19 @@ struct LongInt
     //Method
     std::string toString()
     {
-        return std::to_string(left) + std::to_string(right);
+	if(left)
+	    {
+       		 if(right<10)
+	    	     {
+	                 return std::to_string(left) + "0" + std::to_string(right);
+		     }
+		 else
+			return std::to_string(left) + std::to_string(right);		 
+	
+	    } 
+         else 
+	     return std::to_string(right);	 
+			     
     }
 
     //Operator
@@ -59,7 +71,12 @@ int main()
 {
     LongInt val1(1,70);
     LongInt val2("2831");
-
+    LongInt val3("0");
+    std::cout << val1.toString() << std::endl;
     val1 += val2;
     std::cout << val1.toString() << std::endl;
+    std::cout << val3.toString() << std::endl;
+    LongInt val4("10");
+    std::cout << val4.toString() << std::endl;
 }
+
