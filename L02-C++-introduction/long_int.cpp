@@ -35,7 +35,7 @@ struct LongInt
     }
 
     //Method
-    std::string toString()
+    std::string toString() const
     {
         std::string long_int_string;
         std::string left_string = std::to_string(left);
@@ -145,6 +145,20 @@ struct LongInt
     int right;
 };
 
+std::ostream & operator<<(std::ostream& os, const LongInt& l)
+{
+    return os << l.toString();
+}
+
+std::istream& operator>>(std::istream& is, LongInt& l)
+{
+    std::string input;
+    is >> input;
+    l = static_cast<LongInt>(input);
+
+    return is;
+}
+
 int main()
 {
     LongInt val1(1, 70);
@@ -157,7 +171,9 @@ int main()
 
 
     val1 += val2;
-    std::cout << val1.toString() << std::endl;
+    std::cout << val1 << std::endl;
+    std::cin >> val1;
+    std::cout << val1 << std::endl;
 
     LongInt l(2, 10);
     LongInt l_copy(2, 10);
