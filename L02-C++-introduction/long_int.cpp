@@ -11,7 +11,7 @@ struct LongInt
     }
 
     //Constructor
-    LongInt(std::string str)
+     LongInt(std::string str)
     {
         int number = std::stoi(str);
         left = number / 100;
@@ -68,8 +68,8 @@ struct LongInt
     {
         int sumLeft;
 	int sumRight;
-	sumLeft = this->left + r.left;
-        sumRight = this->right + r.right;
+	sumLeft = left + r.left;
+        sumRight = right + r.right;
         sumLeft += sumRight / 100;
         sumRight = sumRight % 100;
 
@@ -82,22 +82,22 @@ struct LongInt
 	int diffRight;
 
 	if(right < r.right)
-	    {	    if(this->left - r.left > 0)
+	    {	    if(left - r.left > 0)
 		    {
-                	diffLeft = this->left - r.left-1;
+                	diffLeft = left - r.left-1;
 		    }
 		    if(diffLeft < 0)
 		        {
 			    ++diffLeft;
 			}
-        	diffRight = this->right - r.right;
+        	diffRight = right - r.right;
        		diffLeft -= diffRight / 100;
        		diffRight = std::abs(diffRight % 100);
 	    }
 	else
 	    {
-		diffLeft = this->left - r.left;
-        	diffRight = this->right - r.right;
+		diffLeft = left - r.left;
+        	diffRight = right - r.right;
         	diffLeft -= diffRight / 100;
 		diffRight = std::abs(diffRight % 100);
 	    }
@@ -108,7 +108,20 @@ struct LongInt
 
     //Copy operator
     LongInt& operator=(const LongInt& other)=default;
+    
+    friend std::ostream& operator<<(std::ostream& out, LongInt& a)
+	{
+	  return out << a.toString();
+	}
+    friend std::istream& operator>> (std::istream& in, LongInt& a) 
+    { 
+	    int value;
+	    in >> value;
 
+	    a.left = value / 100;
+	    a.right = value % 100;
+        return in;            
+    }
     //Members
     int left;
     int right;
@@ -141,6 +154,7 @@ int main()
 
     std::cout << val200.toString() << std::endl;
     std::cout << val300.toString() << std::endl;
-
-
+    
+    std::cout << val100 << std::endl;
+    std::cin >> val100;
 }
