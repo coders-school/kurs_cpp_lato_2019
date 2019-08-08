@@ -12,7 +12,6 @@ struct LongInt
     //Constructor
     LongInt(int left, int right) : left(left), right(right)
     {
-        std::cout << "Create " << toString() << std::endl;
     }
 
     //Constructor
@@ -21,7 +20,6 @@ struct LongInt
         int number = std::stoi(str);
         left = number / 100;
         right = number % 100;
-        std::cout << "Create " << toString() << std::endl;
     }
 
     //Copy constructor
@@ -29,13 +27,11 @@ struct LongInt
     {
         left = other.left;
         right = other.right;
-        std::cout << "Create " << toString() << std::endl;
     }
 
     //Destructor
     ~LongInt()
     {
-        std::cout << "Delete " << toString() << std::endl;
     }
 
     //Method
@@ -68,15 +64,16 @@ struct LongInt
     }
 
     //Operator
-    LongInt& operator+(const LongInt& r)
+    LongInt operator+(const LongInt& r)
     {
         LongInt sum;
+
         sum.left = left + r.left;
         sum.right = right + r.right;
         sum.left += (right / 100);
         sum.right = right % 100;
 
-        return *this;
+        return sum;
     }
 
     //Operator
@@ -110,27 +107,29 @@ struct LongInt
     }
 
     //Operator
-    LongInt& operator-(const LongInt& r)
+    LongInt operator-(const LongInt& r)
     {
+        LongInt sum;
+
         if(left > r.left) {
             if((right < r.right) && (left > 0)) {
-                left -= 1;
-                right += 100;
+                sum.left = left - 1;
+                sum.right = right + 100;
             }
-            left -= r.left;
-            right -= r.right;
+            sum.left = left - r.left;
+            sum.right = right - r.right;
         } else {
             if((right > r.right) && (r.left > 0)) {
-                left = -(r.left - left - 1);
-                right = r.right - right + 100;
-                if(left == 0) right *= -1;
+                sum.left = -(r.left - left - 1);
+                sum.right = r.right - right + 100;
+                if(left == 0) sum.right *= -1;
             } else {
-                left = -(r.left - left);
-                right = r.right - right;
+                sum.left = -(r.left - left);
+                sum.right = r.right - right;
             }
         }
 
-        return *this;
+        return sum;
     }
 
     //Copy operator
