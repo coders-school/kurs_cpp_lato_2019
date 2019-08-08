@@ -29,15 +29,16 @@ void fillVector(auto& v, int N, int M)
 
 bool isPrime(int n)
 {
-	while (n > 1)
+	int tempN = n;
+	while (tempN > 2)
 	{
-		if (!n%(n-1))
+		tempN--;
+		if (n%tempN == 0)
 		{
-			return true;
+			return false;
 		}
-		n--;
 	}
-	return false;
+	return true;
 }
 
 int main ()
@@ -86,6 +87,6 @@ int main ()
 	showVector(primeVector);
 
 	std::map<int, std::vector<int>> primeMap;
-
+	
 	return 0;
 }
