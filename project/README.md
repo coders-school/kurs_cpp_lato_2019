@@ -12,6 +12,7 @@ Celem projektu będzie utworzenie aplikacji, która będzie przechowywać i wyś
 
 User Story - wymaganie użytkownika
 Użytkownik - osoba korzystająca z aplikacji (trener lub kursant)
+Dane kursanów - imię, nick na Discordzie, link do GitHuba, link do Firecode, grupa.
 
 ### User Stories
 
@@ -29,3 +30,50 @@ Użytkownik - osoba korzystająca z aplikacji (trener lub kursant)
 1. Jako kursant chciałbym, aby moje dane były chronione, więc nikt oprócz trenera i mnie nie może edytować moich danych.
 1. Jako trener chciałbym, aby punkty za lekcje można było odczytać z pliku Markdown
 1. Jako użytkownik chciałbym, aby aplikacja była dostępna przez przeglądarkę internetową
+
+### Zasady formatowania kodu
+
+1. Nazwy klas i typów UpperCamelCase (PascalCase). Nazwy zmiennych i funkcji lowerCamelCase.
+1. Nazwy klas i zmiennych muszą zawierać rzeczownik. Nazwy funkcji muszą zawierać czasownik.
+1. Głębokość wcięć to 4 spacje.
+1. Dopuszczamy jednolinijkowe funkcje, jeśli składają się tylko z jednej instrukcji.
+
+    ```cpp
+    int doSth(int value) { return doSthElse(value); }
+    ```
+
+1. Nie dopuszczamy jednolinijkowych instrukcji warunkowych lub pętli:
+
+    ```cpp
+    if (condition) return 42;  // bad
+    ```
+
+    Akcja zawsze musi być w kolejnej linijce, aby jej nie przeoczyć:
+
+    ```cpp
+    if (condition)  // good
+        return 42;
+    ```
+
+1. Reszta do ustalenia przez was wspólnie.
+    1. Braces
+
+        ```cpp
+        void f()
+        {
+            dosth();
+        }
+        // or
+        void f() {
+            dosth();
+        }
+        ```
+
+    1. Left, right or center references and pointers
+
+        ```cpp
+        int b = 42;
+        int& i = b;  // left
+        int &i = b;  // right
+        int & i = b;  // center
+        ```
