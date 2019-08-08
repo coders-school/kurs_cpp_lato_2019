@@ -9,20 +9,24 @@
 void showVector(const auto& v)
 {
 	std::cout<< "[ ";
+	/*
 	for (auto& e : v)
 	{
 		std::cout<< e << " ";
 	}
+	*/
 	std::cout<< "]"<< std::endl;;
 }
 
 void showMap (const auto& m)
 {
+	/*
 	for (auto [first, second] : m)
 	{
 		std::cout<< first<< " -> ";
 		showVector(second);
 	}
+	*/
 }
 
 
@@ -30,16 +34,19 @@ void fillVector(auto& v, int N, int M)
 {
 	srand(time(NULL));
 
+	/*
 	for (size_t i=0; i<N; i++)
 	{
 		v.push_back(rand()%M);
 	}
+	*/
 }
 
 
 bool isPrime(int n)
 {
 	int tempN = n;
+	/*
 	while (tempN > 2)
 	{
 		tempN--;
@@ -48,12 +55,14 @@ bool isPrime(int n)
 			return false;
 		}
 	}
+	*/
 	return true;
 }
 
 
 void fillPrimeVector(auto& v, int M)
 {
+	/*
 	for (size_t i=2; i < M; i++)
 	{
 		if (isPrime(i))
@@ -61,6 +70,7 @@ void fillPrimeVector(auto& v, int M)
 			v.push_back(i);
 		}
 	}
+	*/
 }
 
 
@@ -107,6 +117,7 @@ int main ()
 
 	std::map<int, std::vector<int>> primeMap;
 
+	/*
 	for (auto it = myVector.begin(); it != myVector.end(); it++)
 	{
 		for (auto itPrime = primeVector.begin(); itPrime != primeVector.end(); itPrime++)
@@ -127,6 +138,7 @@ int main ()
 			}
 		}
 	}
+	*/
 	std::cout<< "primeMap: "<< std::endl;
 	showMap(primeMap);
 
