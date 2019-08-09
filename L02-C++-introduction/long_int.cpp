@@ -62,11 +62,25 @@ struct LongInt
         right = other.right;
         return *this;
     }
-
+    
+    void operator-=(const LongInt &r)
+    {
+        left = left - r.left;
+        right = right - r.right;
+        left = left + right / 100;
+        right = right % 100;
+        if(right < 0) 
+        {
+            left = left - 1;
+            right = 100 + right;
+        }
+    }   
+    
     //Members
     int left;
     int right;
 };
+
 
 int main()
 {
@@ -77,9 +91,18 @@ int main()
     LongInt val5(0,10);
     LongInt val6(10,0);
     val1 += val2;
-    std::cout << val1.toString() << std::endl;
-    std::cout << val3.toString() << std::endl;
-    std::cout << val4.toString() << std::endl;
-    std::cout << val5.toString() << std::endl;
-    std::cout << val6.toString() << std::endl;
+    std::cout << "val1: " << val1.toString() << std::endl;
+    std::cout << "val3: " << val3.toString() << std::endl;
+    std::cout << "val4: " << val4.toString() << std::endl;
+    std::cout << "val5: " << val5.toString() << std::endl;
+    std::cout << "val6: " << val6.toString() << std::endl;
+    
+    val1 -= val2;
+    std::cout << "val -= val2 : " << val1.toString() << std::endl;
+    
+    val2 -= val1;
+    std::cout << "val2 -= val1 : " << val2.toString() << std::endl;
+
+    val6 -= val5;
+    std::cout << "val6 -= val5: " << val6.toString() << std::endl;
 }

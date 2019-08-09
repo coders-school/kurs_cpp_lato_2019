@@ -1,0 +1,101 @@
+Autor: piotr.kowandy
+--------------------------------------------------------------
+Keywords:
+--------------------------------------------------------------
+
+
+Fundamental types:
+
+- bool
+	- przyjmuje prawda albo falsz, np mozemy sprawdzic warunek (jakis_warunek == true/false)
+	- true -> 1
+	- false ->0
+- char
+	- czyli typ znakowy, mozemy wykorzystac tablice znakow, aby zapisac jakies slowo, zdanie
+- double
+	- typ zmiennoprzecinkowy, ma 2x wieksza precyzje niz float
+- float
+	- typ zmiennoprzecinkowy
+- int
+	- integer
+- long
+	- co najmniej takiej samej dlugosci jak int, tak mowi standard jezyka 
+- short
+	- mniejszy od int, lecz moze sie zdarzyc ze short i int bede mialy 16 bits
+- signed
+	- ze znakiem, czyli moze zawierac liczbe ujemna i dodatnia
+- unsigned
+	- bez znaku
+- enum
+	- typ wyliczeniowy, ktory zawiera liste wartosci, jesli nie przypiszemy liczb, numerowanie zaczyna sie od 0,
+	- jesli w dalszej kolejnosci natrafi np na 8 to nastepny bedzie mial 9 itd.
+	- mozemy uzywac operacji arytmetycznych na enum,
+- auto
+	- auto czyli moze byc dowolnym typem zmiennych, zmienna zastepcza, 
+	- jest wydedukowywany na podstawie wartosci zainicjalizowanej zmiennej, czyli kombinuje co to ma byc,
+	- moze zawierac modyfikatory const, volatile
+	- moze byc wskaznikiem, referencja
+
+
+Related to loops:
+- while
+	- while (jakis_warunek) jesli spelniony to wykonuje dalej
+- for
+	- wykorzystywana przy tablicach, vectorach itp.
+- do
+	- spotykana przy petlach z while -> do .. while (jakis_warunek)
+- break
+	- konczymy wykonywanie instrukcji
+- continue
+	- przeskakujemy do poczatku petli, czyli o kolejna iteracje
+
+
+Related to errors:
+- throw
+- try
+- catch
+	- wykorzystywane do rzucania wyjatkow
+	- try, catch czyli sprawdzamy czy nasze instrukcje moga sie nie udac to lapiemy wyjatek, pozniej throw do rzucania,
+
+
+Statement:
+- if
+- else
+	- wykorzystujemy, gdy chcemy sprawdzic jakis warunek, jesli warunek nie spelnia okreslonego warunku
+	  to przechodzi do fragmentu kodu, gdzie w else sa instrukcje, co jesli nie spelni warunku 
+- switch
+- case
+- break (wykorzystywany w petlach, gdzie chcemy przerwac wykonywanie jakis instrukcji)
+	- wykorzystujemy do np do zrobienia menu, gdy chcemy wybrac odpowiednia funkcje po wybraniu danego klawisza 
+	  switch (zmienna)
+	  {
+	  case 1: ... break;
+	  ....
+	  default: ...;
+	  }
+
+
+Related to function:
+- return
+	- zatrzymuje wykonywanie funkcji i zwraca pewna wartosc
+- void
+	- kiedy w funkcji mamy np void f(), wtedy funkcja nic nie zwraca
+	- mozemy utworzyc wskaznik ktory przyjmie typ void
+	- nie mozna utworzyc tablicy ani referencji z void
+- const (related to variable too)
+	- stala
+
+Conversion:
+Sa to operatory rzutowania, przy pomocy ktorych mozemy przypisac zmienna np z typu float na typ int
+- static_cast
+	- wykorzystujemy przy konwersji roznych typow
+- const_cast
+	- wykorzystujemy do konwersji ze stalych na zmienne, zmienne na stale, 
+	- nie mozna rzutowac stalej na zmienna innego typu
+	- w tym przypadku operujemy na wskaznikach
+- dynamic_cast
+	- wykorzystujemy dla typow polimorficznych
+- reinterpret_cast
+	- wykorzystujemy przy rzutowaniu wskaznikow, czyli adresow, ktore maja wskazywac inny typ
+
+
