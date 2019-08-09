@@ -11,11 +11,11 @@
 int main()
 {
     std::forward_list<int> l = {1, 2, 3, 4, 5, 6, 7, 8};
-    auto itb = l.begin();
-    auto itEnd= l.end();
+    std::forward_list<int>::iterator itb = std::begin(l);
+    std::forward_list<int>::iterator itEnd = std::end(l);
     int size = 0;
 
-    for (auto itb = l.begin(); itb != itEnd; itb++)
+    for (auto itb : l)
         size ++;
     std::cout << "List size: " << size << std:: endl; 
 

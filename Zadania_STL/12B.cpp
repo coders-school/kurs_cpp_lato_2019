@@ -8,7 +8,7 @@
 #include <algorithm>
 
 void printVector (std::vector <int>);
-void printMap (std::multimap<int,std::vector<int>>);
+void printMap (std::map<int,std::vector<int>>);
 bool checkIfIsPrime (int);
 
 int main()
@@ -37,7 +37,7 @@ int main()
     }
     printVector(prime);
     
-    std::multimap<int,std::vector<int>> PrimeValues;
+    std::map<int,std::vector<int>> PrimeValues;
     for(auto elementM : prime)
     {
         std::vector<int> keyVal;
@@ -45,8 +45,11 @@ int main()
         {
             if(*it % elementM == 0 && *it != *(it-1)) 
              keyVal.push_back(*it);
+             // drugi warunek wyklucza przypisanie do keyVal 0 i duplikownia liczb (ponieważ
+             // wektor values jest posortowany) 
+
         }
-        PrimeValues.emplace(elementM,keyVal);
+        PrimeValues.emplace(elementM, keyVal);
         keyVal.clear();
     }
 
@@ -61,7 +64,7 @@ void printVector (std::vector <int> vec)
     std::cout << std::endl;
 }
 
-void printMap (std::multimap<int,std::vector<int>> m)
+void printMap (std::map<int,std::vector<int>> m)
 {
      for(auto element : m)
     {
@@ -72,7 +75,6 @@ void printMap (std::multimap<int,std::vector<int>> m)
 
 bool checkIfIsPrime (int number)
 {
-    int sum = 0;
     if (number <2) 
         return false;
     else 
@@ -80,12 +82,9 @@ bool checkIfIsPrime (int number)
         for (int i=2; i < number; i++)
         {
             if (number%i == 0) 
-                sum++;
+                return false;
         }
-        if (sum != 0) 
-            return false;
-        else 
-            return true;     
+        return true;  
     }
 }
 
