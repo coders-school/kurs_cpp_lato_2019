@@ -5,7 +5,7 @@
 
 std::string sentence;
 
-bool isPali(std::string &sentence)
+bool isPali(std::string sentence)
 {
     sentence.erase(std::remove(sentence.begin(), sentence.end(), ' '), sentence.end());
     auto iterators = std::mismatch(sentence.begin(), sentence.end(), sentence.rbegin());
