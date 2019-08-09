@@ -19,11 +19,11 @@ struct LongInt
     }
 
     //Copy constructor
-    LongInt(const LongInt& other)
-    {
-        left = other.left;
-        right = other.right;
-    }
+    LongInt(const LongInt& other)=default;
+//    {
+//        left = other.left;
+//        right = other.right;
+//    }
 
     //Destructor
     ~LongInt()
@@ -34,7 +34,12 @@ struct LongInt
     //Method
     std::string toString()
     {
-        return std::to_string(left) + std::to_string(right);
+
+        // naprawa bugu
+        if (left!=0)
+            return std::to_string(left)+std::to_string(right);
+        else return std::to_string(right);
+
     }
 
     //Operator
@@ -54,6 +59,7 @@ struct LongInt
         return *this;
     }
 
+
     //Members
     int left;
     int right;
@@ -63,7 +69,13 @@ int main()
 {
     LongInt val1(1, 70);
     LongInt val2("5980");
+    LongInt val3("0");
+    LongInt val4("10");
+    LongInt val5("3001");
 
     val1 += val2;
-    std::cout << val1.toString() << std::endl;
+    std::cout << val2.toString() << std::endl;
+    std::cout << val3.toString() << std::endl;
+    std::cout << val4.toString() << std::endl;
+    std::cout << val5.toString() << std::endl;
 }
