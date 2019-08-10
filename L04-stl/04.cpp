@@ -18,12 +18,13 @@ int main(){
 
     return 0;
 }
-//result: Vector is faster
+//Results: first with commented list, working vector
+//second with commented vector, working list
 //vectror:
-//real	0m0,389s
-//user	0m0,323s
-//sys	0m0,026s
+//real	0m0,368s
+//user	0m0,312s
+//sys	0m0,023s
 //list:
-//real	0m0,397s
-//user	0m0,331s
-//sys	0m0,026s
+//real	0m0,390s
+//user	0m0,312s
+//sys	0m0,037s
