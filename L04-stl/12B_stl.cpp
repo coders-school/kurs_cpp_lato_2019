@@ -34,22 +34,18 @@ void showMap (auto& m)
 
 }
 
-void push(auto& v, int n)
-{
-	v.push_back(n);
-}
 
 void fillVector(auto& v, int N, int M)
 {
 	srand(time(NULL));
-	int n[N];
+	std::vector<int> n(N);
 	/*
 	for (size_t i=0; i<N; i++)
 	{
 		v.push_back(rand()%M);
 	}
 	*/
-	//std::transform(v.begin(), v.end(), n, push(v, (rand()%M))); //<- to fix
+	//std::transform(v.begin(), v.end(), n, [=]()->(void) {push(v, (rand()%M);})); //<- to fix
 }
 
 
