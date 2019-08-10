@@ -29,23 +29,25 @@ void showMap (auto& m)
 		showVector(second);
 	}
 	*/
-
-	std::for_each( m.begin(), m.end(), [=](auto& el){std::cout<<el.first<<" "; showVector(el.second);});
-
 }
 
+
+void push(auto& v, int n)
+{
+	v.emplace_back(n);
+}
 
 void fillVector(auto& v, int N, int M)
 {
 	srand(time(NULL));
-	std::vector<int> n(N);
+	int n[N];
 	/*
 	for (size_t i=0; i<N; i++)
 	{
 		v.push_back(rand()%M);
 	}
 	*/
-	//std::transform(v.begin(), v.end(), n, [=]()->(void) {push(v, (rand()%M);})); //<- to fix
+	std::transform(v.begin(), v.end(), v.begin(), v.push_back(rand()%M));
 }
 
 
