@@ -6,7 +6,7 @@
 #include <algorithm>
 
 
-void showVector(const auto& v)
+void showVector(auto& v)
 {
 	std::cout<< "[ ";
 	/*
@@ -15,10 +15,12 @@ void showVector(const auto& v)
 		std::cout<< e << " ";
 	}
 	*/
+	std::for_each( v.begin(), v.end(), [](int& el){std::cout<<el<<" ";});
+
 	std::cout<< "]"<< std::endl;;
 }
 
-void showMap (const auto& m)
+void showMap (auto& m)
 {
 	/*
 	for (auto [first, second] : m)
@@ -27,19 +29,27 @@ void showMap (const auto& m)
 		showVector(second);
 	}
 	*/
+
+	std::for_each( m.begin(), m.end(), [=](auto& el){std::cout<<el.first<<" "; showVector(el.second);});
+
 }
 
+void push(auto& v, int n)
+{
+	v.push_back(n);
+}
 
 void fillVector(auto& v, int N, int M)
 {
 	srand(time(NULL));
-
+	int n[N];
 	/*
 	for (size_t i=0; i<N; i++)
 	{
 		v.push_back(rand()%M);
 	}
 	*/
+	//std::transform(v.begin(), v.end(), n, push(v, (rand()%M))); //<- to fix
 }
 
 
