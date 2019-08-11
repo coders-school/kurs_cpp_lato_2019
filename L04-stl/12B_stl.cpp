@@ -32,15 +32,12 @@ void push(auto& v, int n)
 void fillVector(auto& v, int N, int M)
 {
 	srand(time(NULL));
-	int n[N];
-	/*
-	for (size_t i=0; i<N; i++)
-	{
-		v.push_back(rand()%M);
-	}
-	*/
-	//std::transform( v.begin(), v.end(), n, [&v, &n, &M](auto& el){push(v, rand()%M);} );
-	//std::transform( v.begin(), v.end(), std::back_inserter(v), rand()%M);
+	std::vector<int> n(N);
+	std::for_each( n.begin(), n.end(), [&](int& el)
+					{
+						v.push_back(rand()%M);
+					}
+					);
 }
 
 
@@ -63,6 +60,7 @@ bool isPrime(int n)
 
 void fillPrimeVector(auto& v, int M)
 {
+	std::vector<int> m(M);
 	/*
 	for (size_t i=2; i < M; i++)
 	{
@@ -72,6 +70,15 @@ void fillPrimeVector(auto& v, int M)
 		}
 	}
 	*/
+	std::for_each( m.begin(), m.end(), [&](int& el)
+                 {
+				 	if (isPrime(el))
+					{
+                    	v.push_back(el);
+					}
+                 }
+                 );
+
 }
 
 
