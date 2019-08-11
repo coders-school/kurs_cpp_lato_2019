@@ -49,15 +49,15 @@ Materiały z kursu C++ (Lipiec 2019 - Wrzesień 2019)
 
 Pracujcie w parach lub po 3 osoby na wspólnym repo. Punkty zostaną przyznane wszystkim osobom w grupie, których commity będą widoczne w PR.
 
-- [ ] (6 punktów) Rozwiążcie zadania 4, 6 i 9 z listy [Zadania z STLa](zadania_stl.pdf)
-- [ ] (6 punktów) Zaimplementujcie zadanie 12A lub 12B z listy [Zadania z STLa](zadania_stl.pdf)
+- [x] (6 punktów) Rozwiążcie zadania 4, 6 i 9 z listy [Zadania z STLa](zadania_stl.pdf)
+- [x] (6 punktów) Zaimplementujcie zadanie 12A lub 12B z listy [Zadania z STLa](zadania_stl.pdf)
 - [ ] (6 punktów) W powyższym zadaniu zamieńcie wszystkie pętle for/do/while na odpowiednie algorytmy STL
 
 ### Projekt
 
 Pracujcie w parach lub po 3 osoby na wspólnym repo. Punkty zostaną przyznane wszystkim osobom w grupie, których commity będą widoczne w PR. Za pracę samemu nie można dostać bonusowych 5 punktów :P
 
-- [ ] (15 punktów) Rozpocznijcie implementację [projektu grupowego CourseDashboard](https://github.com/coders-school/CourseDashboard). Zróbcie Forka i wykonajcie tylko pierwsze User Story (US1):
+- [x] (15 punktów) Rozpocznijcie implementację [projektu grupowego CourseDashboard](https://github.com/coders-school/CourseDashboard). Zróbcie Forka i wykonajcie tylko pierwsze User Story (US1):
   > Jako trener chciałbym móc przeglądać, dodawać, usuwać i edytować dane kursantów
 - [ ] (5 punktów - bonus) - grupa która zaproponuje najlepsze rozwiązanie US1 dostanie dodatkowe 5 punktów, a jej rozwiązanie zostanie zmergowane do projektu. Bardzo ważne będzie napisanie czystego i przejrzystego kodu.
 
