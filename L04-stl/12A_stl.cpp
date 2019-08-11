@@ -9,14 +9,11 @@
 void fillMap(std::map<char, int>& myMap, std::string& myString)
 {
 	myMap.clear();
-	/*
-	for (size_t i=0; i<myString.size(); i++)
-	{
-		myMap.insert(myMap.begin(),std::pair<char,int>(myString[i], int(myString[i])));
-	}
-	*/
-	//auto fun = [=](char myChar){ myMap.insert(myMap.begin(), std::pair<char,int>(myChar, int(myChar))); };
-	//std::for_each(myString.begin(), myString.end(), fun); //to fix
+	std::for_each(myString.begin(), myString.end(), [&](char el)
+					{
+						myMap.insert(myMap.begin(),std::pair<char,int>(el, int(el)));
+					}
+			 		);
 }
 
 
