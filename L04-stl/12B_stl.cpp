@@ -9,26 +9,18 @@
 void showVector(auto& v)
 {
 	std::cout<< "[ ";
-	/*
-	for (auto& e : v)
-	{
-		std::cout<< e << " ";
-	}
-	*/
 	std::for_each( v.begin(), v.end(), [](int& el){std::cout<<el<<" ";});
-
 	std::cout<< "]"<< std::endl;;
 }
 
 void showMap (auto& m)
 {
-	/*
-	for (auto [first, second] : m)
-	{
-		std::cout<< first<< " -> ";
-		showVector(second);
-	}
-	*/
+	std::for_each( m.begin(), m.end(), [=](auto& el)
+					{
+						std::cout<<el.first<<" "; 
+						showVector(el.second);
+					}
+					);
 }
 
 
@@ -47,7 +39,8 @@ void fillVector(auto& v, int N, int M)
 		v.push_back(rand()%M);
 	}
 	*/
-	std::transform(v.begin(), v.end(), v.begin(), v.push_back(rand()%M));
+	//std::transform( v.begin(), v.end(), n, [&v, &n, &M](auto& el){push(v, rand()%M);} );
+	//std::transform( v.begin(), v.end(), std::back_inserter(v), rand()%M);
 }
 
 
