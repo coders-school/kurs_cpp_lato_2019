@@ -116,34 +116,59 @@ int main ()
 	showVector(primeVector);
 	std::cout<< std::endl;
 
-
 	std::map<int, std::vector<int>> primeMap;
-
-	/*
-	for (auto it = myVector.begin(); it != myVector.end(); it++)
+	
+	std::for_each(myVector.begin(), myVector.end(), [&](auto& el)
 	{
-		for (auto itPrime = primeVector.begin(); itPrime != primeVector.end(); itPrime++)
+	std::for_each(primeVector.begin(), primeVector.end(), [&](auto& elPrime)
 		{
-			if (*it%*itPrime == 0)
+			if (el%elPrime == 0)
 			{
-				if (primeMap.find(*itPrime) == primeMap.end())
+				if (primeMap.find(elPrime) == primeMap.end())
 				{
 					std::vector<int> v;
-					v.push_back(*it);
-					primeMap.insert( std::pair<int, std::vector<int> >(*itPrime, v));
+					v.push_back(el);
+					primeMap.insert( std::pair<int, std::vector<int> >(elPrime, v));
 				}
 				else
 				{
-					auto foundP = primeMap.find(*itPrime);
-					foundP->second.push_back(*it);
+					auto foundP = primeMap.find(elPrime);
+					foundP->second.push_back(el);
 				}
 			}
 		}
+		);
 	}
-	*/
+	);
+	
 	std::cout<< "primeMap: "<< std::endl;
 	showMap(primeMap);
 
 	return 0;
 }
 
+/*
+Give me N (how many values do You want): 20
+Give me M (what range do You want 1...N?): 20
+
+myVector before any changes: [ 13 11 6 8 4 8 13 1 0 5 8 4 15 2 15 17 16 13 11 5 ]
+
+myVector after sort: [ 0 1 2 4 4 5 5 6 8 8 8 11 11 13 13 13 15 15 16 17 ]
+
+Removing multiply numbers.
+[ 0 1 2 4 5 6 8 11 13 15 16 17 ]
+
+Erasing 0 and 1 from myVector.
+[ 2 4 5 6 8 11 13 15 16 17 ]
+
+Creating vector with prime numbers.
+[ 2 3 5 7 11 13 17 19 ]
+
+primeMap:
+2 [ 2 4 6 8 16 ]
+3 [ 6 15 ]
+5 [ 5 15 ]
+11 [ 11 ]
+13 [ 13 ]
+17 [ 17 ]
+*/
