@@ -49,10 +49,7 @@ int main()
                 it++;
         
         });
-    for(auto el : wektor2)
-    {
-        cout<<el;
-    }
+	std::for_each(wektor2.begin(), wektor2.end(), [=](auto& el){std::cout<<el;});
 
     return 0;
 }
