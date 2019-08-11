@@ -6,53 +6,46 @@
 #include <fstream>
 #include <algorithm>
 using namespace std;
-
-
 int main()
 {
     cout<<endl<<endl<<endl;
-    
-     string text ="abcdef    abcd A ";
-    cout<<text;
+     string text ="abcdef";
     // int N= text.size();
     srand(time(NULL));
-	int key = (rand()%10)+1;
+    int key = (rand()%10)+1;
+    cout<<key<<endl;
     int charwithkey;
-    
     vector<char> wektor;
-      vector<char> wektor2;
     wektor.reserve(text.size()); 
-    wektor2.reserve(text.size()); 
     map<int,char> myMap;
     myMap.clear();
-    int it =0;
-   
-   for_each(text.begin(),
-            text.end(),
-            [  &myMap, &it, &key](char &  text)
-            {
-               //int it=0;
-               int znak= int (text)+key;
-               myMap.emplace(std::make_pair(it,text));
-               it++;
 
-            });
-        it=0;
-    for_each(text.begin(), text.end(), [&it,&wektor2,&myMap](char& text)
+    for(auto it = 0;it<=text.size(); it++)
+    {
+        charwithkey=int (text[it]) + key;
+        char newchar = char (charwithkey);
+           myMap.emplace(std::pair<int,char>(it, newchar));
+    };
+    for(auto it = 0;it<=text.size();it++)
+    {
+       auto search=  myMap.find(it);
+        if (search!=myMap.end())
         {
-                auto search=  myMap.find(it);
-                if (search!=myMap.end())
-                   {
-                        char character = search->second;
-                        wektor2.push_back(character);
-                } 
-                it++;
-        
-        });
-    for(auto el : wektor2)
+            char character = search->second;
+            wektor.push_back(character);
+        } 
+    }
+    for (auto el:wektor )
     {
         cout<<el;
     }
+    for(auto el:wektor)
+    {
+        int num= int (el)-key;
+        cout<< char(num);
+
+    }
+
 
     return 0;
 }
