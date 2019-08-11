@@ -6,7 +6,7 @@
 
 void print_vec(const std::vector<int> &v)
 {
-    for (auto i: v){std::cout << i << " ";}
+    copy(v.begin(), v.end(), std::ostream_iterator<int>(std::cout, " "));
     std::cout << std::endl;
 }
 
@@ -17,18 +17,16 @@ bool is_prime(int liczba)
     return (flag == 2); 
 }
 
-std::vector<int> divisors(int number)
+
+bool is_divisor(int a, int dzielnik){return a % dzielnik == 0;}
+
+void print_map(const std::map<int, std::vector<int>> &m)
 {
-    std::vector<int> vd = {};
-    for (int i = 1; i <= number; ++i){if (number % i == 0){vd.push_back(i);}}
-    return vd;
+    std::vector<int> mv = {};
+    std::for_each(m.begin(), m.end(), [&](std::pair<int, vector<int>> p){std::cout<< p.first << ":"; [](vector<int> pv){p}}); //
+//???
 }
 
-
-bool is_divisor(int a, int dzielnik)
-{
-    return a % dzielnik == 0;   
-}
 
 
 int main()
@@ -73,16 +71,10 @@ int main()
     }
 
     std::cout << "Elementy mapy: \n";
-    for (auto & el : mapa)
-    {
-        std::cout << el.first << ": ";
-        print_vec(el.second);
-    }
+    print_map(mapa);
 
 
 
-
-//    copy(mapa.begin(),mapa.end(),std::ostream_iterator<int>(std::cout, ","));    
 
     return 0;
 }
