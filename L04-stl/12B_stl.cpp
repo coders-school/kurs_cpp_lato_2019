@@ -41,44 +41,38 @@ void fillVector(auto& v, int N, int M)
 }
 
 
-bool isPrime(int n)
+bool isPrime(int N)
 {
-	int tempN = n;
-	/*
-	while (tempN > 2)
-	{
-		tempN--;
-		if (n%tempN == 0)
-		{
-			return false;
-		}
-	}
-	*/
-	return true;
+	std::vector<int> n(N);
+    int counter = N;
+	bool state = true;	
+	std::for_each(n.begin(), n.end(), [&](int& el)
+					{
+						counter--;
+						if ( (counter > 1) && (N%counter == 0) )
+						{
+							state = false;
+						}
+					}
+					);
+
+	return state;
 }
 
 
 void fillPrimeVector(auto& v, int M)
 {
 	std::vector<int> m(M);
-	/*
-	for (size_t i=2; i < M; i++)
-	{
-		if (isPrime(i))
-		{
-			v.push_back(i);
-		}
-	}
-	*/
+	int counter = 1;
 	std::for_each( m.begin(), m.end(), [&](int& el)
                  {
-				 	if (isPrime(el))
+				 	counter++;
+				 	if ( isPrime(counter) )
 					{
-                    	v.push_back(el);
+                    	v.push_back(counter);
 					}
                  }
                  );
-
 }
 
 
@@ -153,28 +147,3 @@ int main ()
 	return 0;
 }
 
-
-/* output:
-Give me N (how many values do You want): 10
-Give me M (what range do You want 1...N?): 20
-
-myVector before any changes: [ 4 12 2 7 15 18 2 0 5 19 ]
-
-myVector after sort: [ 0 2 2 4 5 7 12 15 18 19 ]
-
-Removing multiply numbers.
-[ 0 2 4 5 7 12 15 18 19 ]
-
-Erasing 0 and 1 from myVector.
-[ 2 4 5 7 12 15 18 19 ]
-
-Creating vector with prime numbers.
-[ 2 3 5 7 11 13 17 19 ]
-
-primeMap:
-2 -> [ 2 4 12 18 ]
-3 -> [ 12 15 18 ]
-5 -> [ 5 15 ]
-7 -> [ 7 ]
-19 -> [ 19 ]
-*/
