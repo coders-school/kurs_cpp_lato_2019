@@ -1,16 +1,12 @@
 
 #include "MyHeader.hpp"
-//#include "palindrom.hpp"
-#include "palindrom_recursive.hpp"
 #include "HomeWork4.hpp"
-#include "long_int.hpp"
-#include <sstream>
+#include "HomeWork2.hpp"
 
 int main()
 {
 	HomeWork2runner();
-
-	homework4runner();
+	//homework4runner();
 	
 	return 0;
 }

@@ -11,106 +11,102 @@
 
 #include <random>
 
+using generatorPair = std::pair< std::mt19937_64, std::uniform_int_distribution<std::size_t> >;
 
-std::vector<std::pair<char, char>>  exercise12_generate_Scheme(const unsigned int& start, const unsigned int end)
+generatorPair generate(const std::size_t& start, const std::size_t& end)
 {
-	// Random number generator setup
-	std::random_device l_random_device;
-	auto l_seed = l_random_device();
+    std::random_device l_Random_device;
+	auto l_Seed = l_Random_device();
 
-	std::mt19937_64 l_gen(l_seed);
-	std::uniform_int_distribution<unsigned int> distribution(start, end);
+	std::mt19937_64 l_gen(l_Seed);
+	std::uniform_int_distribution<std::size_t> l_Distribution(start, end);
 
-	// setup end
+    return std::make_pair(l_gen, l_Distribution);
+}
 
-	std::vector<std::pair<char, char>> Scheme;
+std::map<char, char>  exercise12GenerateCodingScheme(const std::size_t& start, const std::size_t& end)
+{
+    std::size_t l_Length = end - start;
 
-	unsigned int length = end - start;
 
-	unsigned int right = 0;
-	auto findpolicy = [&](const auto& val) {
-		return (unsigned int)val.second == right;
+    auto l_Generator = generate(start, end);
+    std::map<char, char> l_CodingScheme;
+
+	
+	unsigned int l_second = 0;
+	auto l_Findpolicy = [&](const auto& val) {
+		return static_cast<unsigned int>(val.second) == l_second;
 	};
 
-	auto fillpolicy = [&]()
+	auto l_Fillpolicy = [&]()
 	{
-		while (std::find_if(Scheme.begin(), Scheme.end(), findpolicy) != Scheme.end()) {
-			right = distribution(l_gen);
+		while (std::find_if(l_CodingScheme.begin(), l_CodingScheme.end(), l_Findpolicy) != l_CodingScheme.end()) {
+			l_second = l_Generator.second(l_Generator.first);
 		}
 
-		unsigned int left = start + Scheme.size();
-		auto result = std::make_pair<char, char>((char)(left), (char)right);
-		right = 0;
+		size_t l_First = start + l_CodingScheme.size();
+		auto result = std::make_pair<char, char>(static_cast<char>(l_First), static_cast<char>(l_second));
+		l_second = 0;
 
 		return result;
 	};
 
-	std::generate_n(std::back_inserter(Scheme), length + 1, fillpolicy);
+	std::generate_n(std::insert_iterator<std::map<char, char>>(l_CodingScheme, l_CodingScheme.begin()), l_Length + 1, l_Fillpolicy);
 
-	return Scheme;
+	return l_CodingScheme;
 }
 
-std::map<char, char> exercise12_encodePlan(const std::vector<std::pair<char, char>>& Scheme)
+std::map<char, char> exercise12Decode(const std::map<char, char>& encoding)
 {
-	std::map<char, char> plan;
-	std::copy(Scheme.begin(), Scheme.end(), std::inserter(plan, plan.begin()));
-
-	return plan;
-}
-
-std::map<char, char> exercise12_decodePlan(const std::vector<std::pair<char, char>>& Scheme)
-{
-	std::map<char, char> plan;
+	std::map<char, char> l_Decoding;
 	auto decodingpolicy = [](auto val) {
 		return std::make_pair(val.second, val.first);
 	};
-	std::transform(Scheme.begin(), Scheme.end(), std::inserter(plan, plan.begin()), decodingpolicy);
+	std::transform(encoding.begin(), encoding.end(), std::inserter(l_Decoding, l_Decoding.begin()), decodingpolicy);
 
-	return plan;
+	return l_Decoding;
 }
 
 void exercise12()
 {
-	unsigned int l_start = 32;
-	unsigned int l_end = 126;
+	std::size_t l_Start = 32;
+	std::size_t l_End = 126;
 
-	std::vector<std::pair<char, char>>Scheme = exercise12_generate_Scheme(l_start, l_end);
-
-	std::map<char, char> encoding = exercise12_encodePlan(Scheme);
-	std::map<char, char> decoding = exercise12_decodePlan(Scheme);
+	auto l_CodingScheme = exercise12GenerateCodingScheme(l_Start, l_End);
+	std::map<char, char> l_Decoding = exercise12Decode(l_CodingScheme);
 
 
-	std::string textToBeEncoded;
+	std::string l_TextToBeEncoded;
 	std::cout << "Provide text:" << std::endl;
-	std::getline(std::cin, textToBeEncoded);
+	std::getline(std::cin, l_TextToBeEncoded);
 
-	std::string encodedText;
-	for (auto e : textToBeEncoded) {
-		encodedText += encoding.find(e)->second;
+	std::string l_EncodedText;
+	for (auto e : l_TextToBeEncoded) {
+		l_EncodedText += l_CodingScheme[e];
 	}
 
-	std::string decoded;
-	for (auto e : encodedText) {
-		decoded += decoding.find(e)->second;
+	std::string l_Decoded;
+	for (auto e : l_EncodedText) {
+		l_Decoded += l_Decoding[e];
 	}
 
-	std::cout << "your orginal text: " << textToBeEncoded << std::endl;
+	std::cout << "your orginal text: " << l_TextToBeEncoded << std::endl;
 
-	std::cout << "your encoded text: " << encodedText << std::endl;
+	std::cout << "your encoded text: " << l_EncodedText << std::endl;
 
-	std::cout << "your decoded text: " << decoded << std::endl;
+	std::cout << "your decoded text: " << l_Decoded << std::endl;
 }
 
 void exercise9()
 {
-    std::string palidromes[] = {"ala", "roor", "home"};
+    std::string l_Palidromes[] = {"ala", "roor", "home"};
 
     for(int i = 0 ; i < 3; ++i)
     {
-        std::string palidrome = palidromes[i];
-        auto result = std::mismatch(palidrome.begin(), palidrome.end(), palidrome.rbegin(), palidrome.rend());
+        std::string l_Palidrome = l_Palidromes[i];
+        auto result = std::mismatch(l_Palidrome.begin(), l_Palidrome.end(), l_Palidrome.rbegin(), l_Palidrome.rend());
 
-        if(result.first == palidrome.end() && result.second == palidrome.rend()) {
+        if(result.first == l_Palidrome.end() && result.second == l_Palidrome.rend()) {
             std::cout << "result is " << true << std::endl;
         } else {
             std::cout << "result is " << false << std::endl;
@@ -121,32 +117,32 @@ void exercise9()
 
 void exercise6()
 {
-    std::forward_list<int> l_fList;
-    for(std::size_t i = 0; i < 10; ++i) { l_fList.push_front(i); }
+    std::forward_list<int> l_FList;
+    for(std::size_t i = 0; i < 10; ++i) { l_FList.push_front(i); }
 
-    auto b = std::begin(l_fList);
-    auto e = std::end(l_fList);
+    auto l_Begin = std::begin(l_FList);
+    auto l_End = std::end(l_FList);
 
-    unsigned int counter = 0;
-    int value = 0;
-    int distance = 0;
+    unsigned int L_counter = 0;
+    int l_Value = 0;
+    int l_Distance = 0;
     
-    std::advance(b, 4);
-    distance = std::distance(b, e);
+    std::advance(l_Begin, 4);
+    l_Distance = std::distance(l_Begin, l_End);
 
-    std::cout << "value of 5th element is: " << value << "\n";
-    std::cout << "distance is: " << distance << "\n";
-    std::cout << "size is: " << counter << "\n";
+    std::cout << "value of 5th element is: " << l_Value << "\n";
+    std::cout << "distance is: " << l_Distance << "\n";
+    std::cout << "size is: " << L_counter << "\n";
 }
 
 void exercise4()
 {
-    std::vector<int> l_list;
+    std::vector<int> l_List;
     
     for(std::size_t i = 0; i < 1'000'000; i++)
     {
-        int value = i + 1;
-        l_list.push_back(value);
+        int l_Value = i + 1;
+        l_List.push_back(l_Value);
     }
     /*
 
@@ -171,7 +167,7 @@ void exercise4()
         }
     */
 
-    std:: cout << l_list[500'000] << std::endl;
+    std:: cout << l_List[500'000] << std::endl;
 
     /*
     Czas wykonania pelnego programu (lista, for loop)
@@ -195,10 +191,10 @@ void exercise4()
 
 void homework4runner()
 {
-    //exercise4();
+    exercise4();
 	exercise6();
-	//exercise9();
-	//exercise12();
+	exercise9();
+	exercise12();
 }
 
 #endif //! HOMEWORK4_H

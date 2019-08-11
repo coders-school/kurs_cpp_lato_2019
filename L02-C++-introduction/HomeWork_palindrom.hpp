@@ -2,7 +2,7 @@
 
 bool palindrom(const std::string& napis)
 {
-    std::size_t dlugosc = napis.size();
+    float dlugosc = static_cast<float>(napis.size());
     
     /*
     W naszym przypadku wykorzystujemy znak logiczny mniejszy większy i operujemy na liczbach pełnych 
