@@ -55,12 +55,14 @@ struct LongInt
     }
 
     //Operator
-    void operator+=(const LongInt& r)
+    LongInt& operator+=(const LongInt& r)
     {
         left += r.left;
         right += r.right;
         left += right / 100;
         right = right % 100;
+
+        return *this;
     }
 
     //Operator
@@ -77,7 +79,7 @@ struct LongInt
     }
 
     //Operator
-    void operator-=(const LongInt& r)
+    LongInt& operator-=(const LongInt& r)
     {
 
         if(r.left < 0) {
@@ -104,6 +106,7 @@ struct LongInt
                 }
             }
         }
+        return *this;
     }
 
     //Operator
@@ -152,9 +155,15 @@ std::ostream & operator<<(std::ostream& os, const LongInt& l)
 
 std::istream& operator>>(std::istream& is, LongInt& l)
 {
-    std::string input;
-    is >> input;
-    l = static_cast<LongInt>(input);
+    LongInt input;
+
+    std::cout << "Provide left value." << std::endl;
+    is >> input.left;
+    std::cout << "Provide right value." << std::endl;
+    is >> input.right;
+
+    l.left = input.left;
+    l.right = input.right;
 
     return is;
 }
