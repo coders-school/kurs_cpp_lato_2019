@@ -15,8 +15,8 @@ void fillMap(std::map<char, int>& myMap, std::string& myString)
 		myMap.insert(myMap.begin(),std::pair<char,int>(myString[i], int(myString[i])));
 	}
 	*/
-	auto fun = [=](char myChar){ myMap.insert(myMap.begin(), std::pair<char,int>(myChar, int(myChar))); };
-	std::for_each(myString.begin(), myString.end(), fun); //to fix
+	//auto fun = [=](char myChar){ myMap.insert(myMap.begin(), std::pair<char,int>(myChar, int(myChar))); };
+	//std::for_each(myString.begin(), myString.end(), fun); //to fix
 }
 
 
@@ -24,14 +24,12 @@ std::string encrypt(std::map<char, int>& myMap, int key, std::string& secretStri
 {	
 	fillMap(myMap, secretString);
 	std::string secret = "";
-	/*
-	for (auto it= myMap.begin(); it !=myMap.end(); ++it)
-	{
-		secret += char(myMap[it->second]+key);
-	}
-	*/
 
-	//add std::for_each
+	std::for_each(myMap.begin(), myMap.end(), [&](auto& el)
+					{
+						secret += char( el.second + key );
+					} 
+					);
 
 	secretString = secret;
 	return secret;
