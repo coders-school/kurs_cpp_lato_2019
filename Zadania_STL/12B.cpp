@@ -6,6 +6,7 @@
 #include <time.h>
 #include <map>
 #include <algorithm>
+#include <set>
 
 void printVector (std::vector <int>);
 void printMap (std::map<int,std::vector<int>>);
@@ -27,8 +28,9 @@ int main()
     for (int it = 0; it < N; it++)
         values.push_back(rand()%(M+1));
     printVector(values);
-    sort(values.begin(), values.end());
-    
+        
+    std::set<int> valuesSet = {values.begin(), values.end()};
+
     std::vector<int> prime;
     for (int it = 0; it < M; it++)
     {
@@ -41,12 +43,10 @@ int main()
     for(auto elementM : prime)
     {
         std::vector<int> keyVal;
-        for(auto it = values.begin(); it < values.end(); it ++)
+        for(auto it = valuesSet.begin(); it != valuesSet.end(); it ++)
         {
-            if(*it % elementM == 0 && *it != *(it-1)) 
-             keyVal.push_back(*it);
-             // drugi warunek wyklucza przypisanie do keyVal 0 i duplikownia liczb (ponieważ
-             // wektor values jest posortowany) 
+            if(*it % elementM == 0) 
+             keyVal.push_back(*it); 
 
         }
         PrimeValues.emplace(elementM, keyVal);

@@ -8,14 +8,14 @@
 #include <algorithm>
 #include <iterator>
 #include <numeric>
+#include <set>
+
 
 void printVector (const std::vector <int> &);
 void printMap (const std::map<int,std::vector<int>> &);
 bool checkIfIsNotPrime (int);
 int creatingRandomNUmber (int);  
 void checkIfIsDIvider (int, int, std::vector<int>);
-   void function(int);
-
 
 int main()
 {
@@ -33,52 +33,28 @@ int main()
     std::generate(values.begin(), 
                   values.end(), 
                   [M] () { return creatingRandomNUmber(M);});
-
     printVector(values);
    
-    sort(values.begin(), values.end());
+    std::set<int> valuesSet = {values.begin(), values.end()};
   
-    std::vector<int> prime (values.begin(),values.end());
+    std::vector<int> prime (valuesSet.begin(),valuesSet.end());
     prime.erase(std::unique(prime.begin(),prime.end()), prime.end());
-    std::vector <int>::iterator it;
-    it = std::remove_if(prime.begin(),
-                        prime.end(),
-                        [] (auto element) {return checkIfIsNotPrime(element);});
+    auto it = std::remove_if(prime.begin(),
+                             prime.end(),
+                             [](auto element){return checkIfIsNotPrime(element);});
     prime = {prime.begin(),it};
     printVector(prime);
     std::cout<<"--------------------------------"<<std::endl;
     
     std::map<int,std::vector<int>> PrimeValues;
-  
     for(auto elementM : prime)
     {
-        std::vector<int> keyVal;
-        for(auto it = values.begin(); it < values.end(); it++)
-        {
-            if(*it % elementM == 0 && *it != *(it-1)) 
-                keyVal.push_back(*it);
-        }
+        std::vector<int> keyVal{};
+        std::copy_if(valuesSet.begin(), valuesSet.end(),std::back_inserter(keyVal), 
+                    [elementM](auto it)->bool{return (it%elementM == 0 && it!=0);} );
         PrimeValues.emplace(elementM,keyVal);
         keyVal.clear();
     }
-    
-
-   /*
-     
-    std::vector<int>::iterator iterator = prime.begin();
-    std::for_each(prime.begin(), prime.end(), function);
-
-    void function(int x)
-    {
-        std::vector<int> keyVal;
-        std::for_each(values.begin(), 
-                      values.end(), 
-                      [](auto it){if (*it%x ==0) keyVal.push_back(it);});
-        PrimeValues.emplace(x, kayVal);
-        keyVal.clear();
-    } 
-
-*/
     printMap(PrimeValues);
     
     return 0;
@@ -88,7 +64,6 @@ int main()
     {
         return rand()%(a+1);
     }
-    
 // -----------------------------------------------------------
  void checkIfIsDIvider (int a, int b, std::vector<int> v)   
     {
@@ -96,7 +71,6 @@ int main()
             {v.push_back(a);}   
     }
 // -----------------------------------------------------------
-
 void printVector(const std::vector<int> &vec)
 {
     std::transform(vec.begin(), 
@@ -112,7 +86,6 @@ void printMap (const std::map <int,std::vector<int>> & m)
                   m.end(),
                   [](auto element) { std::cout << element.first <<"\t"; 
                   printVector(element.second); });
-
 }   
 // -----------------------------------------------------------
 bool checkIfIsNotPrime (int number)
@@ -136,4 +109,3 @@ bool checkIfIsNotPrime (int number)
     }
 }
 // -----------------------------------------------------------
-
