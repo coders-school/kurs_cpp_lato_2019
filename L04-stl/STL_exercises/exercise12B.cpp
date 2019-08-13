@@ -23,12 +23,11 @@ std::vector<int> generateRand(const int range, const int number)
 bool isPrime(const int number)
 {
     int numerOfTimes = {0};
-    for(int i = 2; i <= number; ++i)
-    {
-        if(number%i==0)
-            numerOfTimes++;
-    }
-    return  number >= 2 and numerOfTimes == 1;
+    std::vector<int> numberN(number);
+    std::iota(numberN.begin(), numberN.end(),1);
+    for_each(numberN.begin(), numberN.end(), [&](int x){if (number % x == 0) numerOfTimes +=1;});
+
+   return (numerOfTimes == 2);
 }
 
 std::vector<int> generatePrime(const int range)
