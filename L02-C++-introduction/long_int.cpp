@@ -10,6 +10,7 @@ struct LongInt
     {
     }
 
+    LongInt() = default;
     //Constructor
     LongInt(std::string str)
     {
@@ -160,6 +161,19 @@ struct LongInt
         right = other.right;
         return *this;
     }
+    //Insertion operator
+    friend std::ostream &operator<<(std::ostream &out,const LongInt &rhs)
+    {
+        out<<rhs.left<<rhs.right<<std::endl;
+             return out;
+    }
+    //Extraction opearator
+    friend std::istream &operator>>(std::istream &in, LongInt &rhs)
+    {
+        in>>rhs.left;
+        in>>rhs.right;
+        return in;
+    }
 
 
     //Members
@@ -177,6 +191,7 @@ int main()
     LongInt val6("1101");
     LongInt val7("1165");
     LongInt val8("2313");
+    LongInt val99;
     val1+=val2;
     val3+val4;
     val6-=val7;
@@ -190,4 +205,9 @@ int main()
     std::cout << "Val6: "<< val6.toString() << std::endl;
     std::cout << "Val7: "<< val7.toString() << std::endl;
     std::cout << "Val8: "<< val8.toString() << std::endl;
+    std::cout<<val1<<std::endl;
+    std::cin>>val99;
+    std::cout<<"You entered: "<<val99<<std::endl;
+
+    return 0;
 }
