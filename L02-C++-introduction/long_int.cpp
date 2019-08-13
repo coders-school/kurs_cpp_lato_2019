@@ -35,14 +35,16 @@ struct LongInt
     std::string toString()
     {
 
-        // naprawa bugu
-        if (left!=0)
-            return std::to_string(left)+std::to_string(right);
-        else return std::to_string(right);
-
+        // naprawa bug'a
+        if (left==0)
+            return std::to_string(right);
+        else if (right<10)
+            return std::to_string(left)+"0"+std::to_string(right);
+        else
+            return std::to_string(left) + std::to_string(right);
     }
 
-    //Operator
+    //Operators
     void operator+=(const LongInt& r)
     {
         left += r.left;
@@ -50,7 +52,107 @@ struct LongInt
         left += right / 100;
         right = right % 100;
     }
-
+    void operator+(const LongInt& r)
+    {
+        left = r.left + left;
+        right = r.right + right;
+        left = left + (right / 100);
+        right = right % 100;
+    }
+    void operator-=(const LongInt& r)
+    {
+        if (r.left>left)
+        {
+            left -=r.left;
+            if (r.right>right)
+            {
+                right = r.right-right;
+            }
+            else
+            {
+                left++;
+                right= r.right+100-right;
+            }
+            left -= right / 100;
+            right = right % 100;
+        }
+        else if (r.left<left)
+        {
+            left -=r.left;
+            if (r.right>right)
+            {
+                left--;
+                right+=100;
+                right -= r.right;
+        }
+            else
+                right -= r.right;
+                left -= right / 100;
+                right = right % 100;
+        }
+        else
+        {
+            left = left - r.left;
+            if (r.right>right)
+            {
+                right -= r.right;
+            }
+            else
+            {
+                left++;
+                right= r.right+100-right;
+            }
+            left = left - (right / 100);
+            right = right % 100;
+       }
+    }
+    void operator-(const LongInt& r)
+    {
+        if (r.left>left)
+        {
+            left = left - r.left;
+            if (r.right>right)
+            {
+                right = r.right-right;
+            }
+            else
+            {
+                left++;
+                right= r.right+100-right;
+            }
+            left = left - (right / 100);
+            right = right % 100;
+        }
+        else if (r.left<left)
+        {
+            left = left - r.left;
+            if (r.right>right)
+            {
+                left--;
+                right+=100;
+                right = left - r.right;
+            }
+            else
+                right = right - r.right;
+            left = left - (right / 100);
+            right = right % 100;
+        }
+        else
+        {
+            left = left - r.left;
+            if (r.right>right)
+            {
+                right -= r.right;
+            }
+            else
+                {
+                left++;
+                right= r.right+100-right;
+                }
+            left = left - (right / 100);
+            right = right % 100;
+       }
+}
     //Copy operator
     LongInt& operator=(const LongInt& other)
     {
@@ -72,10 +174,20 @@ int main()
     LongInt val3("0");
     LongInt val4("10");
     LongInt val5("3001");
+    LongInt val6("1101");
+    LongInt val7("1165");
+    LongInt val8("2313");
+    val1+=val2;
+    val3+val4;
+    val6-=val7;
+    val7-val8;
 
-    val1 += val2;
-    std::cout << val2.toString() << std::endl;
-    std::cout << val3.toString() << std::endl;
-    std::cout << val4.toString() << std::endl;
-    std::cout << val5.toString() << std::endl;
+    std::cout << "Val1: "<< val1.toString() << std::endl;
+    std::cout << "Val2: "<< val2.toString() << std::endl;
+    std::cout << "Val3: "<< val3.toString() << std::endl;
+    std::cout << "Val4: "<< val4.toString() << std::endl;
+    std::cout << "Val5: "<< val5.toString() << std::endl;
+    std::cout << "Val6: "<< val6.toString() << std::endl;
+    std::cout << "Val7: "<< val7.toString() << std::endl;
+    std::cout << "Val8: "<< val8.toString() << std::endl;
 }
