@@ -14,24 +14,10 @@
 
 bool is_palindrome (std::string napis)
 {
-    std::string napis_temp {};
-    for (std::string::reverse_iterator rit=napis.rbegin();
-         rit!=napis.rend();++rit)
-    {
-        napis_temp.push_back(*rit);
-    }
-    std::pair<std::string::iterator,std::string::iterator> test;
-    test=mismatch(napis.begin(),napis.end(),napis_temp.begin());
-    if (*test.first!=0)
-    {
-        std::cout<<"No!"<<std::endl;
-        return false;
-    }
-    else
-    {
-        std::cout<<"Yes!"<<std::endl;
-        return true;
-    }
+    std::string napis_temp = napis;
+    std::reverse(std::begin(napis_temp),std::end(napis_temp));
+    auto test = mismatch(napis.begin(),napis.end(),napis_temp.begin());
+    return (test.first==napis.end());
 }
 
 int main () {
@@ -43,10 +29,12 @@ int main () {
     std::list<int>::iterator itr=l.begin();
     std::advance(itr,500000);
     std::cout<<*itr<<std::endl;
+    //real 0,142s , user 0,138s, sys 0,004s
     std::vector<int> vec{};
     vec.resize(1000000);
     std::iota(vec.begin(),vec.end(),1);
     std::cout<<vec.at(500000)<<std::endl;
+    //real 0,022s , user 0,013s, sys 0,009s
 
     std::cout<<"===========Exercise 6==========="<<std::endl;
     std::forward_list<int> numbers{1,2,3,4,16,6,7,15};
@@ -62,8 +50,8 @@ int main () {
     std::cout<<std::distance(numbers.begin(),itr_l)<<std::endl;
 
     std::cout<<"===========Exercise 9========"<<std::endl;
-    is_palindrome("kajak");
-    is_palindrome("wiktor");
+    std::cout<<std::boolalpha<<is_palindrome("kajak")<<std::endl;
+    std::cout<<std::boolalpha<<is_palindrome("wiktor")<<std::endl;
 
 return 0;
 
