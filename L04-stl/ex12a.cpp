@@ -60,8 +60,18 @@ int main()
 {
     std::srand(std::time(0));    
     Code c{};
-    std::string line;
+    std::string s;
+    std::string enc_s;
+    std::string dec_s;
 
+    std::cout << "Type the message you want to encrypt: ";
+    std::getline(std::cin, s);
+    enc_s = c.makeEncryption(s);
+    std::cout << "Encrypted message is: " << enc_s << std::endl;
+    dec_s = c.makeDecryption(enc_s);
+    std::cout << "Decrypted message is: " << dec_s << std::endl;
+
+    std::string line;
     std::ifstream baseFile ("base.txt");
     std::ofstream encryptedFile ("encrypted.txt", std::ofstream::out | std::ofstream::trunc);
     std::ifstream encryptedFile2 ("encrypted.txt");
