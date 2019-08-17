@@ -40,10 +40,8 @@ std::vector<unsigned> generatePrimeNumbers(unsigned maxValue)
     unsigned currentValue;
     auto eratosthenesCrossOut = [&currentValue](unsigned x)
     { 
-        if(currentValue==0)
-            return true;
         if(x!=currentValue) 
-            return x%currentValue==0; 
+            return x%currentValue == 0; 
         return false; 
     };
     for(unsigned i1 = 2; i1 <= static_cast<unsigned>(sqrt(maxValue)); ++i1)
@@ -68,11 +66,9 @@ std::map<unsigned, std::vector<unsigned>> createMapWithPrimeNumbersAndDividents(
                     randomUnsignedNumbers.end(),
                     std::back_inserter(dividentsVectors[counter]),
                     [element](unsigned x){ if(x!=element) return (x%element == 0 and x != 0); return false; });        
-        
         dividentsVectors[counter].erase(
             std::unique(dividentsVectors[counter].begin(), dividentsVectors[counter].end()),
             dividentsVectors[counter].end());
-        
         ++counter;
     }
     std::map<unsigned, std::vector<unsigned>> output{};
@@ -93,7 +89,8 @@ void printMap(std::map<unsigned, std::vector<unsigned>>& input)
                       { 
                         std::cout << "key: " << p.first << ",  value: ";
                         printVector(p.second);
-                        std::cout << "\n"; });
+                        std::cout << "\n"; 
+                      });
     }
 
 int main()
@@ -108,10 +105,9 @@ int main()
     
     std::vector<unsigned> randomNumbers = generateRandomNumbers(N, 0, M);
     std::vector<unsigned> primeNumbers = generatePrimeNumbers(M);
-    std::map<unsigned, std::vector<unsigned>> mapka = createMapWithPrimeNumbersAndDividents(primeNumbers, randomNumbers);
+    std::map<unsigned, std::vector<unsigned>> map = createMapWithPrimeNumbersAndDividents(primeNumbers, randomNumbers);
     
     std::cout << "\nPrinting map with prime numbers as keys and dividents as values: \n\n";
-    printMap(mapka);
-
+    printMap(map);
     return 0;
 }
