@@ -83,6 +83,7 @@ std::map<unsigned, std::vector<unsigned>> createMapWithPrimeNumbersAndDividents(
 
 void printMap(std::map<unsigned, std::vector<unsigned>>& input)
     {
+        std::cout << "\nPrinting map with prime numbers as keys and dividents as values: \n\n";
         std::for_each(input.cbegin(), 
                       input.cend(), 
                       [](std::pair<unsigned, std::vector<unsigned>> p)
@@ -102,12 +103,9 @@ int main()
     std::cout << "Enter amount of generated random integers (from 0 to M) (N): ";
     unsigned N;
     std::cin >> N;
-    
     std::vector<unsigned> randomNumbers = generateRandomNumbers(N, 0, M);
     std::vector<unsigned> primeNumbers = generatePrimeNumbers(M);
     std::map<unsigned, std::vector<unsigned>> map = createMapWithPrimeNumbersAndDividents(primeNumbers, randomNumbers);
-    
-    std::cout << "\nPrinting map with prime numbers as keys and dividents as values: \n\n";
     printMap(map);
     return 0;
 }
