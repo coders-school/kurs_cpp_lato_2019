@@ -1,0 +1,55 @@
+
+SCRUM
+
+Daily stand-up do 15 min
+Sprint Review do 1h
+Sprint Planning
+Product Owner
+Scrum Master
+Retro, retrospective
+sprint backlog
+zespol developerski
+MVP - minimum viable product
+PSPI - Potentialy Shippable Product Incremental
+
+
+----------------------------------
+
+TDD
+
+3 fazy:
+
+RED
+- test nie przechodzi bo ni ema implementacji
+
+GREEN
+- dodanie implementacji
+
+REFECTOR
+- do przerobinia cos
+
+
+UT-> Unit test - testy jednostkowe
+- sprawdzaja maly kawalek kodu, jednostke, czyli jedna pojedyncza funkcja, albo klasa
+
+MT - Module test - testy modulowe
+IT - Integration test - testy integracyjne
+CT - Component test - testy komponentowe
+
+
+GTEST, ___catch__
+
+given - zalozenia poczatkowe
+when - akcja
+then - zalozenia koncowe, sprawdzenia
+
+
+
+
+
+
+
+
+
+
+
