@@ -44,15 +44,12 @@ void fillVector(auto& v, int N, int M)
 bool isPrime(int N)
 {
 	std::vector<int> n(N);
-    int counter = N;
+	int counter = N;
 	bool state = true;	
 	std::for_each(n.begin(), n.end(), [&](int& el)
 					{
 						counter--;
-						if ( (counter > 1) && (N%counter == 0) )
-						{
-							state = false;
-						}
+						if ((counter > 1) && (N%counter == 0)) state = false;
 					}
 					);
 
@@ -120,7 +117,7 @@ int main ()
 	
 	std::for_each(myVector.begin(), myVector.end(), [&](auto& el)
 	{
-	std::for_each(primeVector.begin(), primeVector.end(), [&](auto& elPrime)
+		std::for_each(primeVector.begin(), primeVector.end(), [&](auto& elPrime)
 		{
 			if (el%elPrime == 0)
 			{
@@ -135,7 +132,7 @@ int main ()
 					auto foundP = primeMap.find(elPrime);
 					foundP->second.push_back(el);
 				}
-			}
+			};
 		}
 		);
 	}

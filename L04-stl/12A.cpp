@@ -1,27 +1,27 @@
 #include <iostream>
 #include <map>
 #include <vector>
-#include <ctime>
-#include <cstdlib>
 #include <fstream>
+#include <random>
+#include <chrono>
 
-void fillMap(std::map<char, int>& myMap, std::string& myString)
+void fillMap(std::map<char, int>& setOfCharInt, const std::string& cipherText)
 {
-	myMap.clear();
-	for (size_t i=0; i<myString.size(); i++)
+	setOfCharInt.clear();
+	for (size_t i=0; i<cipherText.size(); i++)
 	{
-		myMap.insert(myMap.begin(),std::pair<char,int>(myString[i], int(myString[i])));
+		setOfCharInt.insert(std::begin(setOfCharInt),std::pair<char,int>(cipherText[i], static_cast<int>(cipherText[i])));
 	}
 }
 
 
-std::string encrypt(std::map<char, int>& myMap, int key, std::string& secretString)
+std::string encrypt(std::map<char, int>& myMap, const int key, std::string& secretString)
 {	
 	fillMap(myMap, secretString);
 	std::string secret = "";
 	for (auto it= myMap.begin(); it !=myMap.end(); ++it)
 	{
-		secret += char(myMap[it->second]+key);
+		secret += static_cast<char>(myMap[it->second]+key);
 	}
 	secretString = secret;
 	return secret;
@@ -37,8 +37,10 @@ std::string decrypt(std::map<char, int>& myMap, int key, std::string& secretStri
 
 int main ()
 {
-	srand(time(NULL));
-	int key = (rand()%10)+1;
+	auto seed = std::chrono::system_clock::now().time_since_epoch().count();
+	std::default_random_engine generator(seed);
+	std::uniform_int_distribution<int> distribution(1,10);
+	int key = distribution(generator);
 
 	std::string secretString="";
 	std::ifstream myFile ("toEncrypt.txt");
