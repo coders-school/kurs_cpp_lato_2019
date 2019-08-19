@@ -263,8 +263,8 @@ void exercise6(const int number)
 	std::forward_list<int> myForwardList {3,4,5,7,8,4,12,0};
 	std::cout<< "myForwardList: ";
 	printElements(myForwardList);
-	std::forward_list<int>::iterator itBegin = myForwardList.begin();
-	auto itEnd = myForwardList.end();
+	std::forward_list<int>::iterator itBegin = std::begin(myForwardList);
+	auto itEnd = std::end(myForwardList);
 
 	std::cout<< "There isn't size() function in forward_list. " << std::endl;
 	std::cout<< "In this case std::distance has been used." << std::endl;
@@ -276,7 +276,7 @@ void exercise6(const int number)
 		if (iter==4)
 		{
 			std::cout<< "Fifth element in forward_list is: " << *itBegin << std::endl;
-			std::cout<< "Distnace form beggining to this iterator is: " << std::distance(myForwardList.begin(), itBegin) << std::endl;
+			std::cout<< "Distnace form beggining to this iterator is: " << std::distance(std::begin(myForwardList), itBegin) << std::endl;
 			break;
 		}
 		iter++;
@@ -359,14 +359,7 @@ bool is_palindrome(std::string& myString)
 	printElements(cpString);
 	auto pair = std::mismatch(myString.begin(), myString.end(), cpString.begin());
 	
-	if (pair.first != myString.end())
-	{
-		return false;
-	}
-	else
-	{
-		return true;
-	}
+	return not (pair.first != myString.end());
 }
 
 void exercise9(const int number)
