@@ -32,13 +32,19 @@ Materiały z kursu C++ (Lipiec 2019 - Wrzesień 2019)
 
 #### Grupa weekendowa
 
+- <img src="foto/weekend_1.jpg" width="250px" /> <img src="foto/weekend_2.jpg" width="250px" />
+  <img src="foto/weekend_3.jpg" width="250px" /> <img src="foto/weekend_4.jpg" width="250px" />
+  
 #### Grupa wieczorowa
+
+- <img src="foto/evening_1.jpg" width="250px" />
 
 ### Post-work
 
-- [ ] (7 punktów) dokończcie zadanie z listą (List.cpp). Zastosujcie właściwe smart pointery. Wymagania:
+- [ ] (7 punktów) dokończcie zadanie z listą (List.cpp). Zmieńcie listę jednokierunkową w listę dwukierunkową. Zastosujcie właściwe smart pointery. Wymagania:
   - wstawianie elementów na początku listy
   - wyszukiwanie elementów od końca
+  - brak wycieków pamięci
 
 - [ ] (13 punktów) zaimplementujcie własny unique_ptr. Wymagania:
   - (2) klasa szablonowa (powinna trzymać wewnątrz wskaźnik do typu szablonowego)
