@@ -80,7 +80,7 @@ zestaw funkcji, który operuje na zakresach zdefiniowanych przez iteratory.
 		* drugi argument to szukane elementy;
 			* funkcja zwróci iterator na pierwsze wystąpienie w 1 kontenerze,
 			któregokolwiek elementu z drugiego kontenera;
-* ** adjacent_find:**
+* **adjacent_find:**
 	* szuka dwóch elementów, które sąsiadują ze sobą i są identyczne;
 	* zwraca iterator na pierwszy z nich;
 * **search:**
