@@ -21,10 +21,6 @@ struct LongInt
 
     //Copy constructor
     LongInt(const LongInt& other)=default;
-//    {
-//        left = other.left;
-//        right = other.right;
-//    }
 
     //Destructor
     ~LongInt()
@@ -46,21 +42,23 @@ struct LongInt
     }
 
     //Operators
-    void operator+=(const LongInt& r)
+    LongInt operator+=(const LongInt& r)
     {
         left += r.left;
         right += r.right;
         left += right / 100;
         right = right % 100;
+        return *this;
     }
-    void operator+(const LongInt& r)
+    LongInt operator+(const LongInt& r)
     {
         left = r.left + left;
         right = r.right + right;
         left = left + (right / 100);
         right = right % 100;
+        return *this;
     }
-    void operator-=(const LongInt& r)
+    LongInt operator-=(const LongInt& r)
     {
         if (r.left>left)
         {
@@ -106,8 +104,9 @@ struct LongInt
             left = left - (right / 100);
             right = right % 100;
        }
+        return *this;
     }
-    void operator-(const LongInt& r)
+    LongInt operator-(const LongInt& r)
     {
         if (r.left>left)
         {
@@ -121,7 +120,7 @@ struct LongInt
                 left++;
                 right= r.right+100-right;
             }
-            left = left - (right / 100);
+            left -=(right / 100);
             right = right % 100;
         }
         else if (r.left<left)
@@ -150,9 +149,10 @@ struct LongInt
                 left++;
                 right= r.right+100-right;
                 }
-            left = left - (right / 100);
+            left -= -(right / 100);
             right = right % 100;
        }
+        return *this;
 }
     //Copy operator
     LongInt& operator=(const LongInt& other)
