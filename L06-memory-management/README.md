@@ -55,5 +55,7 @@ Materiały z kursu C++ (Lipiec 2019 - Wrzesień 2019)
 
 ### Pre-work
 
-- [ ] poszukaj informacji o tym, jakie nowości weszły do C++11, 14 i 17
-- [ ] poszukaj informacji o tym, co wejdzie do standardu C++20
+- [ ] Przeczytaj artykuł o [SOLID](https://www.samouczekprogramisty.pl/solid-czyli-dobre-praktyki-w-programowaniu-obiektowym/)
+- [ ] Przeczytaj artykuł o [KISS, DRY, YAGNI](https://www.samouczekprogramisty.pl/jakosc-kodu-a-oschle-pocalunki-jagny/)
+- [ ] Zapoznaj się z [nowoczesnym C++](https://github.com/AnthonyCalandra/modern-cpp-features)
+- [ ] Zapoznaj się z [kodem](../L07-modern-cpp/exercises)
