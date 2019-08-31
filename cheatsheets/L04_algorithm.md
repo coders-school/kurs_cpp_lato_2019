@@ -5,11 +5,6 @@
 + forward list
 + list
 + deque
-<<<<<<< HEAD
-
-=======
-           
->>>>>>> 30d65c884ae823d22863f078f230eba89c25f915
 ### Asocjacyjne:
 * **Uporządkowane:**
 	* set
