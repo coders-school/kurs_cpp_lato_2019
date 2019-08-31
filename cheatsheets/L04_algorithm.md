@@ -5,7 +5,6 @@
 + forward list
 + list
 + deque
-           
 ### Asocjacyjne:
 * **Uporządkowane:**
 	* set
@@ -23,12 +22,12 @@
 	* priority_queue
 
 ## Algorytmy STL:
-**Algorytmy STL**: 
+**Algorytmy STL**:
 zestaw funkcji, który operuje na zakresach zdefiniowanych przez iteratory.
 
 ### Kategorie algorytmów STL:
 * Non-modifying sequence operations,
-* Modifying sequence operations, 
+* Modifying sequence operations,
 * Sorting,
 * Partitions,
 * Binary search,
@@ -46,7 +45,7 @@ zestaw funkcji, który operuje na zakresach zdefiniowanych przez iteratory.
 	* operacje logicze  na całym kontenerze;
 	* zwracają true/false, gdy spełniają określony predykat;
 	* przykładowe użycie:
-		* napisanie funkcji lambda, dzięki której przy użyciu ~~all_of
+		* napisanie funkcji lambda, dzięki której przy użyciu **all_of**<br/>
 		sprawdzimy czy wszystkie elementy kontenera są parzyste;
 * **for_each:**
 	* odpowiednik zakresowej pętli for;
@@ -69,16 +68,16 @@ zestaw funkcji, który operuje na zakresach zdefiniowanych przez iteratory.
 	* zwraca iterator na poszukiwany element;
 * **find_if, find_if_not:**
 	* **find if** - zwraca iterator na element spełniający kryteria;
-	* **find_if_not** - zwraca it. na pierwszy napotkany element
+	* **find_if_not** - zwraca it. na pierwszy napotkany element<br/>
 		który nie spełnia podanego kryterium;
 * **find_end:**
-	* zwraca iterator na ostatnie występowanie elementu
-            (za element można wstawić np mniejszy wektor);
+	* zwraca iterator na ostatnie występowanie elementu<br/>
+	(za element można wstawić np mniejszy wektor);
 * **find_first_of:**
 	* jako argumenty podajemy np. dwa wektory:
 		* pierwszy jest przeszukiwaną kolekcją,
 		* drugi argument to szukane elementy;
-			* funkcja zwróci iterator na pierwsze wystąpienie w 1 kontenerze,
+			* funkcja zwróci iterator na pierwsze wystąpienie w 1 kontenerze,<br/>
 			któregokolwiek elementu z drugiego kontenera;
 * **adjacent_find:**
 	* szuka dwóch elementów, które sąsiadują ze sobą i są identyczne;
@@ -87,8 +86,8 @@ zestaw funkcji, który operuje na zakresach zdefiniowanych przez iteratory.
 	* szuka zakresu elementów, a nie pojedynczego elementu;
 	* zwraca iterator na pierwszy element poszukiwanego pod-ciągu;
 * **search_n:**
-	* nie szuka do końca kolekcji, podajemy przez ile elementów 
-	ma się odbyć przeszukiwanie;
+	* nie szuka do końca kolekcji, 
+	* podajemy przez ile elementów ma się odbyć przeszukiwanie;
 
 ***
 
@@ -105,19 +104,19 @@ zestaw funkcji, który operuje na zakresach zdefiniowanych przez iteratory.
 * **move:**
 	* przenosi elementy z jednej kolekcji do drugiej;
 * **move_backward:**
-	* przenosi elementy z jednej kolekcji do drugiej,
-            ale w odwrotnej kolejności (od końca) ;
+	* przenosi elementy z jednej kolekcji do drugiej,<br/>
+	ale w odwrotnej kolejności (od końca) ;
 * **fill:**
 	* wypełnia każdy element w kontenerze podaną wartością;
 * **fill_n:**
 	* wypełnia n elementów;
 * **transform** (często stosowany):
 	* transformuje zakres wejściowy -> zakres wyjściowy;
-	* może być konieczność użycia odpowiedniego insertera do kontenerów 
+	* może być konieczność użycia odpowiedniego insertera do kontenerów<br/>
 	(np. do vectora back_inserter);
 * **generate** (często stosowany):
 	* podajemy zakres wyjściowy i funktor;
-	* generuje dane do kontenera, przykład z użyciem f. lambda:
+	* generuje dane do kontenera, przykład z użyciem f. lambda:<br/>
 	`std::generate ( v.begin(), v.end(), [n=0] () mutable { return n++; } );`
 		* mutable ściąga niejawnego consta ze zmiennych zdefiniowanych na liście przechwytującej,
 		* zmienne zdefiniowane na liście przechwytującej są zawsze typu auto;
@@ -148,8 +147,9 @@ zestaw funkcji, który operuje na zakresach zdefiniowanych przez iteratory.
 * **reverse_copy:**
 	* analogicznie jak reverse - tylko wynik zapisywany jest w nowym kontenerze;
 * **rotate:**
-	* (obracanie) / przesuwanie kontenera względem elementu na który wskazuje iterator np.:
-	`1 2 >3< 4 5` ->	`>3< 4 5  1 2`
+	* (obracanie) / przesuwanie kontenera względem elementu na który wskazuje iterator np.:<br/>
+	`1 2 >3< 4 5`<br/>
+	`>3< 4 5  1 2`
 * **shift_left, shift_right:** *(C++ 20)*
 	* jak rotate, podajemy o ile ma przesunąć oraz w którą stronę;
 * ~~**random_shuffle**~~: *(funkcja usunięta)*
@@ -160,8 +160,8 @@ zestaw funkcji, który operuje na zakresach zdefiniowanych przez iteratory.
 	* wybierz n losowych wartości z naszego kontenera wejściowego;
 * **unique:**
 	* usuwa duplikaty *(nie do końca prawda)*;
-		* unique nie usuwa fizycznie duplikatów tylko przesuwa je na koniec kolekcji
-		oraz zwraca iterator na miejsce gdzie kończą się niepowtarzalne wartości;
+		* unique nie usuwa fizycznie duplikatów tylko przesuwa je na koniec kolekcji oraz<br/>
+		zwraca iterator na miejsce gdzie kończą się niepowtarzalne wartości;
 
 ***
 
@@ -183,10 +183,10 @@ zestaw funkcji, który operuje na zakresach zdefiniowanych przez iteratory.
 	* przyjmuje 3 iteratory, sortuje od iteratora first do middle;
 * **stable_sort:**
 	* gdy sortujemy np 4 pary i bierzemy tylko first do sortowania;
-	* mamy gwarancję, że nie pomiesza kolejności ze względu na drugą wartość:
-	`(1,1) (1,2) (2,2) (2,1)` -> input;
-	`(1,1) (1,2) (2,2) (2,1)`  -> stable sort
-	`(1,2) (1,1) (2,2) (2,1)`  -> zwykły sort tak może zrobić
+	* mamy gwarancję, że nie pomiesza kolejności ze względu na drugą wartość:<br/>
+	`(1,1) (1,2) (2,2) (2,1)` -> input<br/>
+	`(1,1) (1,2) (2,2) (2,1)`  -> stable sort<br/>
+	`(1,2) (1,1) (2,2) (2,1)`  -> zwykły sort tak może zrobić<br/>
 * **nth_element:**
 	* wybrany element będzie na swoim miejscu;
 	* na lewo elementy będą mniejsze;
@@ -196,10 +196,10 @@ zestaw funkcji, który operuje na zakresach zdefiniowanych przez iteratory.
 
 ### Partitioning operations:
 	#include <algorithm>
-**Algorytmy partycjonujące:**
-	* dzielą nam zbiór wejściowy na 2 części -> część lewą i część prawą;
-	* przekazujemy lambdę, która przekazuje kryteria partycjonowania;
-	* np podział na elementy parzyste i nieparzyste
+**Algorytmy partycjonujące:**<br/>
+-> dzielą nam zbiór wejściowy na 2 części -> część lewą i część prawą;<br/>
+-> przekazujemy lambdę, która przekazuje kryteria partycjonowania;<br/>
+-> np podział na elementy parzyste i nieparzyste<br/>
 
 * **partition:**
 	* wrzucamy lambde z warunkiem, dla pierwszego zakresu:
@@ -216,25 +216,26 @@ zestaw funkcji, który operuje na zakresach zdefiniowanych przez iteratory.
 
 ### Binary search operations:
 	#include <algorithm>
-**Algorytmy partycjonujące:**
-	* .find jest gotowe w mapie lub w zbiorze;
-	* binary search można użyć przy użyciu algorithm
-	warunkiem jest posiadanie posortowanego kontenera
+**Binary search:**<br/>
+-> .find jest gotowe w mapie lub w zbiorze;<br/>
+-> binary search można użyć przy użyciu algorithm;<br/>
+-> warunkiem jest posiadanie posortowanego kontenera;<br/>
 
 * **binary_search:**
+    * sprawdza czy element znajduje się w podanym zakresie
 
 W przypadku powtarzających się elementów możemy skorzystać z:
 
 * **lower_bound** oraz **upper_bound**:
 	* zwraca odpowiednio:
 		* iterator na pierwszy powtarzający się element
-		* iterator na element za ostatnim powtarzającym się:
+		* iterator na element za ostatnim powtarzającym się:<br/>
 		`1 2* 2 3* 3 4` -> w przypadku liczby 2;
 * **equal_range:**
 	* zwraca zakres elementów pasujących do podanego klucza;
 	* zwraca parę lower i upper bound (first -> lower, second -> upper)
- 
- ***
+
+***
 
 ### Other operations on sorted ranges:
 	#include <algorithm>
@@ -245,12 +246,12 @@ W przypadku powtarzających się elementów możemy skorzystać z:
 * **inplace_merge:**
 	* dołącza drugi zakres do pierwszego;
 
- ***
+***
 
 ### Set operations:
 	#include <algorithm>
 * **includes**:
-	* mówi nam czy jeden zbiór zawiera się w drugim
+	* mówi nam czy jeden zbiór zawiera się w drugim<br/>
 	(czy występuje część wspólna)
 * **set_union:**
 	* suma zbiorów -> elementy z jednego i drugiego zbioru:
@@ -261,10 +262,10 @@ W przypadku powtarzających się elementów możemy skorzystać z:
 	* zwraca różnicę pomiędzy zbiorami;
 	* kolejność argumentów ma znaczenie;
 * **set_symetric_difference:**
-	* suma wszystkiego co nie jest częścią wspólną
+	* suma wszystkiego co nie jest częścią wspólną<br/>
 	(wyklucza część wspólną);
 
- ***
+***
 
 ### Heap operations:
 	#include <algorithm>
@@ -276,18 +277,18 @@ W przypadku powtarzających się elementów możemy skorzystać z:
 	* sortowanie, aby elementy odpowiadały strukturze kopca;
 * **sort_heap:**
 	* sortowanie kontenera;
-* **is_heap:** 
+* **is_heap:**
 	* czy mamy strukturę kopca w kontenerze;
 * **is_heap_until:**
 	* do kiedy kontener spełnia strukturę kopca;
 
- ***
+***
 
 ### Minimum/ maximum operations:
 	#include <algorithm>
 * **min:**
 	* zwraca najmniejszą **wartość**
-* **max:** 
+* **max:**
 	* zwraca największą **wartość**
 * **minmax:**
 	* zwraca parę min i max (**wartość**)
@@ -300,11 +301,11 @@ W przypadku powtarzających się elementów możemy skorzystać z:
 * **clamp:**
 	* spłaszczenie wartości do podanych granic:
 		* podajemy wartość min i max (np 3 i 5)
-		* wszystko mniejsze od 3 -> będzie 3 
+		* wszystko mniejsze od 3 -> będzie 3
 		* wszystko powyżej 5 -> będzie 5
 		* wartości pośrednie nie ulegną zmianie
 
- ***
+***
 
 ### Comparison and permutation operations:
 	#include <algorithm>
@@ -316,7 +317,7 @@ W przypadku powtarzających się elementów możemy skorzystać z:
  		* może być std::string lub inny kontener z liczbami
  	* zwraca kolejną permutację
  * **prev_permutation:**
- 	* jak next_permutation tylko zwraca poprzednią permutację 
+ 	* jak next_permutation tylko zwraca poprzednią permutację
  * **equal:**
  	* zwraca wartość logiczną czy dwa zbiory są sobie równe
  	* czy elementy są takie same (np w deque i vectorze)
@@ -331,33 +332,33 @@ W przypadku powtarzających się elementów możemy skorzystać z:
 
 ***
 
-### Numeric operations: 
+### Numeric operations:
 	#include <numeric>
 * **iota:**
 	* funkcja, która generuje ciąg
-	* podajemy od czego ma zacząć
-	**1:** `1, 2, 3, 4, 5, (...)`
-	**a:** `a, b, c, d, e, (...)`
+	* podajemy od czego ma zacząć<br/>
+	**1:** `1, 2, 3, 4, 5, (...)`<br/>
+	**a:** `a, b, c, d, e, (...)`<br/>
 * **accumulate:**
 	* sumowanie elementów z kontenera
 	* sprawdź również **std::reduce**
 * **inner_product:**
-	* iloczyn skalarny:
-	`std::vector<int> a{0, 1, 2, 3};`
-	`std::vector<int> b{5, 4, 2, 3};`
-	 *output:*  `0*5 + 1*4 + 2*2 + 3*3`
+	* iloczyn skalarny:<br/>
+	`std::vector<int> a{0, 1, 2, 3};`<br/>
+	`std::vector<int> b{5, 4, 2, 3};`<br/>
+	 *output:*  `0*5 + 1*4 + 2*2 + 3*3`<br/>
 * **adjacent_difference:**
-	* różnica pomiędzy sąsiadującymi elementami:
- 	*input*: 	`10,   8,   10,   6`
- 	*output:* 	`10, -2, 2, -4`
+	* różnica pomiędzy sąsiadującymi elementami:<br/>
+ 	*input*: 	`10,   8,   10,   6`<br/>
+ 	*output:* 	`10, -2, 2, -4`<br/>
  * **partial_sum:**
  	* sumuje od początku do elementu na którym jesteśmy
- 	* *input*: `10, 8, 10, 6` 
+ 	* *input*: `10, 8, 10, 6`
  	* *output*: `10, 18, 28, 34`
  * **reduce:**
  	* wynik działania jak w std::accumulate
  	* może być szybszy od accumulate (multi-thread);
---- 
+---
 #### Nieomówione algorytmy z numeric:
 * exclusive_scan
 * inclusive_scan
