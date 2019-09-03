@@ -1,2 +1,6 @@
+**/[Bb]uild/*
+**/cmake-build-debug/*
+.vscode/*
+idea/*
 *.o
-*.out
+*.ko
