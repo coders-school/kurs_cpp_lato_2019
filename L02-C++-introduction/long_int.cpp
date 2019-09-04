@@ -19,8 +19,8 @@ struct LongInt
     LongInt(std::string str)
     {
         int number = std::stoi(str);
-        left = number / 10;
-        right = number % 10;
+        left = number / 100;
+        right = number % 100;
     }
 
     //Copy constructor
@@ -39,22 +39,26 @@ struct LongInt
     }
 
     //Method
-    std::string toString()
+    std::string toString() const
     {
-        if (left!=0) return std::to_string(left) + std::to_string(right);
+        if (left!=0) 
+        {   
+            if (right >=1 and right <=9) return std::to_string(left) + "0" + std::to_string(right);
+            else return std::to_string(left) + std::to_string(right);
+        } 
         else return std::to_string(right);
     }
 
-    //Operator
+    //Operator +=
     void operator+=(const LongInt& r)
     {
         left += r.left;
         right += r.right;
-        left += right / 10;
-        right = right % 10;
+        left += right / 100;
+        right = right % 100;
     }
 
-    //Copy operator
+    //Operator =
     LongInt& operator=(const LongInt& other)
     {
         left = other.left;
@@ -64,47 +68,63 @@ struct LongInt
 
      //Operator -=
     void operator-=(const LongInt& a)
-    {
-        left -= a.left;
+    {   
+//        cout << a.left << endl;
+//        cout << a.right << endl;
+        
         right -= a.right;
-        left -= right / 10;
-        right = right % 10;
+        if (right < 0)
+        {
+            right += 100;
+            left = left - a.left - 1;
+        }
+        else 
+            left -= a.left;
+        cout << left << endl; 
+        cout << right << endl; 
     }
 
+
     //Operator +
-    LongInt& operator+(const LongInt& one)
+    LongInt operator+(const LongInt& one)
     {
-        left += one.left;
-        right += one.right;
-        left += right / 10;
-        right = right % 10;
-        return *this;
+        LongInt sum;
+        sum.right = (right + one.right) % 100;
+        sum.left = (right + one.right) / 100 + left + one.left;
+        return sum;
     }
 
      //Operator -
-    LongInt& operator-(const LongInt& sec)
+    LongInt operator-(const LongInt& sec)
     {
-        left -= sec.left;
-        right -= sec.right;
-        left -= right / 10;
-        right = right % 10;
-        return *this;
+        LongInt min;
+        min.right = right - sec.right;
+        if (min.right < 0)
+        {
+            min.right += 100;
+            min.left = left - sec.left - 1;
+        }
+        else
+            min.left = left - sec.left;
+
+        return min;
     }
 
     friend ostream& operator<<(ostream &out, LongInt& p)
     {
         out << "My << overloading" << endl;
-        out << "(" << p.left << "," << p.right << ")" << endl;
-        return out;
+        return out << p.toString();
     }
 
     friend istream& operator>>(istream &inp, LongInt& s)
-    {   
-        inp >> s.left >> s.right;
+    { 
+        LongInt obj;  
+        inp >> obj.left >> obj.right;
+        s.left = obj.left;
+        s.right = obj.right;
         return inp;
     }
  
-
 
     //Members
     int left;
@@ -116,36 +136,37 @@ struct LongInt
 int main()
 {
     LongInt val1(1,70);
-    LongInt val2("5980");
+    LongInt val2("598");
     LongInt val3("3001");
     LongInt val4("0");
     LongInt val5("10");
     LongInt val6;
     LongInt val7;
-    LongInt val8("100");
-    LongInt val9("200");
-    LongInt val10("1");
-    LongInt val11("2");
-
-    val1 += val2;
-    val6 = val8 + val9;
-    val7 = val11 - val10;
-    val5 -= val4;
-
-    std::cout << "Val1: " << val1.toString() << std::endl;
-    std::cout << "Val2: " << val3.toString() << std::endl;
-    std::cout << "Val3: " << val4.toString() << std::endl;
-    std::cout << "Val5: " << val5.toString() << std::endl;
-    std::cout << "Val6: " << val6.toString() << std::endl;
-    std::cout << "Val7: " << val7.toString() << std::endl;
-    std::cout << "Val5: " << val5.toString() << std::endl;
-
-    cout << val1 << endl;
-    cout << "Insert new numbers to object" << endl;
-    cin >> val7;
-    cout << "You inserted" << val7;
+    LongInt val8(30,10);
+    LongInt val9(10,40);
+    LongInt val10;
+    LongInt val11;
+    LongInt val12("80"); 
 
 
+    val6 = val2 - val1;
+    val3 -= val2;
+    val7 = val1 + val2;
+    val10 = val8 - val9;
+    val12 += val5;
+
+    std::cout << "598 - 170 = 428 here: " << val6.toString() << std::endl;
+    std::cout << "3001 -= 598 gives 2403 here: " << val3.toString() << std::endl;
+    std::cout << "170 + 598 = 768 here: " << val7.toString() << std::endl;
+    std::cout << "val1: " << val1.toString() << std::endl;
+    std::cout << "val8: " << val8.toString() << std::endl;
+    std::cout << "3010 - 1040 = 1970 here: " << val10.toString() << std::endl;
+    std::cout << "80 += 10 = 90 here: " << val12.toString() << std::endl;
+
+
+    cout << "Insert new numbers to object - left and right: " << endl;
+    cin >> val11;
+    cout << "You inserted: " << val11 << endl;;
 
     return 0;
 
