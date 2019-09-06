@@ -1,0 +1,43 @@
+1. Which operations happen when you allocate an object using new?
+
+2. What is the structure of std::shared_pointer?
+
+3. Why std::make_shared shall be preferred?
+
+4. When to use get(), release() and reset() on smart pointers?
+
+5. What are Rule of 0 and Rule of 5?
+
+6. What will be the result of below code?
+```
+#include <memory>
+#include <iostream>
+
+struct MyData
+{};
+
+void handleData1(const std::shared_ptr<MyData> data)
+{
+   std::cout << "1: " << data.use_count() << std::endl;
+}
+
+void handleData2(const std::shared_ptr<MyData>& data)
+{
+   std::cout << "2: " << data.use_count() << std::endl;
+}
+
+int main()
+{
+   auto data = std::make_shared<MyData>();
+
+   auto data2 = data;
+   handleData1(data2);
+
+   auto data3 = std::move(data);
+   handleData2(data2);
+
+   std::cout << "3: " << data.use_count() << std::endl;
+}
+```
+
+https://ideone.com/3daGo3
