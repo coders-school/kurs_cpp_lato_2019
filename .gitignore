@@ -1,6 +1,7 @@
 [Bb]uild/*
 cmake-build-debug/*
 LS04-stl/cmake-build-debug/*
+LS04-stl/.idea/*
 .idea/*
 *.o
 *.ko

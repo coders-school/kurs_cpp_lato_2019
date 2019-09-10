@@ -2,6 +2,7 @@
 #include <random>
 #include <map>
 #include <set>
+#include <algorithm>
 
 #include "task12B.hpp"
 #include "Atkins.hpp"
@@ -14,47 +15,40 @@ int main() {
         N = 10000;
         M = 100;
     } else {
-    for (auto const & ch:SieveOfAtkin(1000))
-        cout << ch << " ";
-    cout << "Please input how many numbers (N) should be generated: " << endl;
-    cout << ">> ";
-    cin >> N;
-    cout << "Please input maximum value of numbers (M) : " << endl;
-    cout << ">> ";
-    cin >> M;
+        cout << "Please input how many numbers (N) should be generated: " << endl;
+        cout << ">> ";
+        cin >> N;
+        cout << "Please input maximum value of numbers (M) : " << endl;
+        cout << ">> ";
+        cin >> M;
     }
 
-    vector<unsigned int> randomNumbers;
-    randomNumbers.reserve(N);
+    vector<unsigned int> randomNumbers(N);
 
     generateRandomNumbers(randomNumbers);
 
-    set<unsigned int> randomNumbersSorted(randomNumbers.begin(), randomNumbers.end());
+    set<unsigned int> randomNumbersSorted(begin(randomNumbers), end(randomNumbers));
 
     vector<unsigned int> allPrimesUpToM;
 
-    allPrimesUpToM = SieveOfAtkin(M);
+    allPrimesUpToM = SieveOfAtkins(M);
 
     map<unsigned int, set<unsigned int>> mapping;
 
-    for (auto const& prime : allPrimesUpToM) {
-        for (auto const& number: randomNumbersSorted) {
+    for_each(begin(allPrimesUpToM), end(allPrimesUpToM), [&]( unsigned int prime)
+    {
+        for_each(begin(randomNumbersSorted), end(randomNumbersSorted), [&](unsigned int number) {
             if (isDivisor(number, prime)) {
                 mapping[prime].insert(number);
             }
-        }
-
-    }
+        });
+    });
 
     return 0;
 }
 
 void generateRandomNumbers(vector<unsigned int> &randomNumbers) {
-    auto engine = initiateRandomGenerator();
-
-    for (unsigned int i = 0; i < N; i++ ) {
-        randomNumbers.push_back( generateRandom(engine, M));
-    }
+    std::generate(randomNumbers.begin(), randomNumbers.end(), getRandomNumber);
 }
 
 default_random_engine initiateRandomGenerator() {
@@ -66,6 +60,11 @@ default_random_engine initiateRandomGenerator() {
 unsigned int generateRandom(default_random_engine& e1, unsigned int upNumber) {
     uniform_int_distribution<unsigned int> uniform_dist(0, upNumber);
     return uniform_dist(e1);
+}
+
+unsigned int getRandomNumber() {
+    auto engine = initiateRandomGenerator();
+    return generateRandom(engine, M);
 }
 
 

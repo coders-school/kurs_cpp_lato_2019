@@ -13,6 +13,8 @@ default_random_engine initiateRandomGenerator();
 
 unsigned int generateRandom(default_random_engine&, unsigned int);
 
+unsigned int getRandomNumber();
+
 void generateRandomNumbers(vector<unsigned int> &randomNumbers);
 
 auto isDivisor = [](unsigned int number,unsigned int divisor){ return number % divisor == 0; };
