@@ -1,0 +1,26 @@
+1. What is RAII idiom?
+
+2. How to allocate an int on a stack and on a heap? Give examples.
+
+3. What is a difference between const pointer and pointer to const? Write down their possible signatures.
+
+4. What is a difference between delete and delete[]? When to use which? Give examples
+
+5. What is a difference between a reference and a pointer?
+
+6. Can you find any problems in this code?
+```cpp
+class Msg{};
+
+void processMsg(Msg* msg)
+{
+    // ...
+    delete msg;
+}
+
+int main()
+{
+    Msg m;
+    processMsg(&m);
+}
+```
