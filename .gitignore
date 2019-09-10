@@ -1,8 +1,13 @@
+<<<<<<< HEAD
 [Bb]uild/*
 .vscode/*
 uild/*
 cmake-build-debug/*
+=======
+**/[Bb]uild/*
+**/cmake-build-debug/*
+.vscode/*
+>>>>>>> 6af6a043d1bc9f15121a48e2657c31e1ff000ff1
 idea/*
 *.o
 *.ko
-
