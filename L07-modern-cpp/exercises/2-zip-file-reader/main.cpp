@@ -1,124 +1,201 @@
 #include <string>
 #include <iostream>
+#include <vector>
+#include <memory>
+#include <cassert>
 
-enum class fileTypes
+class IFile
 {
-    Json,
-    Xml,
-    Html,
-    JsonInZip,
-    XmlInZip,
-    HtmlInZip,
+public:
+    IFile() = default;
+    IFile(IFile &&  ) = default;
+
+    virtual bool isValidType(std::string path) = 0;
+
+    virtual std::string load(std::string path) = 0;
+
+    virtual ~IFile() = default;
 };
 
-fileTypes get_file_type(std::string path)
+class JSONFile : public IFile
 {
-    if(path.size() < 5)
-        throw std::runtime_error("Wrong file name");
-    if(path.back() == 'l')
-    {
-        if(path.rfind('.') == (path.size() - 4))
-            return fileTypes::Xml;
-        return fileTypes::Html;
-    } else if(path.back() == 'p') {
-        path = path.substr(0, path.size() - 4);
-        if(path.back() == 'l')
-        {
-            if(path.rfind('.') == (path.size() - 4))
-                return fileTypes::XmlInZip;
-            return fileTypes::HtmlInZip;
-        }
-        return fileTypes::JsonInZip;
+public:
+    JSONFile() = default;
+    JSONFile(JSONFile &&  ) = default;
+
+    bool isValidType(std::string path) override {
+        return path.find(".json") == path.size() - 5;
     }
-    return fileTypes::Json;
-}
 
-std::string load_json(std::string path)
+    std::string load(std::string path) override {
+        return "json data from " + path;
+    }
+};
+
+class XMLFile : public IFile
 {
-    return "json data from " + path;
-}
+public:
+    XMLFile() = default;
+    XMLFile(XMLFile &&  ) = default;
+ 
+    bool isValidType(std::string path) override {
+        return path.find(".xml") == path.size() - 4;
+    }
 
-std::string load_xml(std::string path)
+    std::string load(std::string path) override {
+         return "xml data from " + path;
+    }
+};
+
+class HTMLFile : public IFile
 {
-    return "xml data from " + path;
-}
+public:
+    HTMLFile() = default;
+    HTMLFile(HTMLFile &&  ) = default;
 
-std::string load_html(std::string path)
+    bool isValidType(std::string path) override {
+        return path.find(".html") == path.size() - 5;
+    }
+
+    std::string load(std::string path) override {
+         return "html data from " + path;
+    }
+    
+};
+
+void JSONTest()
 {
-    return "html data from " + path;
+    JSONFile jSONFile;
+    assert(jSONFile.isValidType("a.json"));
+    assert(!jSONFile.load("a.json").compare("json data from a.json"));
 }
 
-std::string load_json_in_zip(std::string path)
+void XMLTest()
 {
-    std::string result = "unziped";
-    path = path.substr(0, path.size() - 4);
-    return result + " " + "json data from " + path;
+    XMLFile xMLFile;
+    assert(xMLFile.isValidType("a.xml"));
+    assert(!xMLFile.load("a.xml").compare("xml data from a.xml"));
 }
 
-std::string load_xml_in_zip(std::string path)
+void HTMLTest()
 {
-    std::string result = "unziped";
-    path = path.substr(0, path.size() - 4);
-    return result + " " + "xml data from " + path;
+    HTMLFile hTMLFIle;
+    assert(hTMLFIle.isValidType("a.html"));
+    assert(!hTMLFIle.load("a.html").compare("html data from a.html"));
 }
 
-std::string load_html_in_zip(std::string path)
+
+
+class IPackage
 {
-    std::string result = "unziped";
-    path = path.substr(0, path.size() - 4);
-    return result + " " + "html data from " + path;
+public:
+    IPackage() = default;
+    IPackage(IPackage&& ) = default;
+
+    virtual bool isCompressed(const std::string& path) = 0;
+
+    virtual std::string  decomression(const std::string& path) = 0;
+
+    virtual ~IPackage() = default;
+};
+
+class ZIPPackage : public IPackage
+{
+public:
+    ZIPPackage() = default;
+    ZIPPackage(ZIPPackage&& ) = default;
+
+    bool isCompressed(const std::string& path) override {
+        return path.find("InZip", path.size()-6) != std::string::npos;
+    }
+
+    std::string decomression(const std::string& path) override {
+        std::cout << "file " + path + " unziped " << std::endl;
+        return  path.substr(0, path.size() - 5);
+    }
+};
+
+void ZIPTest()
+{
+    ZIPPackage zIPPackage;
+
+    assert(zIPPackage.isCompressed("a.jsonInZip"));
+    assert(!zIPPackage.decomression("a.jsonInZip").compare("a.json"));
+
+    assert(zIPPackage.isCompressed("a.xmlInZip"));
+    assert(!zIPPackage.decomression("a.xmlInZip").compare("a.xml"));
+
+    assert(zIPPackage.isCompressed("a.htmlInZip"));
+    assert(!zIPPackage.decomression("a.htmlInZip").compare("a.html"));
 }
 
-void load_data()
+
+std::string unpack_file(const std::string& path)
+{
+    std::vector<std::unique_ptr<IPackage>> Packaging;
+    Packaging.push_back(std::move(std::make_unique<ZIPPackage>()));
+
+    for(const auto& e : Packaging)
+    {
+        if(e->isCompressed(path)) {
+            return e->decomression(path);
+        }
+    }
+    return path;
+}
+
+
+void load_data(std::string path)
+{
+    std::vector<std::unique_ptr<IFile>> filesReader;
+    filesReader.push_back(std::move(std::make_unique<JSONFile>()));
+    filesReader.push_back(std::move(std::make_unique<XMLFile>()));
+    filesReader.push_back(std::move(std::make_unique<HTMLFile>()));
+
+    for(const auto& reader : filesReader)
+    {
+            if(reader->isValidType(path)) {
+                std::cout << reader->load(path) << std::endl;
+                return;
+            }
+    }
+    throw std::runtime_error("File format " + path + " not implemented");
+}
+
+
+std::string userInput()
 {
     std::string path;
     std::cout << "Enter file name: ";
     std::cin >> path;
 
-    try {
-        if(get_file_type(path) == fileTypes::Json)
-            std::cout << load_json(path) << std::endl;
-    } catch (const std::exception& ex) {
-        std::cout << ex.what() << std::endl;
-    }
-
-    try {
-        if(get_file_type(path) == fileTypes::Xml)
-            std::cout << load_xml(path) << std::endl;
-    } catch (const std::exception& ex) {
-        std::cout << ex.what() << std::endl;
-    }
-
-    try {
-        if(get_file_type(path) == fileTypes::Html)
-            std::cout << load_html(path) << std::endl;
-    } catch (const std::exception& ex) {
-        std::cout << ex.what() << std::endl;
-    }
-
-    try {
-        if(get_file_type(path) == fileTypes::JsonInZip)
-            std::cout << load_json_in_zip(path) << std::endl;
-    } catch (const std::exception& ex) {
-        std::cout << ex.what() << std::endl;
-    }
-
-    try {
-        if(get_file_type(path) == fileTypes::XmlInZip)
-            std::cout << load_xml_in_zip(path) << std::endl;
-    } catch (const std::exception& ex) {
-        std::cout << ex.what() << std::endl;
-    }
-
-    try {
-        if(get_file_type(path) == fileTypes::HtmlInZip)
-            std::cout << load_html_in_zip(path) << std::endl;
-    } catch (const std::exception& ex) {
-        std::cout << ex.what() << std::endl;
-    }
+    return path; 
 }
 
 int main()
 {
-    load_data();
+    ZIPTest();
+    JSONTest();
+    XMLTest();
+    HTMLTest();
+
+    //userInput();
+
+    std::vector<std::string> files = 
+    {
+        "a.json",
+        "a.xml",
+        "a.html",
+        "a.jsonInZip",
+        "a.xmlInZip",
+        "a.htmlInZip",
+        "a.htmlInRar",
+    };
+
+    for(auto f : files)
+    {
+        std::string unpacked = unpack_file(f);
+        load_data(unpacked);
+    }
+
 }

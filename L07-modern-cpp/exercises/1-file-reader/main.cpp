@@ -1,70 +1,140 @@
 #include <string>
 #include <iostream>
+#include <vector>
+#include <memory>
+#include <cassert>
 
-enum class fileTypes
+class IFile
 {
-    Json,
-    Xml,
-    Html,
+public:
+    IFile() = default;
+    IFile(IFile &&  ) = default;
+
+    virtual bool isValidType(std::string path) = 0;
+
+    virtual std::string load(std::string path) = 0;
+
+    virtual ~IFile() = default;
 };
 
-fileTypes get_file_type(std::string path)
+class JSONFile : public IFile
 {
-    if(path.size() < 5)
-        throw std::runtime_error("Wrong file name");
-    if(path.back() == 'l')
-    {
-        if(path.rfind('.') == (path.size() - 4))
-            return fileTypes::Xml;
-        return fileTypes::Html;
+public:
+    JSONFile() = default;
+    JSONFile(JSONFile &&  ) = default;
+
+    bool isValidType(std::string path) override {
+        return path.find(".json") == path.size() - 5;
     }
-    return fileTypes::Json;
-}
 
-std::string load_json(std::string path)
+    std::string load(std::string path) override {
+        return "json data from " + path;
+    }
+};
+
+class XMLFile : public IFile
 {
-    return "json data from " + path;
-}
+public:
+    XMLFile() = default;
+    XMLFile(XMLFile &&  ) = default;
+ 
+    bool isValidType(std::string path) override {
+        return path.find(".xml") == path.size() - 4;
+    }
 
-std::string load_xml(std::string path)
+    std::string load(std::string path) override {
+         return "xml data from " + path;
+    }
+};
+
+class HTMLFile : public IFile
 {
-    return "xml data from " + path;
-}
+public:
+    HTMLFile() = default;
+    HTMLFile(HTMLFile &&  ) = default;
 
-std::string load_html(std::string path)
+    bool isValidType(std::string path) override {
+        return path.find(".html") == path.size() - 5;
+    }
+
+    std::string load(std::string path) override {
+         return "html data from " + path;
+    }
+    
+};
+
+void load_data(std::string path)
 {
-    return "html data from " + path;
+    std::vector<std::unique_ptr<IFile>> filesReader;
+    filesReader.push_back(std::move(std::make_unique<JSONFile>()));
+    filesReader.push_back(std::move(std::make_unique<XMLFile>()));
+    filesReader.push_back(std::move(std::make_unique<HTMLFile>()));
+
+    for(const auto& reader : filesReader)
+    {
+            if(reader->isValidType(path)) {
+                std::cout << reader->load(path) << std::endl;
+                return;
+            }
+    }
+    throw std::runtime_error("File format " + path + "not implemented");
 }
 
-void load_data()
+std::string userInput()
 {
     std::string path;
     std::cout << "Enter file name: ";
     std::cin >> path;
 
-    try {
-        if(get_file_type(path) == fileTypes::Json)
-            std::cout << load_json(path) << std::endl;
-    } catch (const std::exception& ex) {
-        std::cout << ex.what() << std::endl;
-    }
-
-    try {
-        if(get_file_type(path) == fileTypes::Xml)
-            std::cout << load_xml(path) << std::endl;
-    } catch (const std::exception& ex) {
-        std::cout << ex.what() << std::endl;
-    }
-
-    try {
-        if(get_file_type(path) == fileTypes::Html)
-            std::cout << load_html(path) << std::endl;
-    } catch (const std::exception& ex) {
-        std::cout << ex.what() << std::endl;
-    }
+    return path; 
 }
+
+
+void JSONTest()
+{
+    JSONFile jSONFile;
+    assert(jSONFile.isValidType("a.json"));
+    assert(!jSONFile.load("a.json").compare("json data from a.json"));
+}
+
+void XMLTest()
+{
+    XMLFile xMLFile;
+    assert(xMLFile.isValidType("a.xml"));
+    assert(!xMLFile.load("a.xml").compare("xml data from a.xml"));
+}
+
+void HTMLTest()
+{
+    HTMLFile hTMLFIle;
+    assert(hTMLFIle.isValidType("a.html"));
+    assert(!hTMLFIle.load("a.html").compare("html data from a.html"));
+}
+
 
 int main()
 {
-    load_data();
+    JSONTest();
+    XMLTest();
+    HTMLTest();
+
+    //userInput();
+
+    std::vector<std::string> files = 
+    {
+        "a.json",
+        "a.xml",
+        "a.html",
+        "a.zip",
+    };
+
+    for(auto f : files)
+    {
+        try {
+            load_data(f);
+        } catch(const std::exception& e) {
+            std::cerr << e.what() << '\n';
+        }
+    }
+
 }
