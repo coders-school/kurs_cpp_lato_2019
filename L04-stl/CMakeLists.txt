@@ -11,4 +11,7 @@ set(SRC_LIST
         task12B.hpp Atkins.cpp Atkins.hpp)
 
 add_executable(${PROJECT_NAME} ${SRC_LIST})
+add_executable("Zadanie4" Zadanie4.cpp)
+add_executable("Zadanie6" Zadanie6.cpp)
+add_executable("Zadanie9" Zadanie9.cpp)
 target_compile_options(${PROJECT_NAME} PRIVATE -Wall -Werror -Wpedantic -Wextra -Wconversion)
