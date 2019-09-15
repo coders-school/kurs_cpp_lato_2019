@@ -8,6 +8,7 @@
 #include <random>
 #include <array>
 
+
 void encryption(std::map<char , char> m, std::string stringToCiphering)
 {
     std::cout << stringToCiphering << "\n";
@@ -17,7 +18,6 @@ void encryption(std::map<char , char> m, std::string stringToCiphering)
         return 0;
     });
     std::cout << "\n";
-
 }
 
 void decryption(std::map<char, char> m, std::string stringToCiphering)
@@ -26,23 +26,13 @@ void decryption(std::map<char, char> m, std::string stringToCiphering)
     for(const auto& element : stringToCiphering)
     {
         auto result = std::find_if(m.begin(), m.end(), [element](const auto& mo){
-              return mo.second == element; 
-              });
+            return mo.second == element; 
+        });
         std::cout << result->first;
     }
     std::cout << "\n"; 
-
-    std::transform(stringToCiphering.begin(), stringToCiphering.end(), stringToCiphering.begin(), [&](const auto& iter){
-        auto result = std::find_if(m.begin(), m.end(),[element](const auto& mo){
-              return mo.second == element; 
-              });
-        std::cout << result->first;
-        return 0;
-    });
-
 }
  
-
 int main()
 { 
     std::vector<char> letter = {};

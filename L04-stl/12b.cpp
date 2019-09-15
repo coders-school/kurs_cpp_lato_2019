@@ -33,18 +33,17 @@ int isPrime(int n)
 std::vector<int> returnDividers(std::vector<int> values, int it)
 {
     std::vector<int> vec = {};
-    ;
-    for( auto iter = values.begin(); iter != values.end(); ++iter)
-    {
-        if(!(*iter % it))
-        vec.push_back(*iter);
-    }
+    std::transform(values.begin(), values.end(), values.begin(), [&](const auto& iter){
+        if(!(iter % it))
+        vec.emplace_back(iter);
+        return 0;
+    });
     return vec;
 }
 void printDivisorOfValue(int n, int m)
 {
     std::vector<int> values(n);
-    std::generate(values.begin(), values.end(), [c = m] () mutable { return random() % c; });
+    std::generate(values.begin(), values.end(), [&] () mutable { return random() % m; });
     std::map<int, std::vector<int> > mapa = {};
     std::vector<int> prime(n);
     std::generate(prime.begin(), prime.end(), [p = 1] () mutable {++p; return isPrime(p); });
@@ -54,11 +53,11 @@ void printDivisorOfValue(int n, int m)
     std::sort(values.begin(), values.end());
     auto last = std::unique(values.begin(), values.end());
     values.erase(last, values.end());
-    
-    for(auto it = prime.begin(); it != prime.end(); ++it)
-    {
-        mapa.insert({ *it, returnDividers(values, *it) });
-    }
+    std::transform(prime.begin(), prime.end(), prime.begin(), [&](auto& it){
+        mapa.insert({it, returnDividers(values, it)});
+        ++it;
+        return 0;
+    });
     for(auto it = mapa.begin(); it != mapa.end(); ++it)
     {
         std::cout << it->first << ": ";
