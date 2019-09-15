@@ -83,9 +83,9 @@ Materiały z kursu C++ (Lipiec 2019 - Wrzesień 2019)
 
 Pracujcie w parach lub po 3 osoby na wspólnym repo. Punkty zostaną przyznane wszystkim osobom w grupie, których commity będą widoczne w PR.
 
-- [ ] (6 punktów) Rozwiążcie zadania 4, 6 i 9 z listy [Zadania z STLa](zadania_stl.pdf)
-- [ ] (6 punktów) Zaimplementujcie zadanie 12A lub 12B z listy [Zadania z STLa](zadania_stl.pdf)
-- [ ] (6 punktów) W powyższym zadaniu zamieńcie wszystkie pętle for/do/while na odpowiednie algorytmy STL
+- [X] (6 punktów) Rozwiążcie zadania 4, 6 i 9 z listy [Zadania z STLa](zadania_stl.pdf)
+- [X] (6 punktów) Zaimplementujcie zadanie 12A lub 12B z listy [Zadania z STLa](zadania_stl.pdf)
+- [X] (6 punktów) W powyższym zadaniu zamieńcie wszystkie pętle for/do/while na odpowiednie algorytmy STL
 
 ### Projekt
 
