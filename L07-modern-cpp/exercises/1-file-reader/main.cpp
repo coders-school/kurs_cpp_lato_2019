@@ -1,66 +1,80 @@
 #include <string>
 #include <iostream>
+#include <vector>
+#include <memory>
 
-enum class fileTypes
+class File
 {
-    Json,
-    Xml,
-    Html,
+public:
+    File() = default;
+    virtual bool check_file_type(std::string path) = 0;
+    virtual std::string load(std::string path) = 0;
+    virtual ~File() = default;
 };
 
-fileTypes get_file_type(std::string path)
+class Json : public File
 {
-    if(path.size() < 5)
-        throw std::runtime_error("Wrong file name");
-    if(path.back() == 'l')
+public:
+    Json() = default;    
+    bool check_file_type(std::string path) override
     {
-        if(path.rfind('.') == (path.size() - 4))
-            return fileTypes::Xml;
-        return fileTypes::Html;
+        return path.find(".json") == path.size() - 5;
     }
-    return fileTypes::Json;
-}
+    std::string load(std::string path) override
+    {
+        return "Json data from " + path;
+    }
+};
 
-std::string load_json(std::string path)
+class Xml : public File
 {
-    return "json data from " + path;
-}
+public:
+    Xml() = default;
+    bool check_file_type(std::string path) override
+    {
+        return path.find(".xml") == path.size() - 4;
+    }
+    std::string load(std::string path) override
+    {
+        return "Xml data from " + path;
+    }
+};
 
-std::string load_xml(std::string path)
+class Html : public File
 {
-    return "xml data from " + path;
-}
-
-std::string load_html(std::string path)
-{
-    return "html data from " + path;
-}
+public:
+    Html() = default;
+    bool check_file_type(std::string path) override
+    {
+        return path.find(".html") == path.size() - 5;
+    }
+    std::string load(std::string path) override
+    {
+        return "html data from " + path;
+    }
+};
 
 void load_data()
 {
     std::string path;
     std::cout << "Enter file name: ";
-    std::cin >> path;
-
-    try {
-        if(get_file_type(path) == fileTypes::Json)
-            std::cout << load_json(path) << std::endl;
-    } catch (const std::exception& ex) {
-        std::cout << ex.what() << std::endl;
+    try{
+        std::cin >> path;
+    }
+    catch(const std::exception& ex)
+    {
+        std::cout<< "Wrong input. " << ex.what() << std::endl;
     }
 
-    try {
-        if(get_file_type(path) == fileTypes::Xml)
-            std::cout << load_xml(path) << std::endl;
-    } catch (const std::exception& ex) {
-        std::cout << ex.what() << std::endl;
-    }
+    std::vector<std::shared_ptr<File>> extensionContainer;
+    extensionContainer.push_back(std::make_shared<Json>());
+    extensionContainer.push_back(std::make_shared<Xml>());
+    extensionContainer.push_back(std::make_shared<Html>());
 
-    try {
-        if(get_file_type(path) == fileTypes::Html)
-            std::cout << load_html(path) << std::endl;
-    } catch (const std::exception& ex) {
-        std::cout << ex.what() << std::endl;
+    for (const auto& extension : extensionContainer)
+    {
+        if (extension->check_file_type(path))
+            std::cout<< extension->load(path) << std::endl;
     }
 }
 
@@ -68,3 +82,4 @@ int main()
 {
     load_data();
 }
+
