@@ -6,9 +6,13 @@
 struct LongInt
 {
     //Constructor
-    LongInt(int left, int right) : left(left), right(right)
-    {
-    }
+   // LongInt(int left, int right) : left(left), right(right)
+   //{
+    //}
+
+    LongInt(int l =12, int r=34) : left(l), right(r)
+      {
+      }
 
     //Constructor
     LongInt(std::string str)
@@ -47,6 +51,76 @@ struct LongInt
         left += right / 100;
         right = right % 100;
     }
+//Operator
+    void operator-=(const LongInt& r)
+    {
+        if (left>=r.left)
+        {
+                left -= r.left;
+                right -= r.right;
+                if(right<0 && left!=0) {left-=1; right+=100;}
+
+        }
+
+        else
+        {
+            int x=left, y=right;
+            left=r.left;
+            right=r.right;
+
+            left -= x;
+            right -= y;
+            if(right<0) {left-=1; right+=100;}
+
+            left*=(-1);
+
+        }
+     }
+
+ //Operator
+    LongInt operator+(const LongInt &other)
+    {
+        LongInt example(0,0);
+
+        example.left = left + other.left;
+        example.right = right + other.right;
+        example.left += example.right / 100;
+        example.right = example.right % 100;
+
+        return example;
+    }
+
+
+    //Operator
+    LongInt operator-(const LongInt &other )
+    {
+        LongInt example(0,0);
+
+
+        if (left>=other.left)
+        {
+               example.left = left - other.left;
+               example.right = right - other.right;
+               if(example.right<0 && example.left!=0) {example.left-=1; example.right+=100;}
+        }
+
+
+        else
+        {
+            LongInt example1(other.left,other.right);
+            LongInt example2(left,right);
+
+            example.left = example1.left - example2.left;
+            example.right = example1.right - example2.right;
+
+           if(example.right<0) {example.left-=1; example.right+=100;}
+
+           example.left*=(-1);
+
+        }
+        return example;
+     }
+
 
     //Copy operator
     LongInt& operator=(const LongInt& other)
