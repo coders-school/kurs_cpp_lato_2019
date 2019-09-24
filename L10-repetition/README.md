@@ -17,10 +17,15 @@ Materiały z kursu C++ (Lipiec 2019 - Wrzesień 2019)
 
 ### Materiały
 
+- Repo [fan_controller](https://github.com/coders-school/fan_controller)
+
 ### Nagrania i foto
 
 #### Grupa weekendowa
-  
+
+- <img src="foto/01_git.jpg" width="250px" /> <img src="foto/02_pointers.jpg" width="250px" />
+  <img src="foto/03_fan.jpg" width="250px" />
+
 #### Grupa wieczorowa
 
 ### Post-work
@@ -35,7 +40,7 @@ Materiały z kursu C++ (Lipiec 2019 - Wrzesień 2019)
 - [ ] Jeśli nie jest to dla Ciebie problemem, udostępnij na swoich mediach społecznościowych post Coders School o naszych przyszłych kursach (w przygotowaniu)
 - [ ] Zapisz się na [newsletter](https://coders.school/#newsletter), aby otrzymywać powiadomienia o przyszłych kursach (w planach mamy kurs C++ online, Wielowątkowość w C++, C++20, kurs Pythona)
 
-Osoby, które jeszcze nie wystawiły rekomendacji - ślicznie proszę o takowe \^_\^
+Osoby, które jeszcze nie wystawiły rekomendacji / opinii - ślicznie proszę o takowe \^_\^
 
 - [LinkedIn - Łukasz](https://www.linkedin.com/in/lukaszziobron)
 - [LinkedIn - Ihor](https://www.linkedin.com/in/ihor-rudynskyi-86a81b172/)
