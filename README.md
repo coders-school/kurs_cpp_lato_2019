@@ -41,8 +41,8 @@ Materiały z kursu C++ (Lipiec 2019 - Wrzesień 2019)
 | [Raziel14](https://github.com/Arakis14)             |  192 |            3 |        |      29 |  6 | 48 |    15 |       |      | 15 | 15 | 14 |  6 | 17 |    |  8 |    | 16 |    |
 | [mateuszh](https://github.com/czarny247)            |  178 |            3 |      3 |      67 | 13 |    |    20 |       |   11 |  6 | 12 | 15 | 13 |  6 |    |  8 |    |  1 |    |
 | [Joanna](https://github.com/teojdb)                 |  175 |            6 |      6 |      31 |    |  9 |    24 |       |    3 | 15 | 15 | 14 | 22 | 22 |    |  8 |    |    |    |
+| [Bodzio](https://github.com/Dolaroza)               |  164 |            3 |        |      31 |    | 15 |    11 |       |    6 | 15 |    | 15 | 22 | 22 |    |  8 |    | 16 |    |
 | [Łukasz](https://github.com/lucaswalicki)           |  162 |            3 |        |      24 |  6 | 39 |    18 |       |   11 | 13 |  4 |  8 | 11 | 17 |    |  8 |    |    |    |
-| [Bodzio](https://github.com/Dolaroza)               |  155 |            3 |        |      31 |    | 15 |    11 |       |    6 |  6 |    | 15 | 22 | 22 |    |  8 |    | 16 |    |
 | [rafal.em](https://github.com/elRaphaelo)           |  136 |            3 |        |      35 |  6 |    |    16 |       |    5 |  7 |  2 | 14 | 13 |  6 |    |  8 |  7 | 14 |    |
 | [Alicja](https://github.com/AlicjaBonder)           |   65 |            6 |        |         |    |    |       |       |      | 15 | 15 | 15 |    |  6 |    |  8 |    |    |    |
 | [nadia1101](https://github.com/JustynaSlazak)       |   55 |            3 |        |         |    |    |       |       |    2 | 15 | 15 |    |    |  6 |    |  8 |    |  6 |    |
