@@ -26,12 +26,23 @@ Materiały z kursu C++ (Lipiec 2019 - Wrzesień 2019)
 ### Nagrania i foto
 
 #### Grupa weekendowa
+
+- [14.09.2019 Małe retro](https://www.youtube.com/watch?v=WRH2S7-l9Jo&list=PLQqoaQUqs4DCoZOgDbqR-KfGSxParz1Pf&index=46)
+- [14.09.2019 Szablony](https://www.youtube.com/watch?v=5HlnvrHJom8&list=PLQqoaQUqs4DCoZOgDbqR-KfGSxParz1Pf&index=47)
+- [14.09.2019 Wzorce projektowe](https://www.youtube.com/watch?v=jIPHVgzLV8o&list=PLQqoaQUqs4DCoZOgDbqR-KfGSxParz1Pf&index=48)
+- [14.09.2019 Praca domowa](https://www.youtube.com/watch?v=oqLS5W4v-mo&list=PLQqoaQUqs4DCoZOgDbqR-KfGSxParz1Pf&index=49)
   
 #### Grupa wieczorowa
 
 - <img src="foto/01_worst_best.jpg" width="250px" /> <img src="foto/02_repetition.jpg" width="250px" />
   <img src="foto/03_patterns.jpg" width="250px" /> <img src="foto/04_singleton.jpg" width="250px" />
   <img src="foto/05_patterns.jpg" width="250px" />
+- [17.09.2019 Małe retro i powtórka](https://www.youtube.com/watch?v=c_p-zIQvXS8&list=PLQqoaQUqs4DCaFPwa3qfVlJc9YOfZkPAO&index=43)
+- [17.09.2019 Szablony](https://www.youtube.com/watch?v=6CN5VhhaxEQ&list=PLQqoaQUqs4DCaFPwa3qfVlJc9YOfZkPAO&index=44)
+- [17.09.2019 Wzorce projektowe: Factory Method](https://www.youtube.com/watch?v=QKyR4GFmrmE&list=PLQqoaQUqs4DCaFPwa3qfVlJc9YOfZkPAO&index=45)
+- [17.09.2019 Wzorce projektowe: Mediator](https://www.youtube.com/watch?v=olaO-cU2DZc&list=PLQqoaQUqs4DCaFPwa3qfVlJc9YOfZkPAO&index=46)
+- [17.09.2019 Wzorce projektowe](https://www.youtube.com/watch?v=btF_DdLrISM&list=PLQqoaQUqs4DCaFPwa3qfVlJc9YOfZkPAO&index=47)
+- [17.09.2019 Praca domowa](https://www.youtube.com/watch?v=bcmJngwgJ90&list=PLQqoaQUqs4DCaFPwa3qfVlJc9YOfZkPAO&index=48)
 
 ### Post-work
 
