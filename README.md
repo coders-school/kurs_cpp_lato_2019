@@ -32,7 +32,7 @@ Materiały z kursu C++ (Lipiec 2019 - Wrzesień 2019)
 | [RyszardH](https://github.com/RyszardHalapacz)      |  314 |           12 |        |      42 |  5 | 51 |    24 |    52 |    2 |  9 | 15 | 15 | 18 | 20 | 20 |  8 |  5 | 16 |    |
 | [Piotr H](https://github.com/PiotrHCpp)             |  307 |            9 |      3 |      45 |    | 21 |    24 |    54 |   16 | 15 | 15 | 14 | 26 | 21 | 20 | 18 |  5 | 16 |    |
 | [Kamil.Waszkiewicz](https://github.com/darkassazi)  |  302 |            9 |        |      67 | 13 | 51 |    16 |       |   18 | 15 | 15 | 15 | 15 | 21 | 20 | 27 |    |    |    |
-| [MonikaZ](https://github.com/MonikaZelechowska)     |  295 |           18 |        |      30 |  6 | 39 |    21 |    47 |   11 | 15 | 15 | 15 | 18 | 20 | 18 | 15 |  7 |    |    |
+| [MonikaZ](https://github.com/MonikaZelechowska)     |  301 |           18 |        |      30 |  6 | 45 |    21 |    47 |   11 | 15 | 15 | 15 | 18 | 20 | 18 | 15 |  7 |    |    |
 | [Joanna](https://github.com/teojdb)                 |  274 |            9 |      6 |      31 | 13 |  9 |    24 |    58 |    3 | 15 | 15 | 14 | 22 | 22 |    |  8 |    |    | 25 |
 | [Cypher](https://github.com/ChopSeeGuy)             |  258 |            6 |        |      52 |  6 | 42 |    15 |    39 |    9 | 15 |  8 | 15 | 13 |  6 | 18 |  8 |    |  6 |    |
 | [Daniel T](https://github.com/LinQ007)              |  228 |            6 |        |      14 |    | 39 |    20 |    55 |      | 15 | 15 | 12 | 27 | 17 |    |  8 |    |    |    |
