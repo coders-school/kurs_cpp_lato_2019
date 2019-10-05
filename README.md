@@ -17,7 +17,7 @@ Materiały z kursu C++ (Lipiec 2019 - Wrzesień 2019)
 ### [L09 - Szablony i wzorce projektowe](L09-templates-patterns)
 ### [L10 - Powtórka](L10-repetition)
 ### [Test końcowy](https://forms.gle/FxJ3b4qyFF8B1dNb9)
-### L11 - Rekrutacja
+### [L11 - Rekrutacja w IT](L11-recruitment-in-it)
 
 ## Organizacja
 
@@ -25,7 +25,7 @@ Materiały z kursu C++ (Lipiec 2019 - Wrzesień 2019)
 
 |                                                     | SUMA | Punktualność | Ściągi | Projekt | US | FC | Test1 | Test2 | Inne | L1 | L2 | L3 | L4 | L5 | L6 | L7 | L8 | L9 | L10|
 |-----------------------------------------------------|------|--------------|--------|---------|----|----|-------|-------|------|----|----|----|----|----|----|----|----|----|----|
-| [piotr.kowandy](https://github.com/PiotrKowandy)    |  401 |           18 |      3 |      43 | 10 | 81 |    22 |    55 |    5 | 15 | 15 | 15 | 18 | 20 | 20 | 21 |  5 | 35 |    |
+| [piotr.kowandy](https://github.com/PiotrKowandy)    |  404 |           18 |      3 |      43 | 10 | 84 |    22 |    55 |    5 | 15 | 15 | 15 | 18 | 20 | 20 | 21 |  5 | 35 |    |
 | [Adam Mierzwiak](https://github.com/adamvm)         |  324 |           12 |      3 |      15 |  6 | 54 |    17 |    42 |   14 | 15 | 15 | 15 | 15 | 20 |    |  8 |  7 | 16 | 50 |
 | [Marcin Bury](https://github.com/MarcinBury92)      |  322 |            9 |        |      46 |  5 | 63 |    25 |    54 |    1 | 15 | 15 | 14 | 26 | 20 |    |  8 |  5 | 16 |    |
 | [SzymonGajewski](https://github.com/SzymonGajewski) |  318 |           12 |      3 |      51 |  5 | 15 |    21 |    54 |    6 | 15 | 15 | 14 | 18 | 20 | 20 |  8 |  5 | 36 |    |
@@ -36,11 +36,11 @@ Materiały z kursu C++ (Lipiec 2019 - Wrzesień 2019)
 | [Joanna](https://github.com/teojdb)                 |  274 |            9 |      6 |      31 | 13 |  9 |    24 |    58 |    3 | 15 | 15 | 14 | 22 | 22 |    |  8 |    |    | 25 |
 | [Cypher](https://github.com/ChopSeeGuy)             |  258 |            6 |        |      52 |  6 | 42 |    15 |    39 |    9 | 15 |  8 | 15 | 13 |  6 | 18 |  8 |    |  6 |    |
 | [Daniel T](https://github.com/LinQ007)              |  228 |            6 |        |      14 |    | 39 |    20 |    55 |      | 15 | 15 | 12 | 27 | 17 |    |  8 |    |    |    |
+| [alicjaliqui](https://github.com/alicjaliQui)       |  226 |            3 |        |      52 | 13 | 45 |    29 |       |    2 | 15 | 15 |    | 22 | 22 |    |  8 |    |    |    |
 | [TheDude](https://github.com/TheDude-cpu)           |  226 |            3 |        |      25 |  6 | 36 |    14 |    29 |    1 | 15 | 13 |  8 | 11 | 20 | 15 |  8 |  7 | 15 |    |
 | [Raziel14](https://github.com/Arakis14)             |  218 |            3 |        |      29 |  6 | 48 |    15 |    26 |      | 15 | 15 | 14 |  6 | 17 |    |  8 |    | 16 |    |
 | [Bodzio](https://github.com/Dolaroza)               |  217 |            3 |        |      31 |    | 15 |    11 |    53 |    6 | 15 |    | 15 | 22 | 22 |    |  8 |    | 16 |    |
 | [NG](https://github.com/NG90)                       |  210 |            3 |        |      30 |  5 |    |    22 |    55 |      | 15 | 15 | 14 | 26 | 20 |    |  8 |  5 |    |    |
-| [alicjaliqui](https://github.com/alicjaliQui)       |  208 |            3 |        |      52 | 13 | 27 |    29 |       |    2 | 15 | 15 |    | 22 | 22 |    |  8 |    |    |    |
 | [mateuszh](https://github.com/czarny247)            |  178 |            3 |      3 |      67 | 13 |    |    20 |       |   11 |  6 | 12 | 15 | 13 |  6 |    |  8 |    |  1 |    |
 | [rafal.em](https://github.com/elRaphaelo)           |  172 |            3 |        |      35 |  6 |    |    16 |    33 |    5 |  7 |  2 | 14 | 13 |  6 |    |  8 |  7 | 14 |    |
 | [Łukasz](https://github.com/lucaswalicki)           |  162 |            3 |        |      24 |  6 | 39 |    18 |       |   11 | 13 |  4 |  8 | 11 | 17 |    |  8 |    |    |    |
