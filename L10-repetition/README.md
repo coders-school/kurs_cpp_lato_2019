@@ -8,7 +8,7 @@ Materiały z kursu C++ (Lipiec 2019 - Wrzesień 2019)
 
 ## Grupa wieczorowa
 
-### 23.09.2019 Powtórka
+### 30.09.2019 Powtórka
 
 ### Poprzedni Pre-work
 
@@ -25,8 +25,18 @@ Materiały z kursu C++ (Lipiec 2019 - Wrzesień 2019)
 
 - <img src="foto/01_git.jpg" width="250px" /> <img src="foto/02_pointers.jpg" width="250px" />
   <img src="foto/03_fan.jpg" width="250px" />
+- [21.09.2019 Wzorce projektowe: Abstract Factory, Strategy](https://www.youtube.com/watch?v=farsBucGoN8&list=PLQqoaQUqs4DCoZOgDbqR-KfGSxParz1Pf&index=49)
+- [21.09.2019 Powtórka wszystkiego: testowanie na repo fan_controller, zarządzanie pamięcią i inne](https://www.youtube.com/watch?v=nOK2gZYSTw4&list=PLQqoaQUqs4DCoZOgDbqR-KfGSxParz1Pf&index=50)
+- [21.09.2019 Praca domowa](https://www.youtube.com/watch?v=SppB1OZ4N9o&list=PLQqoaQUqs4DCoZOgDbqR-KfGSxParz1Pf&index=51)
 
 #### Grupa wieczorowa
+
+- [30.09.2019 Omówienie testu](https://www.youtube.com/watch?v=eBh77rINbQ4&list=PLQqoaQUqs4DCaFPwa3qfVlJc9YOfZkPAO&index=48)
+- [30.09.2019 Struktura projektu obiektowego](https://www.youtube.com/watch?v=Co6qsbvuz7w&list=PLQqoaQUqs4DCaFPwa3qfVlJc9YOfZkPAO&index=49)
+- [30.09.2019 Testowanie](https://www.youtube.com/watch?v=6EEPuBKGQ-0&list=PLQqoaQUqs4DCaFPwa3qfVlJc9YOfZkPAO&index=50)
+- [30.09.2019 Mockowanie](https://www.youtube.com/watch?v=m_ljQF448aU&list=PLQqoaQUqs4DCaFPwa3qfVlJc9YOfZkPAO&index=51)
+- [30.09.2019 Zarządzanie pamięcią](https://www.youtube.com/watch?v=8T7HPryN7BE&list=PLQqoaQUqs4DCaFPwa3qfVlJc9YOfZkPAO&index=52)
+- [30.09.2019 Przegląd tematów i praca domowa](https://www.youtube.com/watch?v=oYKvVfFveco&list=PLQqoaQUqs4DCaFPwa3qfVlJc9YOfZkPAO&index=53)
 
 ### Post-work
 

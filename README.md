@@ -46,7 +46,6 @@ Materiały z kursu C++ (Lipiec 2019 - Wrzesień 2019)
 | [Łukasz](https://github.com/lucaswalicki)           |  162 |            3 |        |      24 |  6 | 39 |    18 |       |   11 | 13 |  4 |  8 | 11 | 17 |    |  8 |    |    |    |
 | [nadia1101](https://github.com/JustynaSlazak)       |   83 |            3 |        |         |    |    |       |    28 |    2 | 15 | 15 |    |    |  6 |    |  8 |    |  6 |    |
 | [Alicja](https://github.com/AlicjaBonder)           |   65 |            6 |        |         |    |    |       |       |      | 15 | 15 | 15 |    |  6 |    |  8 |    |    |    |
-| [Arion](https://github.com/Ariionex)                |   44 |            3 |        |         |    |    |       |       |    5 |  7 |    | 15 |    |  6 |    |  8 |    |    |    |
 | [Kuba_K](https://github.com/kubakusz)               |   18 |              |        |         |    |    |       |       |    1 |  3 |    |    |    |  6 |    |  8 |    |    |    |
 | zielin                                              |   14 |              |        |         |    |    |       |       |      |    |    |    |    |  6 |    |  8 |    |    |    |
 
