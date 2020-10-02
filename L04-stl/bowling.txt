@@ -48,7 +48,7 @@ Ten strikes on the first ball of all ten frames.
 Two bonus balls, both strikes.
 Score for each frame == 10 + score for next two 
 balls == 10 + 10 + 10 == 30
-Total score == 10 frames x 30 == 300
+Total score == 10 frames * 30 == 300
 
 9-|9-|9-|9-|9-|9-|9-|9-|9-|9-||
 Nine pins hit on the first ball of all ten frames.
